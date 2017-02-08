@@ -1,37 +1,38 @@
-﻿using System.Configuration;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 
 namespace NorthWind.Repositorios.SqlServer
 {
-    public class CategoriaRepositorio
+    public class CategoriaRepositorio : RepositorioDataTableBase
     {
+        // 1 - Começar assim
         public DataTable Obter()
         {
-            var dataTable = new DataTable();
+            var categoriasDataTable = new DataTable();
 
-            using (var conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["oficinaConnectionString"].ConnectionString))
+            // northWindConnectionString - não é case sensitive.
+            using (var conexao = new SqlConnection(_conexao))
             {
                 conexao.Open();
 
-                const string instrucao = @"SELECT [Id]
-                      ,[Nome]
-                      ,[Email]
-                      ,[DataNascimento]
-                      ,Tipo
-                  FROM [Oficina].[dbo].[Cliente]
-                  Where Nome like '%' + @nome + '%'";
+                const string instrucao = @"SELECT CategoryId, CategoryName FROM Categories";
 
                 using (var comando = new SqlCommand(instrucao, conexao))
                 {
                     using (var dataAdapter = new SqlDataAdapter(comando))
                     {
-                        dataAdapter.Fill(dataTable);
+                        dataAdapter.Fill(categoriasDataTable);
                     }
                 }
             }
 
-            return dataTable;
+            return categoriasDataTable;
         }
+
+        // 2 - Depois refatorar.
+        //public DataTable Obter()
+        //{
+        //    return base.Obter(@"SELECT CategoryId, CategoryName FROM Categories");
+        //}
     }
 }
