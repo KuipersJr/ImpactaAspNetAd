@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.WebForms", "NorthWind.WebForms\NorthWind.WebForms.csproj", "{A124B431-0ED7-4D14-917F-69714DE5E65C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Repositorios.SqlServer", "NorthWind.Repositorios.SqlServer\NorthWind.Repositorios.SqlServer.csproj", "{95016330-5E41-4557-9AA2-32C0A55F543E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A124B431-0ED7-4D14-917F-69714DE5E65C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A124B431-0ED7-4D14-917F-69714DE5E65C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A124B431-0ED7-4D14-917F-69714DE5E65C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A124B431-0ED7-4D14-917F-69714DE5E65C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95016330-5E41-4557-9AA2-32C0A55F543E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95016330-5E41-4557-9AA2-32C0A55F543E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95016330-5E41-4557-9AA2-32C0A55F543E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95016330-5E41-4557-9AA2-32C0A55F543E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
