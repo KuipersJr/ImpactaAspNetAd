@@ -33,30 +33,30 @@ namespace NorthWind.Repositorios.SqlServer
         }
 
         // 2 - depois refatorar.
-        //protected DataTable Obter(string instrucao, List<SqlParameter> parametros = null)
-        //{
-        //    var dataTable = new DataTable();
+        protected DataTable Obter_(string instrucao, List<SqlParameter> parametros = null)
+        {
+            var dataTable = new DataTable();
 
-        //    // northWindConnectionString - não é case sensitive.
-        //    using (var conexao = new SqlConnection(_conexao))
-        //    {
-        //        conexao.Open();
+            // northWindConnectionString - não é case sensitive.
+            using (var conexao = new SqlConnection(_conexao))
+            {
+                conexao.Open();
 
-        //        using (var comando = new SqlCommand(instrucao, conexao))
-        //        {
-        //            using (var dataAdapter = new SqlDataAdapter(comando))
-        //            {
-        //                if (parametros != null)
-        //                {
-        //                    dataAdapter.SelectCommand.Parameters.AddRange(parametros.ToArray());
-        //                }
+                using (var comando = new SqlCommand(instrucao, conexao))
+                {
+                    using (var dataAdapter = new SqlDataAdapter(comando))
+                    {
+                        if (parametros != null)
+                        {
+                            dataAdapter.SelectCommand.Parameters.AddRange(parametros.ToArray());
+                        }
 
-        //                dataAdapter.Fill(dataTable);
-        //            }
-        //        }
-        //    }
+                        dataAdapter.Fill(dataTable);
+                    }
+                }
+            }
 
-        //    return dataTable;
-        //}
+            return dataTable;
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace NorthWind.Repositorios.SqlServer
     public class ProdutoRepositorio : RepositorioDataTableBase
     {
         // 1 - começar assim.
-        public DataTable Obter(int categoriaId)
+        public DataTable ObterPorCategoria(int categoriaId)
         {
             var produtosDataTable = new DataTable();
 
@@ -20,7 +20,7 @@ namespace NorthWind.Repositorios.SqlServer
                                             UnitPrice,
                                             UnitsInStock
                                             FROM Products
-                                            WHERE CategoryId=@CategoryId";
+                                            WHERE CategoryId = @CategoryId";
 
                 using (var comando = new SqlCommand(instrucao, conexao))
                 {
@@ -49,5 +49,22 @@ namespace NorthWind.Repositorios.SqlServer
 
         //    return base.Obter(instrucao, parametros);
         //}
+
+        public DataTable ObterPorFornecedor(int fornecedorId)
+        {
+            var instrucao = ObterQuery() + " WHERE SupplierId = @SupplierId";
+
+            var parametros = new List<SqlParameter> { new SqlParameter("@SupplierId", fornecedorId) };
+
+            return base.Obter_(instrucao, parametros);
+        }
+
+        private static string ObterQuery()
+        {
+            return @"SELECT ProductName,
+                            UnitPrice,
+                            UnitsInStock
+                    FROM Products ";
+        }
     }
 }

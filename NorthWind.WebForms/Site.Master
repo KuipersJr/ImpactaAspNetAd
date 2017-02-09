@@ -1,20 +1,23 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="NorthWind.WebForms.SiteMaster" %>
 
 <!DOCTYPE html>
-
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %></title>
-
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+<%--    <style type="text/css">
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>--%>
 </head>
 <body>
     <form runat="server">
@@ -38,7 +41,6 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -62,12 +64,17 @@
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Northwind Traders</p>
-            </footer>
         </div>
-
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr />
+                        <p>&copy; <%: DateTime.Now.Year %> - Northwind Traders</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </form>
 </body>
 </html>

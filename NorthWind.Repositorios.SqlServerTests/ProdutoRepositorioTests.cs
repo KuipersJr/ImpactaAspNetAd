@@ -9,7 +9,7 @@ namespace NorthWind.Repositorios.SqlServer.Tests
         [TestMethod()]
         public void ObterTest()
         {
-            var produtosDataTable = new ProdutoRepositorio().Obter(1);
+            var produtosDataTable = new ProdutoRepositorio().ObterPorCategoria(1);
 
             Assert.AreNotEqual(produtosDataTable.Rows.Count, 0);
 

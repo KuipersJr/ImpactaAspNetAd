@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace NorthWind.WebForms
 {
@@ -12,6 +7,12 @@ namespace NorthWind.WebForms
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void criterioPesquisaRadioButtonList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            criterioPesquisaMultiView.ActiveViewIndex = Convert.ToInt32(criterioPesquisaRadioButtonList.SelectedValue);
+            produtosGridView.DataSourceID = $"produtosPor{criterioPesquisaRadioButtonList.SelectedItem.Text}ObjectDataSource";            
         }
     }
 }
