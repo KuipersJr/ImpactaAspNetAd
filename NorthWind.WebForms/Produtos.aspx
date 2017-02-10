@@ -38,7 +38,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <asp:GridView ID="produtosGridView" runat="server" DataSourceID="produtosPorCategoriaObjectDataSource" AutoGenerateColumns="false" Width="100%" AllowPaging="True" AllowSorting="True">
+            <asp:GridView ID="produtosGridView" runat="server" DataSourceID="produtosPorCategoriaObjectDataSource" AutoGenerateColumns="false" Width="100%" AllowPaging="True" AllowSorting="True" CssClass="gridView">
                 <Columns>
                     <asp:BoundField DataField="ProductName" HeaderText="Produto" SortExpression="ProductName"></asp:BoundField>
                     <asp:BoundField DataField="UnitPrice" HeaderText="Pre&#231;o" SortExpression="UnitPrice" DataFormatString="{0:C}">
@@ -48,6 +48,9 @@
                         <ItemStyle HorizontalAlign="Right"></ItemStyle>
                     </asp:BoundField>
                 </Columns>
+                <PagerSettings Mode="NumericFirstLast" />
+                <SortedAscendingHeaderStyle CssClass="sortasc" />
+                <SortedDescendingHeaderStyle CssClass="sortdesc" />
             </asp:GridView>
             <asp:ObjectDataSource ID="produtosPorCategoriaObjectDataSource" TypeName="NorthWind.Repositorios.SqlServer.ProdutoRepositorio" SelectMethod="ObterPorCategoria" runat="server">
                 <SelectParameters>

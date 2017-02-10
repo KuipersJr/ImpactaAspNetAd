@@ -11,13 +11,6 @@
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-<%--    <style type="text/css">
-        footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>--%>
 </head>
 <body>
     <form runat="server">

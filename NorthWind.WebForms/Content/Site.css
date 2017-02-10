@@ -34,7 +34,15 @@ footer {
     display: block;
     position: absolute;
     bottom: 10px;
-    /*position: absolute;
-    bottom: 0;*/
     width: 100%;
+}
+
+.gridView th.sortasc a {
+    background: url(../Images/asc.gif) right center no-repeat;
+    padding-right: 20px;
+}
+
+.gridView th.sortdesc a {
+    background: url(../Images/desc.gif) right center no-repeat;
+    padding-right: 20px;
 }
