@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Optimization;
 using System.Web.Routing;
-using System.Web.Security;
-using System.Web.SessionState;
 
 namespace NorthWind.WebForms
 {
@@ -16,6 +12,12 @@ namespace NorthWind.WebForms
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+
+        public void Application_Error(object sender, EventArgs e)
+        {
+            var excecao = Server.GetLastError();
+            // Implementar log4net, por exemplo.
         }
     }
 }
