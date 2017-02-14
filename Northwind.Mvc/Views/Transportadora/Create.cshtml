@@ -2,16 +2,15 @@
 
 @{
     ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Transportadora</h4>
         <hr />
@@ -46,4 +45,8 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/inputmask")
+    <script type="text/javascript">
+        $(function () { $("#Telefone").inputmask("mask", { "mask": "(99) 9999-9999" }); });
+    </script>
 }

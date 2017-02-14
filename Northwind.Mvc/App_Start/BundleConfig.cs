@@ -26,6 +26,14 @@ namespace Northwind.Mvc
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/inputmask").Include(
+                        "~/Scripts/jquery.inputmask/inputmask.js",
+                        "~/Scripts/jquery.inputmask/jquery.inputmask.js",
+                        "~/Scripts/jquery.inputmask/inputmask.extensions.js",
+                        "~/Scripts/jquery.inputmask/inputmask.date.extensions.js",
+                        //and other extensions you want to include
+                        "~/Scripts/jquery.inputmask/inputmask.numeric.extensions.js"));
         }
     }
 }
