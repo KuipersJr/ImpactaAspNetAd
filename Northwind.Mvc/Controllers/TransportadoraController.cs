@@ -34,10 +34,13 @@ namespace Northwind.Mvc.Controllers
             {
                 // TODO: Add insert logic here
 
+                //throw new Exception("Teste");
+
                 return RedirectToAction("Index");
             }
-            catch
+            catch(Exception excecao)
             {
+                //ModelState.AddModelError(string.Empty, excecao.Message);
                 return View();
             }
         }
