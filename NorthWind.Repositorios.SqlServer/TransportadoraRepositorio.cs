@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace NorthWind.Repositorios.SqlServer
 {
@@ -11,29 +12,69 @@ namespace NorthWind.Repositorios.SqlServer
     {
         public List<Transportadora> Selecionar()
         {
-            var tranportadoras = new List<Transportadora>();
+            const string nomeProcedure = "TransportadoraSelecionar";
 
-            using (var conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["northwindConnectionString"].ConnectionString))
-            {
-                conexao.Open();
+            return base.ExecuteReader<Transportadora>(nomeProcedure, Mapear, null);
 
-                const string nomeProcedure = "TransportadoraSelecionar";
+            //return base.ExecuteReader(nomeProcedure, null);
 
-                using (var comando = new SqlCommand(nomeProcedure, conexao))
-                {
-                    comando.CommandType = CommandType.StoredProcedure;
+            //var tranportadoras = new List<Transportadora>();
 
-                    using (var registro = comando.ExecuteReader())
-                    {
-                        while (registro.Read())
-                        {
-                            tranportadoras.Add(Mapear(registro));
-                        }
-                    }
-                }
-            }
+            //using (var conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["northwindConnectionString"].ConnectionString))
+            //{
+            //    conexao.Open();
 
-            return tranportadoras;
+            //    const string nomeProcedure = "TransportadoraSelecionar";
+
+            //    using (var comando = new SqlCommand(nomeProcedure, conexao))
+            //    {
+            //        comando.CommandType = CommandType.StoredProcedure;
+
+            //        using (var registro = comando.ExecuteReader())
+            //        {
+            //            while (registro.Read())
+            //            {
+            //                tranportadoras.Add(Mapear(registro));
+            //            }
+            //        }
+            //    }
+            //}
+
+            //return tranportadoras;
+        }
+
+        public Transportadora Selecionar(int id)
+        {
+            const string nomeProcedure = "TransportadoraSelecionar";
+
+            return base.ExecuteReader<Transportadora>(nomeProcedure, Mapear, new SqlParameter("id", id)).FirstOrDefault();
+
+            //return base.ExecuteReader(nomeProcedure, new SqlParameter("id", id)).FirstOrDefault();
+
+            //var tranportadora = new Transportadora();
+
+            //using (var conexao = new SqlConnection(ConfigurationManager.ConnectionStrings["northwindConnectionString"].ConnectionString))
+            //{
+            //    conexao.Open();
+
+            //    const string nomeProcedure = "TransportadoraSelecionar";
+
+            //    using (var comando = new SqlCommand(nomeProcedure, conexao))
+            //    {
+            //        comando.CommandType = CommandType.StoredProcedure;
+            //        comando.Parameters.Add(new SqlParameter("id", id));
+
+            //        using (var registro = comando.ExecuteReader())
+            //        {
+            //            if (registro.Read())
+            //            {
+            //                tranportadora = Mapear(registro);
+            //            }
+            //        }
+            //    }
+            //}
+
+            //return tranportadora;
         }
 
         private static Transportadora Mapear(SqlDataReader registro)

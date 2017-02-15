@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NorthWind.Repositorios.SqlServer;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Northwind.Dominio;
 using System.Linq;
 
@@ -62,6 +63,16 @@ namespace NorthWind.Repositorios.SqlServer.Tests
             transportadoras = _transportadoraRepositorio.Selecionar();
 
             Assert.IsFalse(transportadoras.Any(t => t.Nome == "Correios Editado"));
+        }
+
+        [TestMethod()]
+        public void SelecionarPorIdTest()
+        {
+            var transportadora = _transportadoraRepositorio.Selecionar(1);
+            Assert.IsNotNull(transportadora);
+
+            transportadora = _transportadoraRepositorio.Selecionar(10);
+            Assert.IsNull(transportadora);
         }
     }
 }

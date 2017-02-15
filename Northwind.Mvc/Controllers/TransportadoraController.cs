@@ -34,13 +34,13 @@ namespace Northwind.Mvc.Controllers
 
         // POST: Transportadora/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Transportadora transportadora)
         {
             try
             {
-                var transportadora = new Transportadora();
-                transportadora.Nome = collection["Nome"];
-                transportadora.Telefone = collection["Telefone"];
+                //var transportadora = new Transportadora();
+                //transportadora.Nome = collection["Nome"];
+                //transportadora.Telefone = collection["Telefone"];
 
                 new TransportadoraRepositorio().Inserir(transportadora);
 
@@ -58,7 +58,7 @@ namespace Northwind.Mvc.Controllers
         // GET: Transportadora/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(_transportadoraRepositorio.Selecionar(id));
         }
 
         // POST: Transportadora/Edit/5
