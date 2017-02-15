@@ -1,9 +1,6 @@
 ﻿using Northwind.Dominio;
 using NorthWind.Repositorios.SqlServer;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Northwind.Mvc.Controllers
@@ -15,15 +12,13 @@ namespace Northwind.Mvc.Controllers
         // GET: Transportadora
         public ActionResult Index()
         {
-            var transportadoras = _transportadoraRepositorio.Selecionar();
-
-            return View(transportadoras);
+            return View(_transportadoraRepositorio.Selecionar());
         }
 
         // GET: Transportadora/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View(_transportadoraRepositorio.Selecionar(id));
         }
 
         // GET: Transportadora/Create
@@ -42,7 +37,7 @@ namespace Northwind.Mvc.Controllers
                 //transportadora.Nome = collection["Nome"];
                 //transportadora.Telefone = collection["Telefone"];
 
-                new TransportadoraRepositorio().Inserir(transportadora);
+                _transportadoraRepositorio.Inserir(transportadora);
 
                 //throw new Exception("Teste");
 
@@ -63,11 +58,11 @@ namespace Northwind.Mvc.Controllers
 
         // POST: Transportadora/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Transportadora transportadora)
         {
             try
             {
-                // TODO: Add update logic here
+                _transportadoraRepositorio.Atualizar(transportadora);
 
                 return RedirectToAction("Index");
             }
@@ -80,16 +75,16 @@ namespace Northwind.Mvc.Controllers
         // GET: Transportadora/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(_transportadoraRepositorio.Selecionar(id));
         }
 
         // POST: Transportadora/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(Transportadora transportadora)
         {
             try
             {
-                // TODO: Add delete logic here
+                _transportadoraRepositorio.Excluir(transportadora.Id);
 
                 return RedirectToAction("Index");
             }

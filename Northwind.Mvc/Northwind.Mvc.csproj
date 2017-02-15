@@ -183,6 +183,8 @@
     <Content Include="Views\Transportadora\Create.cshtml" />
     <Content Include="Views\Transportadora\Index.cshtml" />
     <Content Include="Views\Transportadora\Edit.cshtml" />
+    <Content Include="Views\Transportadora\Details.cshtml" />
+    <Content Include="Views\Transportadora\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
