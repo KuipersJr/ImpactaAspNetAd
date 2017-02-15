@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Northwind.Dominio;
+using NorthWind.Repositorios.SqlServer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +10,14 @@ namespace Northwind.Mvc.Controllers
 {
     public class TransportadoraController : Controller
     {
+        TransportadoraRepositorio _transportadoraRepositorio = new TransportadoraRepositorio();
+
         // GET: Transportadora
         public ActionResult Index()
         {
-            return View();
+            var transportadoras = _transportadoraRepositorio.Selecionar();
+
+            return View(transportadoras);
         }
 
         // GET: Transportadora/Details/5
@@ -32,7 +38,11 @@ namespace Northwind.Mvc.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+                var transportadora = new Transportadora();
+                transportadora.Nome = collection["Nome"];
+                transportadora.Telefone = collection["Telefone"];
+
+                new TransportadoraRepositorio().Inserir(transportadora);
 
                 //throw new Exception("Teste");
 

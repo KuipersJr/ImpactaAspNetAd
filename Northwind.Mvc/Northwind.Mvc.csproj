@@ -17,7 +17,7 @@
     <AssemblyName>Northwind.Mvc</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -181,6 +181,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Transportadora\Create.cshtml" />
+    <Content Include="Views\Transportadora\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -198,6 +199,10 @@
     <ProjectReference Include="..\Northwind.Dominio\Northwind.Dominio.csproj">
       <Project>{2f2cf7fc-4f67-4bdc-9b7d-113051f55c6d}</Project>
       <Name>Northwind.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NorthWind.Repositorios.SqlServer\NorthWind.Repositorios.SqlServer.csproj">
+      <Project>{95016330-5e41-4557-9aa2-32c0a55f543e}</Project>
+      <Name>NorthWind.Repositorios.SqlServer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -218,7 +223,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>57204</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:57204/</IISUrl>
+          <IISUrl>http://localhost/Northwind.Mvc</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
