@@ -12,6 +12,7 @@ namespace Northwind.Mvc.Controllers
         // GET: Transportadora
         public ActionResult Index()
         {
+            throw new Exception("TEste");
             return View(_transportadoraRepositorio.Selecionar());
         }
 
