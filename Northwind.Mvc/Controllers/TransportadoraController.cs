@@ -1,4 +1,5 @@
-﻿using Northwind.Dominio;
+﻿using Impacta.Apoio;
+using Northwind.Dominio;
 using NorthWind.Repositorios.SqlServer;
 using System;
 using System.Web.Mvc;
@@ -62,13 +63,18 @@ namespace Northwind.Mvc.Controllers
         {
             try
             {
+                Validar.DataAnnotations(transportadora);
+
                 _transportadoraRepositorio.Atualizar(transportadora);
 
                 return RedirectToAction("Index");
             }
-            catch (Exception excecao)
+            catch (DataAnnotationValidationException excecao)
             {
-                //ModelState.AddModelError(string.Empty, excecao.Message);
+                foreach (var erro in excecao.ErrosValidacao)
+                {
+                    ModelState.AddModelError(string.Empty, erro.ErrorMessage);
+                }
 
                 return View();
             }

@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Dominio", "Northw
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Mvc", "Northwind.Mvc\Northwind.Mvc.csproj", "{A9A90008-3322-46CD-9400-6BA9FC19141E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Impacta.Apoio", "Impacta.Apoio\Impacta.Apoio.csproj", "{010EC6CF-5C6D-42EF-BBE8-4D9E4432AF2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Impacta.ApoioTests", "Impacta.ApoioTests\Impacta.ApoioTests.csproj", "{B3FA7B03-EC0F-4B8B-829F-568DE9A73F7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{81BF38C0-56EA-46F4-82E0-9D502C3E5C00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,8 +45,20 @@ Global
 		{A9A90008-3322-46CD-9400-6BA9FC19141E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9A90008-3322-46CD-9400-6BA9FC19141E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9A90008-3322-46CD-9400-6BA9FC19141E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{010EC6CF-5C6D-42EF-BBE8-4D9E4432AF2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{010EC6CF-5C6D-42EF-BBE8-4D9E4432AF2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{010EC6CF-5C6D-42EF-BBE8-4D9E4432AF2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{010EC6CF-5C6D-42EF-BBE8-4D9E4432AF2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3FA7B03-EC0F-4B8B-829F-568DE9A73F7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3FA7B03-EC0F-4B8B-829F-568DE9A73F7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3FA7B03-EC0F-4B8B-829F-568DE9A73F7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3FA7B03-EC0F-4B8B-829F-568DE9A73F7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E11E95A2-A5FE-46B5-9764-23BA3A2305AE} = {81BF38C0-56EA-46F4-82E0-9D502C3E5C00}
+		{B3FA7B03-EC0F-4B8B-829F-568DE9A73F7A} = {81BF38C0-56EA-46F4-82E0-9D502C3E5C00}
 	EndGlobalSection
 EndGlobal

@@ -200,6 +200,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Impacta.Apoio\Impacta.Apoio.csproj">
+      <Project>{010ec6cf-5c6d-42ef-bbe8-4d9e4432af2e}</Project>
+      <Name>Impacta.Apoio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Northwind.Dominio\Northwind.Dominio.csproj">
       <Project>{2f2cf7fc-4f67-4bdc-9b7d-113051f55c6d}</Project>
       <Name>Northwind.Dominio</Name>
