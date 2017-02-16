@@ -1,5 +1,4 @@
-﻿using NorthWind.Repositorios.SqlServer;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Northwind.Dominio;
 using System.Linq;
 

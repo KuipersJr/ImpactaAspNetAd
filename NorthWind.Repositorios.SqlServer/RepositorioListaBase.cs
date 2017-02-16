@@ -7,6 +7,8 @@ using System.Data.SqlClient;
 
 namespace NorthWind.Repositorios.SqlServer
 {
+    public delegate T MapeamentoHandler<T>(SqlDataReader reader);
+
     public class RepositorioListaBase
     {
         protected string _stringConexao = ConfigurationManager.ConnectionStrings["northWindConnectionString"].ConnectionString;
@@ -58,7 +60,7 @@ namespace NorthWind.Repositorios.SqlServer
         }
 
         //protected IEnumerable<T> ExecuteReader<T>(string nomeProcedure, Func<SqlDataReader, T> metodoDeMapeamento, params SqlParameter[] parametros)
-        protected List<T> ExecuteReader<T>(string nomeProcedure, Func<SqlDataReader, T> metodoDeMapeamento, params SqlParameter[] parametros)
+        protected List<T> ExecuteReader<T>(string nomeProcedure, MapeamentoHandler<T> metodoDeMapeamento, params SqlParameter[] parametros)
         {
             var lista = new List<T>();
 

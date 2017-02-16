@@ -12,7 +12,6 @@ namespace Northwind.Mvc.Controllers
         // GET: Transportadora
         public ActionResult Index()
         {
-            throw new Exception("TEste");
             return View(_transportadoraRepositorio.Selecionar());
         }
 
@@ -44,7 +43,7 @@ namespace Northwind.Mvc.Controllers
 
                 return RedirectToAction("Index");
             }
-            catch(Exception excecao)
+            catch (Exception excecao)
             {
                 //ModelState.AddModelError(string.Empty, excecao.Message);
                 return View();
@@ -67,8 +66,10 @@ namespace Northwind.Mvc.Controllers
 
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception excecao)
             {
+                //ModelState.AddModelError(string.Empty, excecao.Message);
+
                 return View();
             }
         }
@@ -89,8 +90,10 @@ namespace Northwind.Mvc.Controllers
 
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception excecao)
             {
+                //ModelState.AddModelError(string.Empty, excecao.Message);
+
                 return View();
             }
         }
