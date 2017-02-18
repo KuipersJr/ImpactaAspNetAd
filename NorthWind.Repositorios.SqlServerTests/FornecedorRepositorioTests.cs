@@ -8,7 +8,7 @@ namespace NorthWind.Repositorios.SqlServer.Tests
         [TestMethod()]
         public void ObterTest()
         {
-            var fornecedores = new FornecedorRepositorio().Obter();
+            var fornecedores = new FornecedorRepositorio().Selecionar();
 
             Assert.AreNotEqual(fornecedores.Rows.Count, 0);
         }

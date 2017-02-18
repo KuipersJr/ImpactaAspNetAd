@@ -18,15 +18,18 @@
             </asp:RadioButtonList>
             <asp:MultiView ID="criterioPesquisaMultiView" runat="server" ActiveViewIndex="0">
                 <asp:View runat="server" ID="categoriaView">
-                    <asp:DropDownList ID="categoriasDropDownList" runat="server" DataSourceID="categoriasObjectDataSource" DataValueField="CategoryId"
+                    <asp:DropDownList ID="categoriasDropDownList" runat="server" DataSourceID="categoriasObjectDataSource" 
+                        DataValueField="CategoryId"
                         DataTextField="CategoryName" AutoPostBack="True" AppendDataBoundItems="true">
                         <asp:ListItem Text="Selecione uma categoria" Value="0" />
                     </asp:DropDownList>
-                    <asp:ObjectDataSource ID="categoriasObjectDataSource" runat="server" TypeName="NorthWind.Repositorios.SqlServer.CategoriaRepositorio"
-                        SelectMethod="Obter"></asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="categoriasObjectDataSource" runat="server" 
+                        TypeName="NorthWind.Repositorios.SqlServer.CategoriaRepositorio"
+                        SelectMethod="Selecionar"></asp:ObjectDataSource>
                 </asp:View>
                 <asp:View runat="server" ID="fornecedorView">
-                    <asp:DropDownList ID="fornecedoresDropDownList" runat="server" AppendDataBoundItems="true" AutoPostBack="true" DataSourceID="fornecedorObjectDataSource" DataTextField="CompanyName"
+                    <asp:DropDownList ID="fornecedoresDropDownList" runat="server" AppendDataBoundItems="true" AutoPostBack="true" 
+                        DataTextField="CompanyName"
                         DataValueField="SupplierId">
                         <asp:ListItem Text="Selecione um fornecedor" Value="0" />
                     </asp:DropDownList>

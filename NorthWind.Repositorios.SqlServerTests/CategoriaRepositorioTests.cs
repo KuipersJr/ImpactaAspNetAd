@@ -9,7 +9,7 @@ namespace NorthWind.Repositorios.SqlServer.Tests
         [TestMethod()]
         public void ObterTest()
         {
-            var categoriasDataTable = new CategoriaRepositorio().Obter();
+            var categoriasDataTable = new CategoriaRepositorio().Selecionar();
 
             Assert.AreNotEqual(categoriasDataTable.Rows.Count, 0);
 

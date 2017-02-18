@@ -6,7 +6,7 @@ namespace NorthWind.Repositorios.SqlServer
     public class CategoriaRepositorio : RepositorioDataTableBase
     {
         // 1 - Começar assim
-        public DataTable Obter()
+        public DataTable Selecionar()
         {
             var categoriasDataTable = new DataTable();
 

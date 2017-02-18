@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NorthWind.Repositorios.SqlServer;
+using System;
 
 namespace NorthWind.WebForms
 {
@@ -12,7 +13,15 @@ namespace NorthWind.WebForms
         protected void criterioPesquisaRadioButtonList_SelectedIndexChanged(object sender, EventArgs e)
         {
             criterioPesquisaMultiView.ActiveViewIndex = Convert.ToInt32(criterioPesquisaRadioButtonList.SelectedValue);
-            produtosGridView.DataSourceID = $"produtosPor{criterioPesquisaRadioButtonList.SelectedItem.Text}ObjectDataSource";            
+            produtosGridView.DataSourceID = $"produtosPor{criterioPesquisaRadioButtonList.SelectedItem.Text}ObjectDataSource";
+
+            if (criterioPesquisaMultiView.ActiveViewIndex == 1 && fornecedoresDropDownList.Items.Count == 1)
+            {
+                fornecedoresDropDownList.DataSource = new FornecedorRepositorio().Selecionar();
+                fornecedoresDropDownList.DataValueField = "SupplierId";
+                fornecedoresDropDownList.DataTextField = "CompanyName";
+                fornecedoresDropDownList.DataBind();
+            }       
         }
     }
 }
