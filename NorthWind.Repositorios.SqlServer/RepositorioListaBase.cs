@@ -93,6 +93,22 @@ namespace NorthWind.Repositorios.SqlServer
             return lista;
         }
 
+        protected object ExecuteScalar(string nomeProcedure, params SqlParameter[] parametros)
+        {
+            using (var conexao = new SqlConnection(_stringConexao))
+            {
+                conexao.Open();
+
+                using (var comando = new SqlCommand(nomeProcedure, conexao))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddRange(parametros);
+
+                    return comando.ExecuteScalar();
+                }
+            }
+        }
+
         private Transportadora Mapear(SqlDataReader registro)
         {
             var transportadora = new Transportadora();

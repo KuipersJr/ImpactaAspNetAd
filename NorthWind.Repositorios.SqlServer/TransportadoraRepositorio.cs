@@ -89,20 +89,22 @@ namespace NorthWind.Repositorios.SqlServer
 
         public void Inserir(Transportadora transportadora)
         {
+            transportadora.Id = Convert.ToInt32(base.ExecuteScalar("TransportadoraInserir", Mapear(transportadora).ToArray()));             
+
             // Começar assim, depois refatorar.
-            using (var conexao = new SqlConnection(_stringConexao))
-            {
-                conexao.Open();
+            //using (var conexao = new SqlConnection(_stringConexao))
+            //{
+            //    conexao.Open();
 
-                const string nomeProcedure = "TransportadoraInserir";
+            //    const string nomeProcedure = "TransportadoraInserir";
 
-                using (var comando = new SqlCommand(nomeProcedure, conexao))
-                {
-                    comando.CommandType = CommandType.StoredProcedure;
-                    comando.Parameters.AddRange(Mapear(transportadora).ToArray());
-                    comando.ExecuteNonQuery();
-                }
-            }
+            //    using (var comando = new SqlCommand(nomeProcedure, conexao))
+            //    {
+            //        comando.CommandType = CommandType.StoredProcedure;
+            //        comando.Parameters.AddRange(Mapear(transportadora).ToArray());
+            //        comando.ExecuteNonQuery();
+            //    }
+            //}
         }
 
         private List<SqlParameter> Mapear(Transportadora transportadora)
@@ -125,7 +127,7 @@ namespace NorthWind.Repositorios.SqlServer
 
         public void Excluir(int id)
         {
-            base.ExecuteNonQuery("TransportadoraExcluir", new SqlParameter("id", id));
+            base.ExecuteNonQuery("TransportadoraExcluir", new SqlParameter("ShipperId", id));
         }
     }
 }

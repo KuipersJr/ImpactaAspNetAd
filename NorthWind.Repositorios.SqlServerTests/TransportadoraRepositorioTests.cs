@@ -29,8 +29,12 @@ namespace NorthWind.Repositorios.SqlServer.Tests
             transportadora.Nome = "Correios";
             transportadora.Telefone = "+5511 1234 1234";
 
+            Assert.IsTrue(transportadora.Id == 0);
+
             _transportadoraRepositorio.Inserir(transportadora);
 
+            Assert.IsFalse(transportadora.Id == 0);
+            
             var transportadoras = _transportadoraRepositorio.Selecionar();
 
             Assert.IsTrue(transportadoras.Any(t => t.Nome == "Correios"));
