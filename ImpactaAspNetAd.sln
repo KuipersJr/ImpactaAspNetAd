@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Impacta.ApoioTests", "Impac
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{81BF38C0-56EA-46F4-82E0-9D502C3E5C00}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Repositorios.SqlServer.EF", "NorthWind.Repositorios.SqlServer.EF\NorthWind.Repositorios.SqlServer.EF.csproj", "{0ABBA110-95A2-4C97-8C22-C3DB518C6C5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Repositorios.SqlServer.EFTests", "NorthWind.Repositorios.SqlServer.EFTests\NorthWind.Repositorios.SqlServer.EFTests.csproj", "{59D6C8EA-8981-400F-BA9F-AECD18C1C494}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,14 @@ Global
 		{B3FA7B03-EC0F-4B8B-829F-568DE9A73F7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3FA7B03-EC0F-4B8B-829F-568DE9A73F7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3FA7B03-EC0F-4B8B-829F-568DE9A73F7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ABBA110-95A2-4C97-8C22-C3DB518C6C5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ABBA110-95A2-4C97-8C22-C3DB518C6C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ABBA110-95A2-4C97-8C22-C3DB518C6C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ABBA110-95A2-4C97-8C22-C3DB518C6C5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59D6C8EA-8981-400F-BA9F-AECD18C1C494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59D6C8EA-8981-400F-BA9F-AECD18C1C494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59D6C8EA-8981-400F-BA9F-AECD18C1C494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59D6C8EA-8981-400F-BA9F-AECD18C1C494}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +72,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E11E95A2-A5FE-46B5-9764-23BA3A2305AE} = {81BF38C0-56EA-46F4-82E0-9D502C3E5C00}
 		{B3FA7B03-EC0F-4B8B-829F-568DE9A73F7A} = {81BF38C0-56EA-46F4-82E0-9D502C3E5C00}
+		{59D6C8EA-8981-400F-BA9F-AECD18C1C494} = {81BF38C0-56EA-46F4-82E0-9D502C3E5C00}
 	EndGlobalSection
 EndGlobal
