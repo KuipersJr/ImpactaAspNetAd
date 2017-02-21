@@ -2,21 +2,28 @@
 using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity.Migrations;
 
 namespace NorthWind.Repositorios.SqlServer.EF
 {
-    public class LojaDbInitializer : DropCreateDatabaseIfModelChanges<LojaDbContext>
+    public class LojaDbInitializer : DropCreateDatabaseAlways<LojaDbContext>
     {
         protected override void Seed(LojaDbContext contexto)
         {
-            contexto.Categorias.AddRange(ObterCategorias());
+            var categorias = ObterCategorias();
+
+            contexto.Categorias.AddOrUpdate(c => c.Nome, categorias[0]);
+            contexto.Categorias.AddOrUpdate(c => c.Nome, categorias[1]);
             contexto.SaveChanges();
 
-            contexto.Produtos.AddRange(ObterProdutos(contexto));
+            var produtos = ObterProdutos(contexto);
+
+            contexto.Produtos.AddOrUpdate(p => p.Nome, produtos[0]);
+            contexto.Produtos.AddOrUpdate(p => p.Nome, produtos[1]);
             contexto.SaveChanges();
         }
 
-        private IEnumerable<Produto> ObterProdutos(LojaDbContext contexto)
+        private List<Produto> ObterProdutos(LojaDbContext contexto)
         {
             var grampeador = new Produto();
             grampeador.Nome = "Grampeador";
@@ -33,7 +40,7 @@ namespace NorthWind.Repositorios.SqlServer.EF
             return new List<Produto> { grampeador, penDrive };
         }
 
-        private IEnumerable<Categoria> ObterCategorias()
+        private List<Categoria> ObterCategorias()
         {
             return new List<Categoria> {
                 new Categoria { Nome = "Papelaria" },

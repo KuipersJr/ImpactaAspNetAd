@@ -14,8 +14,8 @@ namespace NorthWind.Repositorios.SqlServer.EF
 
             // Migrations
             //  1. Enable-Migrations
-            //  2. add-migration Initial -IgnoreChanges
-            //  3. Update-Database -ConnectionStringName "lojaConnectionString"
+            //  2. add-migration Inicial
+            //  3. Update-Database -ConnectionStringName "lojaConnectionString" // não esquecer de comentar o Up.
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<LojaDbContext, Configuration>());
         }
 

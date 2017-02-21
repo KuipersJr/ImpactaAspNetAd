@@ -13,7 +13,7 @@ namespace NorthWind.Repositorios.SqlServer.EF.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201702211744050_AddProdutoDescontinuado"; }
+            get { return "201702212228338_AddProdutoDescontinuado"; }
         }
         
         string IMigrationMetadata.Source

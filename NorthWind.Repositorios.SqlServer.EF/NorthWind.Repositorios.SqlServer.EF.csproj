@@ -51,13 +51,13 @@
   <ItemGroup>
     <Compile Include="LojaDbContext.cs" />
     <Compile Include="LojaDbInitializer.cs" />
-    <Compile Include="Migrations\201702211420219_Inicial.cs" />
-    <Compile Include="Migrations\201702211420219_Inicial.Designer.cs">
-      <DependentUpon>201702211420219_Inicial.cs</DependentUpon>
+    <Compile Include="Migrations\201702212143339_Inicial.cs" />
+    <Compile Include="Migrations\201702212143339_Inicial.Designer.cs">
+      <DependentUpon>201702212143339_Inicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702211744050_AddProdutoDescontinuado.cs" />
-    <Compile Include="Migrations\201702211744050_AddProdutoDescontinuado.Designer.cs">
-      <DependentUpon>201702211744050_AddProdutoDescontinuado.cs</DependentUpon>
+    <Compile Include="Migrations\201702212228338_AddProdutoDescontinuado.cs" />
+    <Compile Include="Migrations\201702212228338_AddProdutoDescontinuado.Designer.cs">
+      <DependentUpon>201702212228338_AddProdutoDescontinuado.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfiguration\CategoriaConfiguration.cs" />
@@ -75,11 +75,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702211420219_Inicial.resx">
-      <DependentUpon>201702211420219_Inicial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702212143339_Inicial.resx">
+      <DependentUpon>201702212143339_Inicial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702211744050_AddProdutoDescontinuado.resx">
-      <DependentUpon>201702211744050_AddProdutoDescontinuado.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702212228338_AddProdutoDescontinuado.resx">
+      <DependentUpon>201702212228338_AddProdutoDescontinuado.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
