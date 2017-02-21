@@ -1,4 +1,5 @@
 ﻿using Northwind.Dominio;
+using NorthWind.Repositorios.SqlServer.EF.Migrations;
 using NorthWind.Repositorios.SqlServer.EF.ModelConfiguration;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -9,7 +10,13 @@ namespace NorthWind.Repositorios.SqlServer.EF
     {
         public LojaDbContext() : base("lojaConnectionString")
         {
-            Database.SetInitializer(new LojaDbInitializer());
+            //Database.SetInitializer(new LojaDbInitializer());
+
+            // Migrations
+            //  1. Enable-Migrations
+            //  2. add-migration Initial -IgnoreChanges
+            //  3. Update-Database -ConnectionStringName "lojaConnectionString"
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<LojaDbContext, Configuration>());
         }
 
         public DbSet<Produto> Produtos { get; set; }
