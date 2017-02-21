@@ -1,5 +1,8 @@
-﻿namespace Northwind.Dominio
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Northwind.Dominio
 {
+    //[Table("Produto")]
     public class Produto
     {
         public int Id { get; set; }
