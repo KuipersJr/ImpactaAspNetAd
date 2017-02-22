@@ -146,12 +146,34 @@ namespace NorthWind.Repositorios.SqlServer.EF.Tests
             System.Console.WriteLine(categoriaPapelaria.Single());
         }
 
+        [TestMethod]
+        public void AdicionarCliente()
+        {
+            var cliente = new Cliente();
+            cliente.Nome = "Vítor";
+            cliente.Endereco = new Endereco { Logradouro = "R. Tal" };
+
+            _contexto.Clientes.Add(cliente);
+
+            _contexto.SaveChanges();
+        }
+
+        [TestMethod]
+        public void ExlcuirCliente()
+        {
+            var cliente = _contexto.Clientes.Single(c => c.Id == 1);
+
+            _contexto.Clientes.Remove(cliente);
+
+            _contexto.SaveChanges();
+        }
+
         private bool ComparararNomeCategoria(Categoria c) { return c.Nome == "Papelaria"; }
 
         [ClassCleanup]
         public static void DescartarContexto()
         {
-            _contexto.Database.Delete();
+            //_contexto.Database.Delete();
             _contexto.Dispose();
         }
     }

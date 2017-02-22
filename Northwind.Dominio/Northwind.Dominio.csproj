@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categoria.cs" />
+    <Compile Include="Cliente.cs" />
+    <Compile Include="Endereco.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="Transportadora.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
