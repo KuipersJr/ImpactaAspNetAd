@@ -7,7 +7,8 @@ namespace Northwind.Dominio
     {
         public int Id { get; set; }
 
-        public Categoria Categoria { get; set; }
+        // virtual - habilita o lazy load.
+        public virtual Categoria Categoria { get; set; }
 
         public string Nome { get; set; }
         public decimal Preco { get; set; }

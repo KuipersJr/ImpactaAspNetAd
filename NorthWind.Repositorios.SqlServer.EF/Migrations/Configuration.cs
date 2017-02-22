@@ -34,7 +34,6 @@ namespace NorthWind.Repositorios.SqlServer.EF.Migrations
             grampeador.Preco = 16.06m;
             grampeador.Estoque = 6;
             grampeador.Categoria = contexto.Categorias.Single(c => c.Nome == "Papelaria");
-            //grampeador.Categoria = contexto.Categorias.Single(delegate (Categoria c) { return c.Nome == "Papelaria"; });
 
             var penDrive = new Produto();
             penDrive.Nome = "Pen drive";

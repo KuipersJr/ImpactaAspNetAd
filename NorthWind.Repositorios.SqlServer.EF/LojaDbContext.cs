@@ -17,6 +17,7 @@ namespace NorthWind.Repositorios.SqlServer.EF
             //  2. add-migration Inicial
             //  3. Update-Database -ConnectionStringName "lojaConnectionString" // não esquecer de comentar o Up.
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<LojaDbContext, Configuration>());
+            Configuration.LazyLoadingEnabled = false;
         }
 
         public DbSet<Produto> Produtos { get; set; }

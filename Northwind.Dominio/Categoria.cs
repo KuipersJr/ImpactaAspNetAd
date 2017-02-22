@@ -6,8 +6,9 @@ namespace Northwind.Dominio
     {
         public int Id { get; set; }
 
-        public List<Produto> Produtos { get; set; }
-
+        public virtual List<Produto> Produtos { get; set; }
+        
+        //[Index("CategoriaNomeUK", 1, IsUnique = true)]
         public string Nome { get; set; }
     }
 }
