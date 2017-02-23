@@ -173,7 +173,7 @@ namespace NorthWind.Repositorios.SqlServer.EF.Tests
         [ClassCleanup]
         public static void DescartarContexto()
         {
-            //_contexto.Database.Delete();
+            _contexto.Database.Delete();
             _contexto.Dispose();
         }
     }

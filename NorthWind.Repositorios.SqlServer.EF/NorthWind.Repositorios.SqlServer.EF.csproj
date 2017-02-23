@@ -63,6 +63,10 @@
     <Compile Include="Migrations\201702231346241_AddCliente.Designer.cs">
       <DependentUpon>201702231346241_AddCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702231427421_AddPedido.cs" />
+    <Compile Include="Migrations\201702231427421_AddPedido.Designer.cs">
+      <DependentUpon>201702231427421_AddPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfiguration\ClienteConfiguration.cs" />
     <Compile Include="ModelConfiguration\CategoriaConfiguration.cs" />
@@ -89,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702231346241_AddCliente.resx">
       <DependentUpon>201702231346241_AddCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702231427421_AddPedido.resx">
+      <DependentUpon>201702231427421_AddPedido.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

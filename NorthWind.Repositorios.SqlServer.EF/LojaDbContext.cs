@@ -25,6 +25,7 @@ namespace NorthWind.Repositorios.SqlServer.EF
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Pedido> Pedidos { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
