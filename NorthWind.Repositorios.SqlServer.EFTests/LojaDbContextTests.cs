@@ -141,9 +141,12 @@ namespace NorthWind.Repositorios.SqlServer.EF.Tests
         [TestMethod]
         public void QueryableTeste()
         {
-            var categoriaPapelaria = _contexto.Categorias.Where/*Single*/(c => c.Nome == "Papelaria");
+            var query = _contexto.Categorias.Where(c => c.Nome == "Papelaria");
+            query.OrderBy(c => c.Nome);
 
-            System.Console.WriteLine(categoriaPapelaria.Single());
+            var primeiro = query.First();
+            var unico = query.Single();            
+            var lista = query.ToList();
         }
 
         [TestMethod]
