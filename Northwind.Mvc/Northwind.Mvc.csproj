@@ -208,9 +208,9 @@
       <Project>{2f2cf7fc-4f67-4bdc-9b7d-113051f55c6d}</Project>
       <Name>Northwind.Dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NorthWind.Repositorios.SqlServer\NorthWind.Repositorios.SqlServer.csproj">
+    <ProjectReference Include="..\NorthWind.Repositorios.SqlServer\NorthWind.Repositorios.SqlServer.Ado.csproj">
       <Project>{95016330-5e41-4557-9aa2-32c0a55f543e}</Project>
-      <Name>NorthWind.Repositorios.SqlServer</Name>
+      <Name>NorthWind.Repositorios.SqlServer.Ado</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

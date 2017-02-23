@@ -7,8 +7,8 @@
     <ProjectGuid>{95016330-5E41-4557-9AA2-32C0A55F543E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NorthWind.Repositorios.SqlServer</RootNamespace>
-    <AssemblyName>NorthWind.Repositorios.SqlServer</AssemblyName>
+    <RootNamespace>NorthWind.Repositorios.SqlServer.Ado</RootNamespace>
+    <AssemblyName>NorthWind.Repositorios.SqlServer.Ado</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
