@@ -7,7 +7,9 @@ namespace NorthWind.Repositorios.SqlServer.EF.ModelConfigurarion
     {
         public ClienteConfiguration()
         {
-            HasRequired(a => a.Endereco);
+            HasRequired(c => c.Endereco)
+                .WithRequiredPrincipal(e => e.Cliente)
+                .WillCascadeOnDelete(true);
         }
     }
 }

@@ -59,9 +59,9 @@
     <Compile Include="Migrations\201702212228338_AddProdutoDescontinuado.Designer.cs">
       <DependentUpon>201702212228338_AddProdutoDescontinuado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702222259308_AddCliente.cs" />
-    <Compile Include="Migrations\201702222259308_AddCliente.Designer.cs">
-      <DependentUpon>201702222259308_AddCliente.cs</DependentUpon>
+    <Compile Include="Migrations\201702231346241_AddCliente.cs" />
+    <Compile Include="Migrations\201702231346241_AddCliente.Designer.cs">
+      <DependentUpon>201702231346241_AddCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfiguration\ClienteConfiguration.cs" />
@@ -87,8 +87,8 @@
     <EmbeddedResource Include="Migrations\201702212228338_AddProdutoDescontinuado.resx">
       <DependentUpon>201702212228338_AddProdutoDescontinuado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702222259308_AddCliente.resx">
-      <DependentUpon>201702222259308_AddCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702231346241_AddCliente.resx">
+      <DependentUpon>201702231346241_AddCliente.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

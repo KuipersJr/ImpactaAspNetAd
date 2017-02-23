@@ -13,7 +13,7 @@ namespace NorthWind.Repositorios.SqlServer.EF.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201702222259308_AddCliente"; }
+            get { return "201702231346241_AddCliente"; }
         }
         
         string IMigrationMetadata.Source

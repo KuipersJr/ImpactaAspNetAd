@@ -8,10 +8,6 @@ namespace NorthWind.Repositorios.SqlServer.EF.ModeloConfiguration
         public EnderecoConfiguration()
         {
             HasKey(e => e.ClienteId);
-
-            HasRequired(e => e.Cliente)
-                .WithRequiredDependent(c => c.Endereco)
-                .WillCascadeOnDelete(true);
         }
     }
 }
