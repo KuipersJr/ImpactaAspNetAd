@@ -1,24 +1,69 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Northwind.Dominio;
+using System.Linq;
 
 namespace NorthWind.Repositorios.SqlServer.EF.Tests
 {
     [TestClass()]
     public class ProdutoRepositorioTests
     {
-        ProdutoRepositorio _produtoRepositorio = new ProdutoRepositorio();
-        CategoriaRepositorio _categoriaRepositorio = new CategoriaRepositorio();
+        private static LojaDbContext _contexto = new LojaDbContext();
+        private ProdutoRepositorio _produtoRepositorio = new ProdutoRepositorio(_contexto);
+        private CategoriaRepositorio _categoriaRepositorio = new CategoriaRepositorio(_contexto);
 
         [TestMethod()]
         public void InserirProdutoTeste()
         {
             var produto = new Produto();
-            produto.Categoria = _categoriaRepositorio.Selecionar(1);
+            produto.Categoria = _categoriaRepositorio.Obter(1);
             produto.Estoque = 34;
             produto.Nome = "Caneta";
             produto.Preco = 22.63m;
 
-            _produtoRepositorio.Inserir(produto);
+            _produtoRepositorio.Adicionar(produto);
+
+            _contexto.SaveChanges();
+        }
+
+        [TestMethod]
+        public void InserirProdutoUowTeste()
+        {
+            using (var lojaUow = new LojaUnitOfWork())
+            {
+                var produto = new Produto();
+                produto.Categoria = lojaUow.Categorias.Obter(1);
+                produto.Estoque = 41;
+                produto.Nome = "Lápis";
+                produto.Preco = 10.41m;
+
+                lojaUow.Produtos.Adicionar(produto);
+
+                lojaUow.Salvar();
+            }
+        }
+
+        [TestMethod]
+        public void AtualizarProdutoUowTeste()
+        {
+            using (var lojaUow = new LojaUnitOfWork())
+            {
+                var produto = lojaUow.Produtos.Obter(p => p.Id == 1).Single();
+                produto.Estoque = 49;
+                produto.Preco = 10.49m;
+
+                lojaUow.Salvar();
+            }
+        }
+
+        [TestMethod]
+        public void RemoverProdutoUowTeste()
+        {
+            using (var lojaUow = new LojaUnitOfWork())
+            {
+                lojaUow.Produtos.Remover(2);
+
+                lojaUow.Salvar();
+            }
         }
     }
 }

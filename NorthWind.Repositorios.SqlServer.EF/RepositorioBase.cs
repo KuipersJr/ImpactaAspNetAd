@@ -1,56 +1,45 @@
 ﻿using NorthWind.Dominio;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
+using System;
+using System.Linq.Expressions;
 
 namespace NorthWind.Repositorios.SqlServer.EF
 {
     public class RepositorioBase<T> : IRepositorio<T> where T : class
     {
-        public void Inserir(T entidade)
+        private LojaDbContext _contexto;
+
+        public RepositorioBase(LojaDbContext _contexto)
         {
-            using (var contexto = new LojaDbContext())
-            {
-                contexto.Set<T>().Add(entidade);
-                contexto.SaveChanges();
-            }
+            this._contexto = _contexto;
         }
 
-        public void Atualizar(T entidade)
+        public void Adicionar(T entidade)
         {
-            using (var contexto = new LojaDbContext())
-            {
-                contexto.Set<T>().Attach(entidade);
-                contexto.Entry(entidade).State = EntityState.Modified;
-                contexto.SaveChanges();
-            }
+            _contexto.Set<T>().Add(entidade);
         }
 
-        public List<T> Selecionar()
+        public List<T> Obter()
         {
-            using (var contexto = new LojaDbContext())
-            {
-                return contexto.Set<T>().ToList();
-            }
+            return _contexto.Set<T>().ToList();
         }
 
-        public T Selecionar(int id)
+        public List<T> Obter(Expression<Func<T, bool>> query)
         {
-            using (var contexto = new LojaDbContext())
-            {
-                return contexto.Set<T>().Find(id);
-            }
+            return _contexto.Set<T>().Where(query).ToList();
         }
 
-        public void Excluir(int id)
+        public T Obter(int id)
         {
-            using (var contexto = new LojaDbContext())
-            {
-                var entidade = contexto.Set<T>().Find(id);
+            return _contexto.Set<T>().Find(id);
+        }
 
-                contexto.Set<T>().Remove(entidade);
-                contexto.SaveChanges();
-            }
+        public void Remover(int id)
+        {
+            var entidade = _contexto.Set<T>().Find(id);
+
+            _contexto.Set<T>().Remove(entidade);
         }
     }
 }
