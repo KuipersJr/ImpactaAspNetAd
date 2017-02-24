@@ -15,7 +15,7 @@ namespace NorthWind.Repositorios.SqlServer.EF
             Categorias = new CategoriaRepositorio(_contexto);
         }
 
-        public void Salvar()
+        public void SaveChanges()
         {
             _contexto.SaveChanges();
         }

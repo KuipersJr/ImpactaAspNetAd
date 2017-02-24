@@ -14,17 +14,17 @@ namespace NorthWind.Repositorios.SqlServer.EF.Migrations
 
         protected override void Seed(LojaDbContext contexto)
         {
-            var categorias = ObterCategorias();
+            if (!contexto.Categorias.Any())
+            {
+                contexto.Categorias.AddRange(ObterCategorias());
+                contexto.SaveChanges();
+            }
 
-            contexto.Categorias.AddOrUpdate(c => c.Nome, categorias[0]);
-            contexto.Categorias.AddOrUpdate(c => c.Nome, categorias[1]);
-            contexto.SaveChanges();
-
-            var produtos = ObterProdutos(contexto);
-
-            contexto.Produtos.AddOrUpdate(p => p.Nome, produtos[0]);
-            contexto.Produtos.AddOrUpdate(p => p.Nome, produtos[1]);
-            contexto.SaveChanges();
+            if (!contexto.Produtos.Any())
+            {
+                contexto.Produtos.AddRange(ObterProdutos(contexto));
+                contexto.SaveChanges();
+            }
         }
 
         private List<Produto> ObterProdutos(LojaDbContext contexto)

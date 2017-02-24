@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Repositorios.SqlS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Dominio", "Northwind.Dominio\Northwind.Dominio.csproj", "{2F2CF7FC-4F67-4BDC-9B7D-113051F55C6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Mvc", "Northwind.Mvc\Northwind.Mvc.csproj", "{A9A90008-3322-46CD-9400-6BA9FC19141E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Mvc.Ado", "Northwind.Mvc\Northwind.Mvc.Ado.csproj", "{A9A90008-3322-46CD-9400-6BA9FC19141E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Impacta.Apoio", "Impacta.Apoio\Impacta.Apoio.csproj", "{010EC6CF-5C6D-42EF-BBE8-4D9E4432AF2E}"
 EndProject
@@ -22,6 +22,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Repositorios.SqlServer.EF", "NorthWind.Repositorios.SqlServer.EF\NorthWind.Repositorios.SqlServer.EF.csproj", "{0ABBA110-95A2-4C97-8C22-C3DB518C6C5C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Repositorios.SqlServer.EFTests", "NorthWind.Repositorios.SqlServer.EFTests\NorthWind.Repositorios.SqlServer.EFTests.csproj", "{59D6C8EA-8981-400F-BA9F-AECD18C1C494}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Mvc.EF", "Northwind.Mvc.EF\Northwind.Mvc.EF.csproj", "{8F444A19-99A8-453E-8C05-AA65C2840DE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{59D6C8EA-8981-400F-BA9F-AECD18C1C494}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59D6C8EA-8981-400F-BA9F-AECD18C1C494}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59D6C8EA-8981-400F-BA9F-AECD18C1C494}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F444A19-99A8-453E-8C05-AA65C2840DE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F444A19-99A8-453E-8C05-AA65C2840DE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F444A19-99A8-453E-8C05-AA65C2840DE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F444A19-99A8-453E-8C05-AA65C2840DE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

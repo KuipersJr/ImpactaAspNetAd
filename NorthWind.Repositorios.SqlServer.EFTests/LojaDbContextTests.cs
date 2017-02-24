@@ -76,6 +76,7 @@ namespace NorthWind.Repositorios.SqlServer.EF.Tests
 
             grampeador.Preco = 0;
             grampeador.Descontinuado = true;
+            grampeador.Categoria = _contexto.Categorias.Single(c => c.Nome == "Informática");
 
             _contexto.SaveChanges();
 
@@ -176,7 +177,7 @@ namespace NorthWind.Repositorios.SqlServer.EF.Tests
         [ClassCleanup]
         public static void DescartarContexto()
         {
-            _contexto.Database.Delete();
+            //_contexto.Database.Delete();
             _contexto.Dispose();
         }
     }

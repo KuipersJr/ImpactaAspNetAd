@@ -38,7 +38,7 @@ namespace NorthWind.Repositorios.SqlServer.EF.Tests
 
                 lojaUow.Produtos.Adicionar(produto);
 
-                lojaUow.Salvar();
+                lojaUow.SaveChanges();
             }
         }
 
@@ -51,7 +51,7 @@ namespace NorthWind.Repositorios.SqlServer.EF.Tests
                 produto.Estoque = 49;
                 produto.Preco = 10.49m;
 
-                lojaUow.Salvar();
+                lojaUow.SaveChanges();
             }
         }
 
@@ -62,7 +62,7 @@ namespace NorthWind.Repositorios.SqlServer.EF.Tests
             {
                 lojaUow.Produtos.Remover(2);
 
-                lojaUow.Salvar();
+                lojaUow.SaveChanges();
             }
         }
     }
