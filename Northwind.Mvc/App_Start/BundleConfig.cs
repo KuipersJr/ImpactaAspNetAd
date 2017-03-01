@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Northwind.Mvc
+namespace Northwind.Mvc.Ado
 {
     public class BundleConfig
     {

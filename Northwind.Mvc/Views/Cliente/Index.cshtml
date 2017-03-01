@@ -1,0 +1,60 @@
+﻿@model Northwind.Mvc.Ado.ViewModels.ClientesViewModel
+
+@{
+    ViewBag.Title = "Clientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Clientes por país</h2>
+
+@*@using (Html.BeginForm())
+{*@
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.PaisSelecionado, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.PaisSelecionado, new SelectList(Model.Paises, "Nome", "Nome"), "--Selecione--", new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+@*}*@
+<table class="table">
+    <tr>
+        <th>
+            Nome
+        </th>
+        <th>
+            Telefone
+        </th>
+        <th>
+            Cidade
+        </th>
+    </tr>
+
+    @foreach (var cliente in Model.Clientes)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => cliente.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => cliente.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => cliente.Cidade)
+            </td>
+        </tr>
+    }
+
+</table>
+@section Scripts {
+    <script type="text/javascript">
+        $("#PaisSelecionado").on("change",
+            function () {
+                //$("form").submit();
+                window.location.replace("@Url.Content("~/")Cliente?nomePais=" + $(event.target).val());
+                //document.location.href = "@Url.Action("Index", "Cliente")?nomePais=" + $(event.target).val();
+            }
+        );
+    </script>
+}

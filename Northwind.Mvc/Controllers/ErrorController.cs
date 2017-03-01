@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Northwind.Mvc.Controllers
+namespace Northwind.Mvc.Ado.Controllers
 {
     public class ErrorController : Controller
     {

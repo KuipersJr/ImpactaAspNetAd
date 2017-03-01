@@ -3,7 +3,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace Northwind.Mvc
+namespace Northwind.Mvc.Ado
 {
     public class MvcApplication : System.Web.HttpApplication
     {

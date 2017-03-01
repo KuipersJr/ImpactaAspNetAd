@@ -4,7 +4,7 @@ using NorthWind.Repositorios.SqlServer;
 using System;
 using System.Web.Mvc;
 
-namespace Northwind.Mvc.Controllers
+namespace Northwind.Mvc.Ado.Controllers
 {
     public class TransportadoraController : Controller
     {

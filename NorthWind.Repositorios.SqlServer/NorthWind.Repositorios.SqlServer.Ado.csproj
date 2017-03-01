@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriaRepositorio.cs" />
+    <Compile Include="ClienteRepositorio.cs" />
     <Compile Include="FornecedorRepositorio.cs" />
+    <Compile Include="PaisRepositorio.cs" />
     <Compile Include="ProdutoRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositorioDataTableBase.cs" />
