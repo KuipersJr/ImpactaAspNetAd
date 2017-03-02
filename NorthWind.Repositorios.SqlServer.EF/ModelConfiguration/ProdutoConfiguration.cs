@@ -24,6 +24,10 @@ namespace NorthWind.Repositorios.SqlServer.EF
             HasRequired(c => c.Imagem)
                 .WithRequiredPrincipal(e => e.Produto)
                 .WillCascadeOnDelete(true);
+
+            HasOptional(c => c.Imagem)
+                .WithRequired(pi => pi.Produto)
+                .WillCascadeOnDelete(true);
         }
     }
 }

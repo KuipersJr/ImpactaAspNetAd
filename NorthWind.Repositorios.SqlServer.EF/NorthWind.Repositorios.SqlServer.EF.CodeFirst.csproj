@@ -73,9 +73,9 @@
     <Compile Include="Migrations\201703021657172_ClienteNovosCampos.Designer.cs">
       <DependentUpon>201703021657172_ClienteNovosCampos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703022135084_ProdutoImagem.cs" />
-    <Compile Include="Migrations\201703022135084_ProdutoImagem.Designer.cs">
-      <DependentUpon>201703022135084_ProdutoImagem.cs</DependentUpon>
+    <Compile Include="Migrations\201703022144452_ProdutoImagem.cs" />
+    <Compile Include="Migrations\201703022144452_ProdutoImagem.Designer.cs">
+      <DependentUpon>201703022144452_ProdutoImagem.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfiguration\ClienteConfiguration.cs" />
@@ -113,8 +113,8 @@
     <EmbeddedResource Include="Migrations\201703021657172_ClienteNovosCampos.resx">
       <DependentUpon>201703021657172_ClienteNovosCampos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703022135084_ProdutoImagem.resx">
-      <DependentUpon>201703022135084_ProdutoImagem.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703022144452_ProdutoImagem.resx">
+      <DependentUpon>201703022144452_ProdutoImagem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
