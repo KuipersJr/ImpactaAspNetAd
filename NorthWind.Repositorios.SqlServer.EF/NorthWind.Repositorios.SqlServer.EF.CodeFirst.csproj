@@ -7,8 +7,8 @@
     <ProjectGuid>{0ABBA110-95A2-4C97-8C22-C3DB518C6C5C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NorthWind.Repositorios.SqlServer.EF</RootNamespace>
-    <AssemblyName>NorthWind.Repositorios.SqlServer.EF</AssemblyName>
+    <RootNamespace>NorthWind.Repositorios.SqlServer.EF.CodeFirst</RootNamespace>
+    <AssemblyName>NorthWind.Repositorios.SqlServer.EF.CodeFirst</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

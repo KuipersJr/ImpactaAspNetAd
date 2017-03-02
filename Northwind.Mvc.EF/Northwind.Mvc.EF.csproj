@@ -203,9 +203,9 @@
       <Project>{2f2cf7fc-4f67-4bdc-9b7d-113051f55c6d}</Project>
       <Name>Northwind.Dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NorthWind.Repositorios.SqlServer.EF\NorthWind.Repositorios.SqlServer.EF.csproj">
+    <ProjectReference Include="..\NorthWind.Repositorios.SqlServer.EF\NorthWind.Repositorios.SqlServer.EF.CodeFirst.csproj">
       <Project>{0abba110-95a2-4c97-8c22-c3db518c6c5c}</Project>
-      <Name>NorthWind.Repositorios.SqlServer.EF</Name>
+      <Name>NorthWind.Repositorios.SqlServer.EF.CodeFirst</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

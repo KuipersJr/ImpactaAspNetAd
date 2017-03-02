@@ -19,11 +19,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Impacta.ApoioTests", "Impac
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{81BF38C0-56EA-46F4-82E0-9D502C3E5C00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Repositorios.SqlServer.EF", "NorthWind.Repositorios.SqlServer.EF\NorthWind.Repositorios.SqlServer.EF.csproj", "{0ABBA110-95A2-4C97-8C22-C3DB518C6C5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Repositorios.SqlServer.EF.CodeFirst", "NorthWind.Repositorios.SqlServer.EF\NorthWind.Repositorios.SqlServer.EF.CodeFirst.csproj", "{0ABBA110-95A2-4C97-8C22-C3DB518C6C5C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Repositorios.SqlServer.EFTests", "NorthWind.Repositorios.SqlServer.EFTests\NorthWind.Repositorios.SqlServer.EFTests.csproj", "{59D6C8EA-8981-400F-BA9F-AECD18C1C494}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Mvc.EF", "Northwind.Mvc.EF\Northwind.Mvc.EF.csproj", "{8F444A19-99A8-453E-8C05-AA65C2840DE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Repositorios.SqlServer.EF.ModelFirst", "NorthWind.Repositorios.SqlServer.EF.ModelFirst\NorthWind.Repositorios.SqlServer.EF.ModelFirst.csproj", "{6E4B66A5-B28E-4B86-AA46-99C67D2C04B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Repositorios.SqlServer.EF.ModelFirstTests", "NorthWind.Repositorios.SqlServer.EF.ModelFirstTests\NorthWind.Repositorios.SqlServer.EF.ModelFirstTests.csproj", "{2252AC05-AA76-40C0-BC25-0295E28611CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +75,14 @@ Global
 		{8F444A19-99A8-453E-8C05-AA65C2840DE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F444A19-99A8-453E-8C05-AA65C2840DE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F444A19-99A8-453E-8C05-AA65C2840DE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E4B66A5-B28E-4B86-AA46-99C67D2C04B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E4B66A5-B28E-4B86-AA46-99C67D2C04B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E4B66A5-B28E-4B86-AA46-99C67D2C04B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E4B66A5-B28E-4B86-AA46-99C67D2C04B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2252AC05-AA76-40C0-BC25-0295E28611CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2252AC05-AA76-40C0-BC25-0295E28611CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2252AC05-AA76-40C0-BC25-0295E28611CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2252AC05-AA76-40C0-BC25-0295E28611CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,5 +91,6 @@ Global
 		{E11E95A2-A5FE-46B5-9764-23BA3A2305AE} = {81BF38C0-56EA-46F4-82E0-9D502C3E5C00}
 		{B3FA7B03-EC0F-4B8B-829F-568DE9A73F7A} = {81BF38C0-56EA-46F4-82E0-9D502C3E5C00}
 		{59D6C8EA-8981-400F-BA9F-AECD18C1C494} = {81BF38C0-56EA-46F4-82E0-9D502C3E5C00}
+		{2252AC05-AA76-40C0-BC25-0295E28611CA} = {81BF38C0-56EA-46F4-82E0-9D502C3E5C00}
 	EndGlobalSection
 EndGlobal

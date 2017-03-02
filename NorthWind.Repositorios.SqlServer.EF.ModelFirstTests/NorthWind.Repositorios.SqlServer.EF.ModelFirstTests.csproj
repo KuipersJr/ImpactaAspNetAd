@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{59D6C8EA-8981-400F-BA9F-AECD18C1C494}</ProjectGuid>
+    <ProjectGuid>{2252AC05-AA76-40C0-BC25-0295E28611CA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NorthWind.Repositorios.SqlServer.EFTests</RootNamespace>
-    <AssemblyName>NorthWind.Repositorios.SqlServer.EFTests</AssemblyName>
+    <RootNamespace>NorthWind.Repositorios.SqlServer.EF.ModelFirstTests</RootNamespace>
+    <AssemblyName>NorthWind.Repositorios.SqlServer.EF.ModelFirstTests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -60,18 +60,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="LojaDbContextTests.cs" />
-    <Compile Include="ProdutoRepositorioTests.cs" />
+    <Compile Include="NorthwindContainerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Northwind.Dominio\Northwind.Dominio.csproj">
-      <Project>{2F2CF7FC-4F67-4BDC-9B7D-113051F55C6D}</Project>
-      <Name>Northwind.Dominio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NorthWind.Repositorios.SqlServer.EF\NorthWind.Repositorios.SqlServer.EF.CodeFirst.csproj">
-      <Project>{0ABBA110-95A2-4C97-8C22-C3DB518C6C5C}</Project>
-      <Name>NorthWind.Repositorios.SqlServer.EF.CodeFirst</Name>
+    <ProjectReference Include="..\NorthWind.Repositorios.SqlServer.EF.ModelFirst\NorthWind.Repositorios.SqlServer.EF.ModelFirst.csproj">
+      <Project>{6E4B66A5-B28E-4B86-AA46-99C67D2C04B1}</Project>
+      <Name>NorthWind.Repositorios.SqlServer.EF.ModelFirst</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
