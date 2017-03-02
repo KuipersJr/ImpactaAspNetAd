@@ -8,7 +8,7 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "Produto", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
@@ -55,6 +55,13 @@
                     @Html.EditorFor(model => model.Produto.Descontinuado)
                     @Html.ValidationMessageFor(model => model.Produto.Descontinuado, "", new { @class = "text-danger" })
                 </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Imagem", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" id="imagemProduto" name="imagemProduto" />
             </div>
         </div>
 

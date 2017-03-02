@@ -4,6 +4,8 @@ using System.Web.Mvc;
 using NorthWind.Repositorios.SqlServer.EF;
 using Northwind.Dominio;
 using Northwind.Mvc.EF.ViewModels;
+using System.Web;
+using System.IO;
 
 namespace Northwind.Mvc.EF.Controllers
 {
@@ -49,10 +51,18 @@ namespace Northwind.Mvc.EF.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Produto produto)
+        public ActionResult Create(Produto produto, HttpPostedFileBase imagemProduto)
         {
             if (ModelState.IsValid)
             {
+                if (imagemProduto != null && imagemProduto.ContentLength > 0)
+                {
+                    using (var reader = new BinaryReader(imagemProduto.InputStream))
+                    {
+                        produto.Imagem = new ProdutoImagem { Bytes = reader.ReadBytes(imagemProduto.ContentLength) };
+                    }
+                }
+
                 produto.Categoria = db.Categorias.Find(produto.Categoria.Id);
 
                 db.Produtos.Add(produto);
@@ -97,7 +107,7 @@ namespace Northwind.Mvc.EF.Controllers
                 db.Entry(produtoBanco).CurrentValues.SetValues(produto);
 
                 produtoBanco.Categoria = db.Categorias.Single(c => c.Id == produto.Categoria.Id);
-                
+
                 db.SaveChanges();
 
                 return RedirectToAction("Index");
@@ -130,7 +140,7 @@ namespace Northwind.Mvc.EF.Controllers
             db.Produtos.Remove(produto);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }        
+        }
 
         protected override void Dispose(bool disposing)
         {
