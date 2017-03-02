@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Repositorios.SqlS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Repositorios.SqlServer.EF.ModelFirstTests", "NorthWind.Repositorios.SqlServer.EF.ModelFirstTests\NorthWind.Repositorios.SqlServer.EF.ModelFirstTests.csproj", "{2252AC05-AA76-40C0-BC25-0295E28611CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pubs.Repositorios.SqlServer.EF.DatabaseFirst", "Pubs.Repositorios.SqlServer.EF.DatabaseFirst\Pubs.Repositorios.SqlServer.EF.DatabaseFirst.csproj", "{94DF663C-C7D4-4D8A-AEED-7C9CF0FFA235}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{2252AC05-AA76-40C0-BC25-0295E28611CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2252AC05-AA76-40C0-BC25-0295E28611CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2252AC05-AA76-40C0-BC25-0295E28611CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94DF663C-C7D4-4D8A-AEED-7C9CF0FFA235}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94DF663C-C7D4-4D8A-AEED-7C9CF0FFA235}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94DF663C-C7D4-4D8A-AEED-7C9CF0FFA235}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94DF663C-C7D4-4D8A-AEED-7C9CF0FFA235}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
