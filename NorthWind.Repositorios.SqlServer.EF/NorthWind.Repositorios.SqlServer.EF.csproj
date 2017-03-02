@@ -69,6 +69,10 @@
     <Compile Include="Migrations\201702231427421_AddPedido.Designer.cs">
       <DependentUpon>201702231427421_AddPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703021657172_ClienteNovosCampos.cs" />
+    <Compile Include="Migrations\201703021657172_ClienteNovosCampos.Designer.cs">
+      <DependentUpon>201703021657172_ClienteNovosCampos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfiguration\ClienteConfiguration.cs" />
     <Compile Include="ModelConfiguration\CategoriaConfiguration.cs" />
@@ -100,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702231427421_AddPedido.resx">
       <DependentUpon>201702231427421_AddPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703021657172_ClienteNovosCampos.resx">
+      <DependentUpon>201703021657172_ClienteNovosCampos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -11,6 +11,7 @@ namespace NorthWind.Repositorios.SqlServer.EF.ModelConfiguration
         {
             Property(p => p.Nome)
                 .IsRequired()
+                //.HasColumnName("")
                 .HasMaxLength(15)
                 .HasColumnType("nvarchar")
                 .HasColumnAnnotation("Index", new IndexAnnotation(new[] { new IndexAttribute("CategoriaNomeUK") { IsUnique = true } }));
