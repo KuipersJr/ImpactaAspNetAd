@@ -3,11 +3,11 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace NorthWind.Repositorios.SqlServer.EF.ModelConfiguration
 {
-    public class EnderecoConfiguration : EntityTypeConfiguration<Endereco>
+    public class ProdutoImagemConfiguration : EntityTypeConfiguration<ProdutoImagem>
     {
-        public EnderecoConfiguration()
+        public ProdutoImagemConfiguration()
         {
-            HasKey(e => e.ClienteId);
+            HasKey(e => e.ProdutoId);
         }
     }
 }

@@ -1,8 +1,6 @@
 ﻿using Northwind.Dominio;
 using NorthWind.Repositorios.SqlServer.EF.Migrations;
-using NorthWind.Repositorios.SqlServer.EF.ModelConfigurarion;
 using NorthWind.Repositorios.SqlServer.EF.ModelConfiguration;
-using NorthWind.Repositorios.SqlServer.EF.ModeloConfiguration;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
@@ -32,6 +30,7 @@ namespace NorthWind.Repositorios.SqlServer.EF
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             modelBuilder.Configurations.Add(new ProdutoConfiguration());
+            modelBuilder.Configurations.Add(new ProdutoImagemConfiguration());
             modelBuilder.Configurations.Add(new CategoriaConfiguration());
             modelBuilder.Configurations.Add(new ClienteConfiguration());
             modelBuilder.Configurations.Add(new EnderecoConfiguration());

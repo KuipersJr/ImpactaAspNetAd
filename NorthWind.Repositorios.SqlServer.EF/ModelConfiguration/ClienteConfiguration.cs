@@ -1,7 +1,7 @@
 ﻿using Northwind.Dominio;
 using System.Data.Entity.ModelConfiguration;
 
-namespace NorthWind.Repositorios.SqlServer.EF.ModelConfigurarion
+namespace NorthWind.Repositorios.SqlServer.EF.ModelConfiguration
 {
     public class ClienteConfiguration : EntityTypeConfiguration<Cliente>
     {

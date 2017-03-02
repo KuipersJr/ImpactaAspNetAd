@@ -48,6 +48,7 @@
     <Compile Include="Pais.cs" />
     <Compile Include="Pedido.cs" />
     <Compile Include="Produto.cs" />
+    <Compile Include="ProdutoImagem.cs" />
     <Compile Include="Transportadora.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

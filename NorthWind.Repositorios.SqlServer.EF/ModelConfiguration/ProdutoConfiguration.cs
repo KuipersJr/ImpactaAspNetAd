@@ -20,6 +20,10 @@ namespace NorthWind.Repositorios.SqlServer.EF
             Property(p => p.Preco).HasPrecision(9, 2);
 
             HasRequired(c => c.Categoria);
+
+            HasRequired(c => c.Imagem)
+                .WithRequiredPrincipal(e => e.Produto)
+                .WillCascadeOnDelete(true);
         }
     }
 }
