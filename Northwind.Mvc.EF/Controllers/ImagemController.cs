@@ -20,6 +20,11 @@ namespace Northwind.Mvc.EF.Controllers
         {
             var produto = _contexto.Produtos.Single(p => p.Id == produtoId);
 
+            if (produto.Imagem == null)
+            {
+                return null;
+            }
+
             return File(Imagem.ObterMiniatura(produto.Imagem.Bytes, largura, altura), produto.Imagem.ContentType);
         }
 
