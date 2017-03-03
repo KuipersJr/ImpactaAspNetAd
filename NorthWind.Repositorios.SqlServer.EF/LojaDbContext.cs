@@ -10,6 +10,7 @@ namespace NorthWind.Repositorios.SqlServer.EF
     {
         public LojaDbContext() : base("name=lojaConnectionString")
         {
+            // Página 191 lista as estratégias.
             //Database.SetInitializer(new LojaDbInitializer());
 
             // Migrations

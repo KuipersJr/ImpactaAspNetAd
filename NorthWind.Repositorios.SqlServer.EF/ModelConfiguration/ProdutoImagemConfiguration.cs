@@ -7,7 +7,11 @@ namespace NorthWind.Repositorios.SqlServer.EF.ModelConfiguration
     {
         public ProdutoImagemConfiguration()
         {
-            HasKey(e => e.ProdutoId);
+            HasKey(pi => pi.ProdutoId);
+
+            Property(pi => pi.ContentType)
+                .HasMaxLength(50)
+                .IsRequired();
         }
     }
 }

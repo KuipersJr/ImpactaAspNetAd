@@ -10,6 +10,7 @@ namespace NorthWind.Repositorios.SqlServer.EF.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            AutomaticMigrationDataLossAllowed = false;
         }
 
         protected override void Seed(LojaDbContext contexto)

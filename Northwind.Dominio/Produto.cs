@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.RegularExpressions;
 
 namespace Northwind.Dominio
 {
@@ -19,5 +21,10 @@ namespace Northwind.Dominio
 
         // Colocar depois - migration.
         public bool Descontinuado { get; set; }
+
+        public bool ValidarFormatoImagem(string contentType)
+        {
+            return Regex.IsMatch(contentType, @"image/.+");
+        }
     }
 }

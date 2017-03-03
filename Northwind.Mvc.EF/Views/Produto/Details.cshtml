@@ -12,6 +12,16 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            Imagem
+        </dt>
+
+        @if (Model.Imagem != null)
+        {
+            <dd>
+                <img src="~/Imagem?produtoId=@Model.Id" alt="Imagem do produto" />
+            </dd>
+        }
+        <dt>
             @Html.DisplayNameFor(model => model.Nome)
         </dt>
 
