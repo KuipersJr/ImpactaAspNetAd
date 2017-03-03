@@ -6,8 +6,8 @@
     <ProjectGuid>{59D6C8EA-8981-400F-BA9F-AECD18C1C494}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NorthWind.Repositorios.SqlServer.EFTests</RootNamespace>
-    <AssemblyName>NorthWind.Repositorios.SqlServer.EFTests</AssemblyName>
+    <RootNamespace>NorthWind.Repositorios.SqlServer.EF.CodeFirst.Testes</RootNamespace>
+    <AssemblyName>NorthWind.Repositorios.SqlServer.EF.CodeFirst.Testes</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

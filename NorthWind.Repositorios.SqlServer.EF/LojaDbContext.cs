@@ -8,7 +8,7 @@ namespace NorthWind.Repositorios.SqlServer.EF
 {
     public class LojaDbContext : DbContext
     {
-        public LojaDbContext() : base("lojaConnectionString")
+        public LojaDbContext() : base("name=lojaConnectionString")
         {
             //Database.SetInitializer(new LojaDbInitializer());
 

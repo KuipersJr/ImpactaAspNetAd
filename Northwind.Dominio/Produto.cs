@@ -16,6 +16,8 @@ namespace Northwind.Dominio
         public string Nome { get; set; }
         public decimal Preco { get; set; }
         public int Estoque { get; set; }
+
+        // Colocar depois - migration.
         public bool Descontinuado { get; set; }
     }
 }
