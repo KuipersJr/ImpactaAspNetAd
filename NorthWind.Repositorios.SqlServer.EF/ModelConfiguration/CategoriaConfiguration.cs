@@ -9,7 +9,7 @@ namespace NorthWind.Repositorios.SqlServer.EF.ModelConfiguration
     {
         public CategoriaConfiguration()
         {
-            var indexAttribute = new IndexAttribute("CategoriaNomeUK") { IsUnique = true, Order = 0 };
+            var indexAttribute = new IndexAttribute("CategoriaNomeUK") { IsUnique = true };
             var indexAnnotation = new IndexAnnotation(indexAttribute);
 
             Property(p => p.Nome)
