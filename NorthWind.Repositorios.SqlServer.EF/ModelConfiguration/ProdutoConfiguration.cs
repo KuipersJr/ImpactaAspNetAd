@@ -15,19 +15,28 @@ namespace NorthWind.Repositorios.SqlServer.EF
                 .IsRequired()
                 .HasMaxLength(40)
                 .HasColumnType("nvarchar")
-                .HasColumnAnnotation("Index", new IndexAnnotation(new[] { new IndexAttribute("ProdutoNomeUK") { IsUnique = true } }));
+                .HasColumnAnnotation("Index", DefinirChaveUnica("ProdutoNomeCategoriaUK", 0));
+
+            Property(p => p.Categoria_Id)
+                .HasColumnAnnotation("Index", DefinirChaveUnica("ProdutoNomeCategoriaUK", 1));
 
             Property(p => p.Preco).HasPrecision(9, 2);
 
-            HasRequired(c => c.Categoria);
-
-            HasRequired(c => c.Imagem)
-                .WithRequiredPrincipal(e => e.Produto)
-                .WillCascadeOnDelete(true);
-
+            HasRequired(p => p.Categoria)
+                .WithMany(c => c.Produtos)
+                .HasForeignKey(p => p.Categoria_Id);
+            
             HasOptional(c => c.Imagem)
                 .WithRequired(pi => pi.Produto)
                 .WillCascadeOnDelete(true);
+        }
+
+        private IndexAnnotation DefinirChaveUnica(string nomeChave, int ordem)
+        {
+            var indexAttribute = new IndexAttribute(nomeChave) { IsUnique = true, Order = ordem };
+            var indexAnnotation = new IndexAnnotation(indexAttribute);
+
+            return indexAnnotation;
         }
     }
 }

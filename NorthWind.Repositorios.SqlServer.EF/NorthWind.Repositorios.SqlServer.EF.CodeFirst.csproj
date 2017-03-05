@@ -85,6 +85,10 @@
     <Compile Include="Migrations\201703031346199_ProdutoImagemContentType.Designer.cs">
       <DependentUpon>201703031346199_ProdutoImagemContentType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703050000537_AdicionarProdutoCategoria_Id.cs" />
+    <Compile Include="Migrations\201703050000537_AdicionarProdutoCategoria_Id.Designer.cs">
+      <DependentUpon>201703050000537_AdicionarProdutoCategoria_Id.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfiguration\ClienteConfiguration.cs" />
     <Compile Include="ModelConfiguration\CategoriaConfiguration.cs" />
@@ -129,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703031346199_ProdutoImagemContentType.resx">
       <DependentUpon>201703031346199_ProdutoImagemContentType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703050000537_AdicionarProdutoCategoria_Id.resx">
+      <DependentUpon>201703050000537_AdicionarProdutoCategoria_Id.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

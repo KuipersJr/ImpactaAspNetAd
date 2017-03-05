@@ -9,12 +9,15 @@ namespace NorthWind.Repositorios.SqlServer.EF.ModelConfiguration
     {
         public CategoriaConfiguration()
         {
+            var indexAttribute = new IndexAttribute("CategoriaNomeUK") { IsUnique = true, Order = 0 };
+            var indexAnnotation = new IndexAnnotation(indexAttribute);
+
             Property(p => p.Nome)
                 .IsRequired()
                 //.HasColumnName("")
                 .HasMaxLength(15)
                 .HasColumnType("nvarchar")
-                .HasColumnAnnotation("Index", new IndexAnnotation(new[] { new IndexAttribute("CategoriaNomeUK") { IsUnique = true } }));
+                .HasColumnAnnotation("Index", indexAnnotation);
         }
     }
 }

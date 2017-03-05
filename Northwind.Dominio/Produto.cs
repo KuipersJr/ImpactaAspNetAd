@@ -11,6 +11,7 @@ namespace Northwind.Dominio
         public int Id { get; set; }
 
         // virtual - habilita o lazy load.
+        public int Categoria_Id { get; set; }
         public virtual Categoria Categoria { get; set; }
         public virtual List<Pedido> Pedidos { get; set; }
         public virtual ProdutoImagem Imagem { get; set; }
