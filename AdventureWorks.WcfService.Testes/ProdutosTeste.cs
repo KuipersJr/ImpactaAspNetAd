@@ -32,6 +32,6 @@ namespace AdventureWorks.WcfService.Testes
                 Assert.IsTrue(produtos.Count() == 94);
                 Assert.IsTrue(produtosClient.ObterContador() == 4);
             }
-        }
+        }        
     }
 }
