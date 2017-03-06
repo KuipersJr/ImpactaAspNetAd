@@ -1,7 +1,6 @@
 ﻿using AdventureWorks.Repositorios.SqlServer.EF.DatabaseFirst;
 using System.Collections.Generic;
 using System.ServiceModel;
-using System.ServiceModel.Web;
 
 namespace AdventureWorks.WcfService
 {
