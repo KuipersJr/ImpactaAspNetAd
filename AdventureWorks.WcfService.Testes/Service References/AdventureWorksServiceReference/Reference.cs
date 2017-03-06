@@ -458,6 +458,18 @@ namespace AdventureWorks.WcfService.Testes.AdventureWorksServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdutos/GetByName", ReplyAction="http://tempuri.org/IProdutos/GetByNameResponse")]
         System.Threading.Tasks.Task<AdventureWorks.WcfService.Testes.AdventureWorksServiceReference.Product[]> GetByNameAsync(string nome);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdutos/Incrementar", ReplyAction="http://tempuri.org/IProdutos/IncrementarResponse")]
+        void Incrementar();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdutos/Incrementar", ReplyAction="http://tempuri.org/IProdutos/IncrementarResponse")]
+        System.Threading.Tasks.Task IncrementarAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdutos/ObterContador", ReplyAction="http://tempuri.org/IProdutos/ObterContadorResponse")]
+        int ObterContador();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdutos/ObterContador", ReplyAction="http://tempuri.org/IProdutos/ObterContadorResponse")]
+        System.Threading.Tasks.Task<int> ObterContadorAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -501,6 +513,22 @@ namespace AdventureWorks.WcfService.Testes.AdventureWorksServiceReference {
         
         public System.Threading.Tasks.Task<AdventureWorks.WcfService.Testes.AdventureWorksServiceReference.Product[]> GetByNameAsync(string nome) {
             return base.Channel.GetByNameAsync(nome);
+        }
+        
+        public void Incrementar() {
+            base.Channel.Incrementar();
+        }
+        
+        public System.Threading.Tasks.Task IncrementarAsync() {
+            return base.Channel.IncrementarAsync();
+        }
+        
+        public int ObterContador() {
+            return base.Channel.ObterContador();
+        }
+        
+        public System.Threading.Tasks.Task<int> ObterContadorAsync() {
+            return base.Channel.ObterContadorAsync();
         }
     }
 }

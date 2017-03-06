@@ -6,6 +6,8 @@ namespace AdventureWorks.WcfService
 {
     public class Produtos : IProdutos
     {
+        private static int Contador { get; set; }
+
         public Product Get(int id)
         {
             using (var contexto = new AdventureWorks2012Entities())
@@ -20,6 +22,16 @@ namespace AdventureWorks.WcfService
             {
                 return contexto.Products.Where(p => p.Name.Contains(nome)).ToList();
             }
+        }
+
+        public void Incrementar()
+        {
+            Contador++;
+        }
+
+        public int ObterContador()
+        {
+            return Contador;
         }
     }
 }

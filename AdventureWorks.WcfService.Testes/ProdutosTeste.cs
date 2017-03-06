@@ -13,8 +13,11 @@ namespace AdventureWorks.WcfService.Testes
             using (var produtosClient = new ProdutosClient())
             {
                 var produto = produtosClient.Get(4);
+                produtosClient.Incrementar();
 
                 Assert.IsTrue(produto.Name == "Headset Ball Bearings");
+                var contador = produtosClient.ObterContador();
+                Assert.IsTrue(contador == 2);
             }
         }
 
@@ -24,8 +27,10 @@ namespace AdventureWorks.WcfService.Testes
             using (var produtosClient = new ProdutosClient())
             {
                 var produtos = produtosClient.GetByName("Mountain");
+                produtosClient.Incrementar();
 
                 Assert.IsTrue(produtos.Count() == 94);
+                Assert.IsTrue(produtosClient.ObterContador() == 4);
             }
         }
     }
