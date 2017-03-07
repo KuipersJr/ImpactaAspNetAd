@@ -1,4 +1,4 @@
-﻿var ProdutoViewModel = ProdutoViewModel || {
+﻿var ProdutoController = ProdutoController || {
     self: this,
 
     inicializar: function (instancia) {
