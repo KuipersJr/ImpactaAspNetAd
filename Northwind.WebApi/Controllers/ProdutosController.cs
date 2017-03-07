@@ -1,34 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using NorthWind.Repositorios.SqlServer.EF.ModelFirst;
+using System.Web.Http.Cors;
 
 namespace Northwind.WebApi.Controllers
 {
-    public class ProdutoController : ApiController
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    public class ProdutosController : ApiController
     {
         private NorthwindContainer db = new NorthwindContainer();
 
-        // GET: api/Produto
+        // GET: api/Produtos
         public IQueryable<Produto> GetProduto()
         {
             return db.Produto;
         }
 
-        // GET: api/Produto/5
+        // GET: api/Produtos/5
         [ResponseType(typeof(Produto))]
-        public async Task<IHttpActionResult> GetProduto(int id)
+        public IHttpActionResult GetProduto(int id)
         {
-            Produto produto = await db.Produto.FindAsync(id);
-
+            Produto produto = db.Produto.Find(id);
             if (produto == null)
             {
                 return NotFound();
@@ -37,9 +33,9 @@ namespace Northwind.WebApi.Controllers
             return Ok(produto);
         }
 
-        // PUT: api/Produto/5
+        // PUT: api/Produtos/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutProduto(int id, Produto produto)
+        public IHttpActionResult PutProduto(int id, Produto produto)
         {
             if (!ModelState.IsValid)
             {
@@ -55,7 +51,7 @@ namespace Northwind.WebApi.Controllers
 
             try
             {
-                await db.SaveChangesAsync();
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -72,33 +68,35 @@ namespace Northwind.WebApi.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Produto
+        // POST: api/Produtos
         [ResponseType(typeof(Produto))]
-        public async Task<IHttpActionResult> PostProduto(Produto produto)
+        public IHttpActionResult PostProduto(Produto produto)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || produto == null)
             {
                 return BadRequest(ModelState);
             }
 
+            produto.Categoria = db.Categoria.Single(c => c.Id == produto.Categoria.Id);
+
             db.Produto.Add(produto);
-            await db.SaveChangesAsync();
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = produto.Id }, produto);
         }
 
-        // DELETE: api/Produto/5
+        // DELETE: api/Produtos/5
         [ResponseType(typeof(Produto))]
-        public async Task<IHttpActionResult> DeleteProduto(int id)
+        public IHttpActionResult DeleteProduto(int id)
         {
-            Produto produto = await db.Produto.FindAsync(id);
+            Produto produto = db.Produto.Find(id);
             if (produto == null)
             {
                 return NotFound();
             }
 
             db.Produto.Remove(produto);
-            await db.SaveChangesAsync();
+            db.SaveChanges();
 
             return Ok(produto);
         }

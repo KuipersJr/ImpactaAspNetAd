@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 03/02/2017 15:43:03
+-- Date Created: 03/07/2017 14:02:46
 -- Generated from EDMX file: C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EF.ModelFirst\Northwind.edmx
 -- --------------------------------------------------
 
@@ -18,18 +18,18 @@ GO
 -- --------------------------------------------------
 
 IF OBJECT_ID(N'[dbo].[FK_ProdutoCategoria]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ProdutoSet] DROP CONSTRAINT [FK_ProdutoCategoria];
+    ALTER TABLE [dbo].[Produto] DROP CONSTRAINT [FK_ProdutoCategoria];
 GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[ProdutoSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[ProdutoSet];
+IF OBJECT_ID(N'[dbo].[Categoria]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Categoria];
 GO
-IF OBJECT_ID(N'[dbo].[CategoriaSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[CategoriaSet];
+IF OBJECT_ID(N'[dbo].[Produto]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Produto];
 GO
 
 -- --------------------------------------------------
@@ -40,6 +40,7 @@ GO
 CREATE TABLE [dbo].[Produto] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Nome] nvarchar(max)  NOT NULL,
+    [Preco] decimal(9,2)  NOT NULL,
     [Categoria_Id] int  NOT NULL
 );
 GO

@@ -8,6 +8,7 @@ namespace Northwind.WebApi
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+            config.EnableCors();
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
             config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -13,17 +9,22 @@ using NorthWind.Repositorios.SqlServer.EF.ModelFirst;
 
 namespace Northwind.WebApi.Controllers
 {
-    public class CategoriaController : ApiController
+    public class CategoriasController : ApiController
     {
         private NorthwindContainer db = new NorthwindContainer();
 
-        // GET: api/Categoria
+        // GET: api/Categorias
         public IQueryable<Categoria> GetCategoria()
         {
             return db.Categoria;
         }
 
-        // GET: api/Categoria/5
+        //public IQueryable<CategoriaViewModel> Get()
+        //{
+        //    return db.Categoria.Select(c => new CategoriaViewModel { Id = c.Id, Nome = c.Nome });
+        //}
+
+        // GET: api/Categorias/5
         [ResponseType(typeof(Categoria))]
         public async Task<IHttpActionResult> GetCategoria(int id)
         {
@@ -36,7 +37,15 @@ namespace Northwind.WebApi.Controllers
             return Ok(categoria);
         }
 
-        // PUT: api/Categoria/5
+        //public async Task<CategoriaViewModel> GetCategoria(int id)
+        //{
+        //    return await db.Categoria
+        //        .Where(c => c.Id == id)
+        //        .Select(c => new CategoriaViewModel { Id = c.Id, Nome = c.Nome })
+        //        .SingleOrDefaultAsync();
+        //}
+
+        // PUT: api/Categorias/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutCategoria(int id, Categoria categoria)
         {
@@ -71,7 +80,7 @@ namespace Northwind.WebApi.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Categoria
+        // POST: api/Categorias
         [ResponseType(typeof(Categoria))]
         public async Task<IHttpActionResult> PostCategoria(Categoria categoria)
         {
@@ -86,7 +95,7 @@ namespace Northwind.WebApi.Controllers
             return CreatedAtRoute("DefaultApi", new { id = categoria.Id }, categoria);
         }
 
-        // DELETE: api/Categoria/5
+        // DELETE: api/Categorias/5
         [ResponseType(typeof(Categoria))]
         public async Task<IHttpActionResult> DeleteCategoria(int id)
         {
