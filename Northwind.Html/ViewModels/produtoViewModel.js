@@ -14,7 +14,8 @@
                 data: self.obterProduto()
             })
             .success(function () {
-                alert("Produto gravado com sucesso!");                
+                alert("Produto gravado com sucesso!");
+                $this[0].reset();
             })
             .error(function () {
                 alert("Erro ao gravar o produto.");
