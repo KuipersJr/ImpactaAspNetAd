@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using NorthWind.Repositorios.SqlServer.EF.ModelFirst;
 using System.Web.Http.Cors;
+using Northwind.WebApi.ViewModels;
 
 namespace Northwind.WebApi.Controllers
 {
@@ -21,16 +22,29 @@ namespace Northwind.WebApi.Controllers
         }
 
         // GET: api/Produtos/5
-        [ResponseType(typeof(Produto))]
+        //[ResponseType(typeof(Produto))]
+        //public IHttpActionResult GetProduto(int id)
+        //{
+        //    Produto produto = db.Produto.Find(id);
+        //    if (produto == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return Ok(produto);
+        //}
+
+        [ResponseType(typeof(ProdutoViewModel))]
         public IHttpActionResult GetProduto(int id)
         {
-            Produto produto = db.Produto.Find(id);
+            var produto = db.Produto.Find(id);
+
             if (produto == null)
             {
                 return NotFound();
             }
 
-            return Ok(produto);
+            return Ok(new ProdutoViewModel(produto));
         }
 
         // PUT: api/Produtos/5
@@ -72,7 +86,12 @@ namespace Northwind.WebApi.Controllers
         [ResponseType(typeof(Produto))]
         public IHttpActionResult PostProduto(Produto produto)
         {
-            if (!ModelState.IsValid || produto == null)
+            if (produto == null)
+            {
+                return NotFound();
+            }
+
+            if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
@@ -90,6 +109,7 @@ namespace Northwind.WebApi.Controllers
         public IHttpActionResult DeleteProduto(int id)
         {
             Produto produto = db.Produto.Find(id);
+
             if (produto == null)
             {
                 return NotFound();
