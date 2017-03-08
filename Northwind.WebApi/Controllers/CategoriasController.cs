@@ -6,23 +6,26 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using NorthWind.Repositorios.SqlServer.EF.ModelFirst;
+using Northwind.WebApi.ViewModels;
+using System.Web.Http.Cors;
 
 namespace Northwind.WebApi.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class CategoriasController : ApiController
     {
         private NorthwindContainer db = new NorthwindContainer();
 
         // GET: api/Categorias
-        public IQueryable<Categoria> GetCategoria()
-        {
-            return db.Categoria;
-        }
-
-        //public IQueryable<CategoriaViewModel> Get()
+        //public IQueryable<Categoria> GetCategoria()
         //{
-        //    return db.Categoria.Select(c => new CategoriaViewModel { Id = c.Id, Nome = c.Nome });
+        //    return db.Categoria;
         //}
+
+        public IQueryable<CategoriaViewModel> Get()
+        {
+            return db.Categoria.Select(c => new CategoriaViewModel { Id = c.Id, Nome = c.Nome });
+        }
 
         // GET: api/Categorias/5
         [ResponseType(typeof(Categoria))]

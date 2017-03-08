@@ -8,53 +8,52 @@
     },
     vincularSubmeter: function () {
         $("#produtoForm").on("submit", function (event) {
-            var $this = $(this);
+            var form = $(this);
             $.ajax({
-                type: $this.attr('method'),
-                url: $this.attr('action'),
+                type: form.attr('method'),
+                url: form.attr('action'),
                 data: self.obterProduto()
             })
             .success(function () {
                 alert("Produto gravado com sucesso!");
-                $this[0].reset();
+                form[0].reset();
+                $("#categoriaId").html("");
             })
-            .error(function () {
+            .fail(function (jqXHR, textStatus, errorThrown) {
+                console.log(errorThrown);
+
                 alert("Erro ao gravar o produto.");
             });
+
             event.preventDefault();
         });
     },
     obterProduto: function () {
-        return {
+        var produto = {
             id: $("#id").val(),
             nome: $("#nome").val(),
             preco: $("#preco").val(),
             categoria: { id: $("#categoriaId").val() }
-        };        
+        };
+
+        return produto;
     },
     carregarCategorias: function () {
         $("#categoriaId").select2({
-            //minimumInputLength: 2,
-            //tags: [],
             ajax: {
-                url: "",
+                url: "http://localhost/Northwind.WebApi/api/Categorias",
                 dataType: 'json',
-                type: "GET",
-                //quietMillis: 50,
-                //data: function (term) {
-                //    return {
-                //        term: term
-                //    };
-                //},
-                results: function (data) {
+
+                processResults: function (data) {
+                    var results = [];
+                    $.each(data, function (index, categoria) {
+                        results.push({
+                            id: categoria.Id,
+                            text: categoria.Nome
+                        });
+                    });
                     return {
-                        results: $.map(data, function (item) {
-                            return {
-                                text: item.nome,
-                                //slug: item.slug,
-                                id: item.id
-                            }
-                        })
+                        results: results
                     };
                 }
             }

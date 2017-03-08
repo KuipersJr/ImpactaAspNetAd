@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container body-content">
-        <form action="http://localhost:54773/api/Produtos" id="produtoForm" method="post">
+        <form action="http://localhost/Northwind.WebApi/api/Produtos" id="produtoForm" method="post">
             <input type="hidden" id="id" name="id" value="0" />
             <div class="form-horizontal">
                 <h4>Produto</h4>
@@ -18,7 +18,7 @@
                         <label for="nome" class="control-label">Nome</label>
                     </div>
                     <div class="col-md-10">
-                        <input type="text" id="nome" name="nome" class="form-control"/>
+                        <input type="text" id="nome" name="nome" class="form-control" />
                     </div>
                 </div>
                 <div class="form-group">
@@ -34,10 +34,7 @@
                         <label for="categoriaId" class="control-label">Categoria</label>
                     </div>
                     <div class="col-md-10">
-                        <select id="categoriaId" name="categoriaId" class="form-control">
-                            <!--<option value="1">Papelaria</option>
-                            <option value="2">Informática</option>-->
-                        </select>
+                        <select id="categoriaId" name="categoriaId" class="form-control" data-minimum-results-for-search="Infinity"></select>
                     </div>
                 </div>
                 <hr />
@@ -53,9 +50,60 @@
 </html>
 <script src="Scripts/jquery-1.9.1.min.js"></script>
 <script src="Scripts/bootstrap.min.js"></script>
-<script type="text/javascript" src="Scripts/select2.min.js"></script>  
-<script src="Controllers/ProdutoController.js"></script>
+<script type="text/javascript" src="Scripts/select2.min.js"></script>
 <script type="text/javascript">
-    var produtoController = Object.create(ProdutoController);
-    produtoController.inicializar(produtoController);
+    $(document).ready(function () {
+        vincularSubmeter();
+        carregarCategorias();
+    });
+
+    function vincularSubmeter() {
+        $("#produtoForm").on("submit", function (event) {
+            var form = $(this);
+
+            $.ajax({
+                type: form.attr('method'),
+                url: form.attr('action'),
+                data: {} // trocar por um objeto que represente o produto a ser inserido.
+            })
+            .success(function (data) {
+                console.log(data);
+
+                alert("Produto gravado com sucesso!");
+                form[0].reset();
+                $("#categoriaId").html("");
+            })
+            .fail(function (jqXHR, textStatus, errorThrown) {
+                console.log(errorThrown);
+
+                alert("Erro ao gravar o produto.");
+            });
+
+            event.preventDefault();
+        });
+    }
+
+    function carregarCategorias() {
+        $("#categoriaId").select2({
+            ajax: {
+                url: "http://localhost/Northwind.WebApi/api/Categorias",
+                dataType: 'json',
+
+                processResults: function (data) {
+                    var results = [];
+
+                    $.each(data, function (index, modelo) {
+                        results.push({
+                            id: modelo.Id, // Id - case sensitive.
+                            text: modelo.Nome // Nome - case sensitive.
+                        });
+                    });
+
+                    return {
+                        results: results
+                    };
+                }
+            }
+        });
+    }
 </script>
