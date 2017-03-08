@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 03/07/2017 14:02:46
--- Generated from EDMX file: C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EF.ModelFirst\Northwind.edmx
+-- Date Created: 03/07/2017 23:29:32
+-- Generated from EDMX file: C:\Users\vitor_000\documents\visual studio 2015\Projects\NorthWind.Repositorios.SqlServer.EF.ModelFirst\Northwind.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -25,11 +25,11 @@ GO
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[Categoria]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Categoria];
-GO
 IF OBJECT_ID(N'[dbo].[Produto]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Produto];
+GO
+IF OBJECT_ID(N'[dbo].[Categoria]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Categoria];
 GO
 
 -- --------------------------------------------------

@@ -4,6 +4,7 @@
     <title></title>
     <meta charset="utf-8" />
     <link href="Content/bootstrap.min.css" rel="stylesheet">
+    <link href="Content/css/select2.min.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container body-content">
@@ -30,12 +31,12 @@
                 </div>
                 <div class="form-group">
                     <div class="control-label col-md-2">
-                        <label for="categoria-id" class="control-label">Categoria</label>
+                        <label for="categoriaId" class="control-label">Categoria</label>
                     </div>
                     <div class="col-md-10">
                         <select id="categoriaId" name="categoriaId" class="form-control">
-                            <option value="1">Papelaria</option>
-                            <option value="2">Informática</option>
+                            <!--<option value="1">Papelaria</option>
+                            <option value="2">Informática</option>-->
                         </select>
                     </div>
                 </div>
@@ -52,7 +53,8 @@
 </html>
 <script src="Scripts/jquery-1.9.1.min.js"></script>
 <script src="Scripts/bootstrap.min.js"></script>
-<script src="Controllers/produtoController.js"></script>
+<script type="text/javascript" src="Scripts/select2.min.js"></script>  
+<script src="Controllers/ProdutoController.js"></script>
 <script type="text/javascript">
     var produtoController = Object.create(ProdutoController);
     produtoController.inicializar(produtoController);

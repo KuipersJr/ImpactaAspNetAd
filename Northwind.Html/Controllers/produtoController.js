@@ -4,6 +4,7 @@
     inicializar: function (instancia) {
         self = instancia;
         self.vincularSubmeter();
+        self.carregarCategorias();
     },
     vincularSubmeter: function () {
         $("#produtoForm").on("submit", function (event) {
@@ -30,5 +31,33 @@
             preco: $("#preco").val(),
             categoria: { id: $("#categoriaId").val() }
         };        
+    },
+    carregarCategorias: function () {
+        $("#categoriaId").select2({
+            //minimumInputLength: 2,
+            //tags: [],
+            ajax: {
+                url: "",
+                dataType: 'json',
+                type: "GET",
+                //quietMillis: 50,
+                //data: function (term) {
+                //    return {
+                //        term: term
+                //    };
+                //},
+                results: function (data) {
+                    return {
+                        results: $.map(data, function (item) {
+                            return {
+                                text: item.nome,
+                                //slug: item.slug,
+                                id: item.id
+                            }
+                        })
+                    };
+                }
+            }
+        });
     }
 };
