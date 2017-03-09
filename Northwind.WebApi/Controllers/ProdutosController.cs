@@ -48,7 +48,6 @@ namespace Northwind.WebApi.Controllers
             return Ok(new ProdutoViewModel(produto));
         }
 
-        [HttpGet]
         [ResponseType(typeof(List<ProdutoViewModel>))]
         public IHttpActionResult GetByName(string nome)
         {
