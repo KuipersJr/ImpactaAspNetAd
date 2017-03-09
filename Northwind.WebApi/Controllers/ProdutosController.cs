@@ -11,13 +11,13 @@ using System.Collections.Generic;
 
 namespace Northwind.WebApi.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*, GetByName")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ProdutosController : ApiController
     {
         private NorthwindContainer db = new NorthwindContainer();
 
         // GET: api/Produtos
-        public IQueryable<Produto> GetProduto()
+        public IQueryable<Produto> GetProdutos()
         {
             return db.Produto;
         }
