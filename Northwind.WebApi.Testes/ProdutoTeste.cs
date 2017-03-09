@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System;
+using System.Collections.Generic;
 
 namespace Northwind.WebApi.Testes
 {
@@ -11,7 +11,7 @@ namespace Northwind.WebApi.Testes
         [TestMethod]
         public void PutTeste()
         {
-            var produto = Get(35).Result;
+            var produto = Get(1).Result;
 
             produto.Preco = 18.33m;
 
@@ -19,7 +19,7 @@ namespace Northwind.WebApi.Testes
 
             Put(produto).Wait();
 
-            produto = Get(35).Result;
+            produto = Get(1).Result;
 
             Assert.IsTrue(produto.Preco == 18.33m);
 
@@ -33,6 +33,14 @@ namespace Northwind.WebApi.Testes
             var produto = Get(34).Result;
 
             Assert.IsNull(produto);
+        }
+
+        [TestMethod]
+        public void GetByNameTeste()
+        {
+            var produtos = GetByName("caneta").Result;
+
+            Assert.AreNotEqual(produtos.Count, 0);
         }
 
         private async Task Put(Produto produto)
@@ -52,7 +60,7 @@ namespace Northwind.WebApi.Testes
             {
                 using (var response = await cliente.GetAsync($"http://localhost/Northwind.WebApi/api/produtos/{id}"))
                 {
-                    //response.EnsureSuccessStatusCode();
+                    response.EnsureSuccessStatusCode();
 
                     return await response.Content.ReadAsAsync<Produto>();
                 }
@@ -66,6 +74,19 @@ namespace Northwind.WebApi.Testes
                 using (var response = await cliente.DeleteAsync($"http://localhost/Northwind.WebApi/api/produtos/{id}"))
                 {
                     response.EnsureSuccessStatusCode();
+                }
+            }
+        }
+
+        private async Task<List<Produto>> GetByName(string nome)
+        {
+            using (var cliente = new HttpClient())
+            {
+                using (var response = await cliente.GetAsync($"http://localhost:55066/api/produtos/GetByName/{nome}"))
+                {
+                    response.EnsureSuccessStatusCode();
+
+                    return await response.Content.ReadAsAsync<List<Produto>>();
                 }
             }
         }

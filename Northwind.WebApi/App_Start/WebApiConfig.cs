@@ -9,7 +9,7 @@ namespace Northwind.WebApi
         {
             // Web API configuration and services
             config.EnableCors();
-            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));            
             config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 
             // Web API routes
@@ -19,6 +19,12 @@ namespace Northwind.WebApi
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "GetByNameActions",
+                routeTemplate: "api/{controller}/{action}/{nome}",
+                defaults: new { action = "get", nome = RouteParameter.Optional }
             );
         }
     }

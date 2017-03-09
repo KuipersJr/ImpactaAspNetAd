@@ -7,10 +7,11 @@ using System.Web.Http.Description;
 using NorthWind.Repositorios.SqlServer.EF.ModelFirst;
 using System.Web.Http.Cors;
 using Northwind.WebApi.ViewModels;
+using System.Collections.Generic;
 
 namespace Northwind.WebApi.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [EnableCors(origins: "*", headers: "*", methods: "*, GetByName")]
     public class ProdutosController : ApiController
     {
         private NorthwindContainer db = new NorthwindContainer();
@@ -45,6 +46,19 @@ namespace Northwind.WebApi.Controllers
             }
 
             return Ok(new ProdutoViewModel(produto));
+        }
+
+        [HttpGet]
+        [ResponseType(typeof(List<ProdutoViewModel>))]
+        public IHttpActionResult GetByName(string nome)
+        {
+            var produtos = db.Produto.Where(p => p.Nome.Contains(nome)).ToList();
+
+            var produtosViewModel = new List<ProdutoViewModel>();
+
+            produtos.ForEach(p => produtosViewModel.Add(new ProdutoViewModel(p)));
+
+            return Ok(produtosViewModel);
         }
 
         // PUT: api/Produtos/5
