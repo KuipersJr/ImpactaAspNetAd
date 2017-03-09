@@ -35,6 +35,11 @@ namespace Northwind.WebApi.Controllers
         //    return Ok(produto);
         //}
 
+        /// <summary>
+        /// Descrição
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [ResponseType(typeof(ProdutoViewModel))]
         public IHttpActionResult GetProduto(int id)
         {
