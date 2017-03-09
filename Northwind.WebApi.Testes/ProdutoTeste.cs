@@ -82,7 +82,7 @@ namespace Northwind.WebApi.Testes
         {
             using (var cliente = new HttpClient())
             {
-                using (var response = await cliente.GetAsync($"http://localhost:55066/api/produtos/GetByName/{nome}"))
+                using (var response = await cliente.GetAsync($"http://localhost:51218/api/Produtos/GetByName/{nome}"))
                 {
                     response.EnsureSuccessStatusCode();
 
