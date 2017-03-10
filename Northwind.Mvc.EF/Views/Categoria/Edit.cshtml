@@ -11,7 +11,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Categoria</h4>
         <hr />
@@ -40,4 +40,8 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        //$(document).ready(function () { $("#Nome").focus() });
+        $(function () { $("#Nome").focus() });
+    </script>
 }
