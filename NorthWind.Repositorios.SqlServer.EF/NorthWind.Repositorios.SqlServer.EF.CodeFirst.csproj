@@ -93,6 +93,10 @@
     <Compile Include="Migrations\201703061805521_MergeCategoriaNomeUK.Designer.cs">
       <DependentUpon>201703061805521_MergeCategoriaNomeUK.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703101803376_MergeCascadeDeleteProduto.cs" />
+    <Compile Include="Migrations\201703101803376_MergeCascadeDeleteProduto.Designer.cs">
+      <DependentUpon>201703101803376_MergeCascadeDeleteProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfiguration\ClienteConfiguration.cs" />
     <Compile Include="ModelConfiguration\CategoriaConfiguration.cs" />
@@ -143,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703061805521_MergeCategoriaNomeUK.resx">
       <DependentUpon>201703061805521_MergeCategoriaNomeUK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703101803376_MergeCascadeDeleteProduto.resx">
+      <DependentUpon>201703101803376_MergeCascadeDeleteProduto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

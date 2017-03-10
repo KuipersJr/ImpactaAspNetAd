@@ -29,6 +29,7 @@ namespace NorthWind.Repositorios.SqlServer.EF
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
 
             modelBuilder.Configurations.Add(new ProdutoConfiguration());
             modelBuilder.Configurations.Add(new ProdutoImagemConfiguration());
