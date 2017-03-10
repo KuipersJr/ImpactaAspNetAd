@@ -23,7 +23,7 @@ namespace Northwind.Dominio
         // Colocar depois - migration.
         public bool Descontinuado { get; set; }
 
-        public bool ValidarFormatoImagem(string contentType)
+        public static bool ValidarFormatoImagem(string contentType)
         {
             return Regex.IsMatch(contentType, @"image/.+");
         }

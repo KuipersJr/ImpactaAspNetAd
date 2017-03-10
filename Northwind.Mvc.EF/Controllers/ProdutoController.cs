@@ -6,6 +6,7 @@ using Northwind.Dominio;
 using Northwind.Mvc.EF.ViewModels;
 using System.Web;
 using System.IO;
+using System;
 
 namespace Northwind.Mvc.EF.Controllers
 {
@@ -51,25 +52,17 @@ namespace Northwind.Mvc.EF.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Produto produto, HttpPostedFileBase imagemProduto)
+        public ActionResult Create(ProdutoViewModel viewModel, HttpPostedFileBase imagemProduto)
         {
-            if (imagemProduto != null && !produto.ValidarFormatoImagem(imagemProduto.ContentType))
+            if (imagemProduto != null && !Produto.ValidarFormatoImagem(imagemProduto.ContentType))
             {
-                ModelState.AddModelError("imagemProduto", "Apenas arquivos de imagem são permitidos.");            
+                ModelState.AddModelError("imagemProduto", "Apenas arquivos de imagem são permitidos.");
             }
+
+            var produto = Mapear(viewModel, imagemProduto);
 
             if (ModelState.IsValid)
             {
-                if (imagemProduto != null && imagemProduto.ContentLength > 0)
-                {
-                    using (var reader = new BinaryReader(imagemProduto.InputStream))
-                    {
-                        produto.Imagem = new ProdutoImagem { Bytes = reader.ReadBytes(imagemProduto.ContentLength), ContentType = imagemProduto.ContentType };
-                    }
-                }
-
-                produto.Categoria = db.Categorias.Find(produto.Categoria.Id);
-
                 db.Produtos.Add(produto);
 
                 db.SaveChanges();
@@ -78,6 +71,32 @@ namespace Northwind.Mvc.EF.Controllers
             }
 
             return View(new ProdutoViewModel(db.Categorias.ToList(), produto));
+        }
+
+        // ToDo: implementar Automapper.
+        private Produto Mapear(ProdutoViewModel viewModel, HttpPostedFileBase imagemProduto)
+        {
+            var produto = new Produto();
+
+            if (imagemProduto != null && imagemProduto.ContentLength > 0)
+            {
+                using (var reader = new BinaryReader(imagemProduto.InputStream))
+                {
+                    produto.Imagem = new ProdutoImagem
+                    {
+                        Bytes = reader.ReadBytes(imagemProduto.ContentLength),
+                        ContentType = imagemProduto.ContentType
+                    };
+                }
+            }
+
+            produto.Categoria = db.Categorias.Find(viewModel.CategoriaId);
+            produto.Descontinuado = viewModel.Descontinuado;
+            produto.Estoque = viewModel.Estoque.Value;
+            produto.Nome = viewModel.Nome;
+            produto.Preco = viewModel.Preco.Value;
+
+            return produto;
         }
 
         // GET: Produto/Edit/5
@@ -103,44 +122,52 @@ namespace Northwind.Mvc.EF.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Produto produto, HttpPostedFileBase imagemProduto)
+        public ActionResult Edit(ProdutoViewModel viewModel, HttpPostedFileBase imagemProduto)
         {
-            var produtoBanco = db.Produtos.Find(produto.Id);
+            var produto = db.Produtos.Find(viewModel.Id);
 
-            if (imagemProduto != null && !produto.ValidarFormatoImagem(imagemProduto.ContentType))
+            Mapear(viewModel, produto, imagemProduto);
+
+            if (imagemProduto != null && !Produto.ValidarFormatoImagem(imagemProduto.ContentType))
             {
                 ModelState.AddModelError("imagemProduto", "Apenas arquivos de imagem são permitidos.");
-                produto.Imagem = produtoBanco.Imagem;
             }
 
             if (ModelState.IsValid)
             {
-                db.Entry(produtoBanco).CurrentValues.SetValues(produto);
-
-                produtoBanco.Categoria = db.Categorias.Single(c => c.Id == produto.Categoria.Id);
-
-                if (imagemProduto != null && imagemProduto.ContentLength > 0)
-                {
-                    using (var reader = new BinaryReader(imagemProduto.InputStream))
-                    {
-                        if (produtoBanco.Imagem == null)
-                        {
-                            produtoBanco.Imagem = new ProdutoImagem { Bytes = reader.ReadBytes(imagemProduto.ContentLength), ContentType = imagemProduto.ContentType };
-                        }
-                        else
-                        {
-                            produtoBanco.Imagem.Bytes = reader.ReadBytes(imagemProduto.ContentLength);
-                            produtoBanco.Imagem.ContentType = imagemProduto.ContentType;
-                        }
-                    }
-                }
-
                 db.SaveChanges();
 
                 return RedirectToAction("Index");
             }
 
             return View(new ProdutoViewModel(db.Categorias.ToList(), produto));
+        }
+
+        private void Mapear(ProdutoViewModel viewModel, Produto produto, HttpPostedFileBase imagemProduto)
+        {
+            db.Entry(produto).CurrentValues.SetValues(viewModel);
+
+            produto.Categoria = db.Categorias.Single(c => c.Id == viewModel.CategoriaId);
+
+            if (imagemProduto != null && imagemProduto.ContentLength > 0)
+            {
+                using (var reader = new BinaryReader(imagemProduto.InputStream))
+                {
+                    if (produto.Imagem == null)
+                    {
+                        produto.Imagem = new ProdutoImagem
+                        {
+                            Bytes = reader.ReadBytes(imagemProduto.ContentLength),
+                            ContentType = imagemProduto.ContentType
+                        };
+                    }
+                    else
+                    {
+                        produto.Imagem.Bytes = reader.ReadBytes(imagemProduto.ContentLength);
+                        produto.Imagem.ContentType = imagemProduto.ContentType;
+                    }
+                }
+            }
         }
 
         // GET: Produto/Delete/5

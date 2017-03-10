@@ -16,56 +16,56 @@
         <h4>Produto</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Produto.Id)
+        @Html.HiddenFor(model => model.Id)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Produto.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Produto.Nome, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Produto.Nome, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Produto.Categoria, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CategoriaId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.Produto.Categoria.Id, new SelectList(Model.Categorias, "Id", "Nome"), "--Selecione--", new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Produto.Categoria, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model => model.CategoriaId, Model.Categorias, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CategoriaId, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Produto.Preco, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Preco, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Produto.Preco, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Produto.Preco, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Preco, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Preco, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Produto.Estoque, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Estoque, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Produto.Estoque, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Produto.Estoque, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Estoque, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Estoque, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Produto.Descontinuado, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Descontinuado, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.Produto.Descontinuado)
-                    @Html.ValidationMessageFor(model => model.Produto.Descontinuado, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.Descontinuado)
+                    @Html.ValidationMessageFor(model => model.Descontinuado, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>
 
-        @if (Model.Produto.Imagem != null)
+        @if (Model.PossuiImagem)
         {
             <div class="form-group">
                 <span class="control-label col-md-2"><strong>Imagem atual</strong></span>
                 <div class="col-md-10">
-                    <img src="~/Imagem?produtoId=@Model.Produto.Id" title="Imagem do produto" />
+                    <img src="~/Imagem?produtoId=@Model.Id" title="Imagem do produto" />
                 </div>
             </div>
         }
