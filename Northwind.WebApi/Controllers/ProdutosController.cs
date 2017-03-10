@@ -53,6 +53,11 @@ namespace Northwind.WebApi.Controllers
             return Ok(new ProdutoViewModel(produto));
         }
 
+        /// <summary>
+        /// Pode ser chamada assim também: api/Produtos?nome=caneta
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
         [ResponseType(typeof(List<ProdutoViewModel>))]
         public IHttpActionResult GetByName(string nome)
         {
