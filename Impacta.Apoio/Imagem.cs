@@ -10,9 +10,9 @@ namespace Impacta.Apoio
         {
             using (MemoryStream stream = new MemoryStream())
             {
-                using (Image thumbnail = Image.FromStream(new MemoryStream(imagem)).GetThumbnailImage(largura, altura, null, new IntPtr()))
+                using (Image miniatura = Image.FromStream(new MemoryStream(imagem)).GetThumbnailImage(largura, altura, null, new IntPtr()))
                 {
-                    thumbnail.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                    miniatura.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
                     return stream.ToArray();
                 }
             }
