@@ -4,6 +4,7 @@ using System.Net;
 using System.Web.Mvc;
 using NorthWind.Repositorios.SqlServer.EF;
 using Northwind.Dominio;
+using System;
 
 namespace Northwind.Mvc.EF.Controllers
 {
@@ -107,9 +108,19 @@ namespace Northwind.Mvc.EF.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Categoria categoria = db.Categorias.Find(id);
-            db.Categorias.Remove(categoria);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+
+            try
+            {
+                db.Categorias.Remove(categoria);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception excecao)
+            {
+                ModelState.AddModelError("DeleteError", "Erro ao excluir esta categoria.");
+
+                return View(categoria);
+            }
         }
 
         protected override void Dispose(bool disposing)

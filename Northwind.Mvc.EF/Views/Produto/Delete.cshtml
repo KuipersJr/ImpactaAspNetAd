@@ -65,5 +65,10 @@
             <input type="submit" value="Delete" class="btn btn-default" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>
+        @Html.ValidationSummary(true)
+        @Html.ValidationMessage("DeleteError")
     }
 </div>
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
