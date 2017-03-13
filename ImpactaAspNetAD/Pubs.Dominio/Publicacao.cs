@@ -8,6 +8,7 @@ namespace Pubs.Dominio
         public Publicacao()
         {
             Comentarios = new List<Comentario>();
+            DataPublicacao = DateTime.Now;
         }
 
         public string Titulo { get; set; }

@@ -13,13 +13,12 @@ namespace Pubs.Repositorios.MongoDb.Tests
         [TestMethod()]
         public void InserirTest()
         {
-
             var publicacao = new Publicacao();
+
             publicacao.Autor = "Vítor";
-            publicacao.DataPublicacao = DateTime.Now;
-            publicacao.Id = Guid.NewGuid();
             publicacao.Texto = "Conteúdo da publicação";
             publicacao.Titulo = "Título da publicação";
+            publicacao.Comentarios.Add(new Comentario { Autor = "Fulano" });
 
             _repositorio.Inserir(publicacao);
         }
@@ -31,18 +30,24 @@ namespace Pubs.Repositorios.MongoDb.Tests
 
             foreach (var publicacao in publicacoes)
             {
+                Console.WriteLine(publicacao.DataPublicacao);
+                Console.WriteLine(publicacao.Comentarios[0].Id);
                 Console.WriteLine(publicacao.Id);
             }
         }
 
         [TestMethod]
-        public void SelecionarTeste()
+        public void SelecionarPorIdTeste()
         {
             var publicacao = _repositorio.Selecionar(new Guid("0e093ab0-f963-4eee-822f-09c0de54116d"));
 
             Console.WriteLine(publicacao.Id);
+        }
 
-            publicacao = _repositorio.Selecionar(p => p.Autor == "Vítor").First();
+        [TestMethod]
+        public void SelecionarPorLinqTeste()
+        {
+            var publicacao = _repositorio.Selecionar(p => p.Autor == "Vítor").First();
 
             Assert.AreEqual(publicacao.Autor, "Vítor");
         }
