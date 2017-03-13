@@ -82,6 +82,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.ViewModels", "Nor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Repositorios.WebApiTests", "Northwind.Repositorios.WebApiTests\Northwind.Repositorios.WebApiTests.csproj", "{63C90CBE-9594-4D42-9A00-980069F0DCE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pubs.Repositorios.MongoDb", "Pubs.Repositorios.MongoDb\Pubs.Repositorios.MongoDb.csproj", "{3F3D0A16-2A6C-43C2-B35D-743302CF86F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pubs.Dominio", "Pubs.Dominio\Pubs.Dominio.csproj", "{6F36C653-AD84-420A-BAC2-D69DD3EF30C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pubs.Repositorios.MongoDbTests", "Pubs.Repositorios.MongoDbTests\Pubs.Repositorios.MongoDbTests.csproj", "{DEC07280-CF88-469A-AEF6-F585BFBFFBE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -180,6 +186,18 @@ Global
 		{63C90CBE-9594-4D42-9A00-980069F0DCE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63C90CBE-9594-4D42-9A00-980069F0DCE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63C90CBE-9594-4D42-9A00-980069F0DCE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F3D0A16-2A6C-43C2-B35D-743302CF86F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F3D0A16-2A6C-43C2-B35D-743302CF86F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F3D0A16-2A6C-43C2-B35D-743302CF86F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F3D0A16-2A6C-43C2-B35D-743302CF86F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F36C653-AD84-420A-BAC2-D69DD3EF30C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F36C653-AD84-420A-BAC2-D69DD3EF30C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F36C653-AD84-420A-BAC2-D69DD3EF30C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F36C653-AD84-420A-BAC2-D69DD3EF30C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEC07280-CF88-469A-AEF6-F585BFBFFBE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEC07280-CF88-469A-AEF6-F585BFBFFBE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEC07280-CF88-469A-AEF6-F585BFBFFBE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEC07280-CF88-469A-AEF6-F585BFBFFBE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -209,5 +227,7 @@ Global
 		{FE31C761-278D-4F84-A87B-6E447D9C6D00} = {0E3E23B5-0131-4607-A261-FDAFCB6F194D}
 		{8104EA52-B675-430C-98FD-44A1EB7D397D} = {0E3E23B5-0131-4607-A261-FDAFCB6F194D}
 		{63C90CBE-9594-4D42-9A00-980069F0DCE0} = {0E3E23B5-0131-4607-A261-FDAFCB6F194D}
+		{3F3D0A16-2A6C-43C2-B35D-743302CF86F7} = {1D2CB0C3-9DAC-49CB-8E15-D932796B5610}
+		{6F36C653-AD84-420A-BAC2-D69DD3EF30C6} = {D99FE7F2-3755-44A9-9C1F-9A2264E87902}
 	EndGlobalSection
 EndGlobal
