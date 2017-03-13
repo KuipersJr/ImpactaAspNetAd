@@ -3,46 +3,52 @@ using MongoDB.Driver;
 using System.Collections.Generic;
 using System;
 using System.Linq.Expressions;
+using System.Configuration;
 
 namespace Pubs.Repositorios.MongoDb
 {
     public class RepositorioBase<T> where T : EntidadeBase
     {
         private readonly IMongoDatabase _db;
+        private IMongoCollection<T> _colecao; /*refatorar depois*/
 
         public RepositorioBase()
         {
-            _db = new MongoClient().GetDatabase("Pubs");
+            var connectionString = ConfigurationManager.ConnectionStrings["pubsConnectionString"].ConnectionString;
+            var databaseName = MongoUrl.Create(connectionString).DatabaseName;
+
+            _db = new MongoClient(connectionString).GetDatabase(databaseName);
+            _colecao = _db.GetCollection<T>(typeof(T).Name);
         }
 
         public void Inserir(T entidade)
         {
-            _db.GetCollection<T>(typeof(T).Name).InsertOne(entidade);
+            _colecao.InsertOne(entidade);
         }
 
         public List<T> Selecionar()
         {
-            return _db.GetCollection<T>(typeof(T).Name).AsQueryable().ToList();
+            return _colecao.AsQueryable().ToList();
         }
 
         public T Selecionar(Guid guid)
         {
-            return _db.GetCollection<T>(typeof(T).Name).Find(p => p.Id == guid).SingleOrDefault();
+            return _colecao.Find(p => p.Id == guid).SingleOrDefault();
         }
 
         public List<T> Selecionar(Expression<Func<T, bool>> query)
         {
-            return _db.GetCollection<T>(typeof(T).Name).Find(query).ToList();
+            return _colecao.Find(query).ToList();
         }
 
         public void Atualizar(T entidade)
         {
-            _db.GetCollection<T>(typeof(T).Name).ReplaceOne(e => e.Id == entidade.Id, entidade);
+            _colecao.ReplaceOne(e => e.Id == entidade.Id, entidade);
         }
 
         public void Excluir(Guid id)
         {
-            _db.GetCollection<T>(typeof(T).Name).DeleteOne(e => e.Id == id);
+            _colecao.DeleteOne(e => e.Id == id);
         }
     }
 }

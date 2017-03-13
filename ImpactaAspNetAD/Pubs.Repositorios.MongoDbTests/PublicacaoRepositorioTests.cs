@@ -39,7 +39,7 @@ namespace Pubs.Repositorios.MongoDb.Tests
         [TestMethod]
         public void SelecionarPorIdTeste()
         {
-            var publicacao = _repositorio.Selecionar(new Guid("0e093ab0-f963-4eee-822f-09c0de54116d"));
+            var publicacao = _repositorio.Selecionar(new Guid("b25cdb3f-6ac0-40f1-927a-a2a84a5aad83"));
 
             Console.WriteLine(publicacao.Id);
         }
@@ -47,9 +47,9 @@ namespace Pubs.Repositorios.MongoDb.Tests
         [TestMethod]
         public void SelecionarPorLinqTeste()
         {
-            var publicacao = _repositorio.Selecionar(p => p.Autor == "Vítor").First();
+            var publicacao = _repositorio.Selecionar(p => p.Autor == "avelino").First(); // Case sensitive.
 
-            Assert.AreEqual(publicacao.Autor, "Vítor");
+            Assert.AreEqual(publicacao.Autor, "avelino");
         }
 
         [TestMethod]
@@ -69,9 +69,9 @@ namespace Pubs.Repositorios.MongoDb.Tests
         [TestMethod]
         public void ExcluirTeste()
         {
-            _repositorio.Excluir(new Guid("1a1fffae-85b0-4252-ab88-328136d3fc1f"));
+            _repositorio.Excluir(new Guid("b25cdb3f-6ac0-40f1-927a-a2a84a5aad83"));
 
-            var publicacao = _repositorio.Selecionar(new Guid("1a1fffae-85b0-4252-ab88-328136d3fc1f"));
+            var publicacao = _repositorio.Selecionar(new Guid("b25cdb3f-6ac0-40f1-927a-a2a84a5aad83"));
 
             Assert.IsNull(publicacao);
         }
