@@ -1,0 +1,10 @@
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Impacta.ApoioTests\bin\Debug\Impacta.ApoioTests.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Impacta.ApoioTests\bin\Debug\Impacta.ApoioTests.pdb
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Impacta.ApoioTests\bin\Debug\Impacta.Apoio.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Impacta.ApoioTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Impacta.ApoioTests\bin\Debug\Northwind.Dominio.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Impacta.ApoioTests\bin\Debug\Impacta.Apoio.pdb
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Impacta.ApoioTests\bin\Debug\Northwind.Dominio.pdb
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Impacta.ApoioTests\obj\Debug\Impacta.ApoioTests.csprojResolveAssemblyReference.cache
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Impacta.ApoioTests\obj\Debug\Impacta.ApoioTests.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Impacta.ApoioTests\obj\Debug\Impacta.ApoioTests.pdb

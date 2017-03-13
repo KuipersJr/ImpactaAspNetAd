@@ -1,0 +1,10 @@
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EF.ModelFirst\bin\Debug\NorthWind.Repositorios.SqlServer.EF.ModelFirst.dll.config
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EF.ModelFirst\bin\Debug\NorthWind.Repositorios.SqlServer.EF.ModelFirst.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EF.ModelFirst\bin\Debug\NorthWind.Repositorios.SqlServer.EF.ModelFirst.pdb
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EF.ModelFirst\bin\Debug\EntityFramework.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EF.ModelFirst\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EF.ModelFirst\bin\Debug\EntityFramework.xml
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EF.ModelFirst\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EF.ModelFirst\obj\Debug\NorthWind.Repositorios.SqlServer.EF.ModelFirst.csprojResolveAssemblyReference.cache
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EF.ModelFirst\obj\Debug\NorthWind.Repositorios.SqlServer.EF.ModelFirst.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EF.ModelFirst\obj\Debug\NorthWind.Repositorios.SqlServer.EF.ModelFirst.pdb

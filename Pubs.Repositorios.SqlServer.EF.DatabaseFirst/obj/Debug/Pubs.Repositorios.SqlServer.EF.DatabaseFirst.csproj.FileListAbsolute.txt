@@ -1,0 +1,10 @@
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.DatabaseFirst\bin\Debug\Pubs.Repositorios.SqlServer.EF.DatabaseFirst.dll.config
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.DatabaseFirst\bin\Debug\Pubs.Repositorios.SqlServer.EF.DatabaseFirst.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.DatabaseFirst\bin\Debug\Pubs.Repositorios.SqlServer.EF.DatabaseFirst.pdb
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.DatabaseFirst\bin\Debug\EntityFramework.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.DatabaseFirst\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.DatabaseFirst\bin\Debug\EntityFramework.xml
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.DatabaseFirst\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.DatabaseFirst\obj\Debug\Pubs.Repositorios.SqlServer.EF.DatabaseFirst.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.DatabaseFirst\obj\Debug\Pubs.Repositorios.SqlServer.EF.DatabaseFirst.pdb
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.DatabaseFirst\obj\Debug\Pubs.Repositorios.SqlServer.EF.DatabaseFirst.csprojResolveAssemblyReference.cache

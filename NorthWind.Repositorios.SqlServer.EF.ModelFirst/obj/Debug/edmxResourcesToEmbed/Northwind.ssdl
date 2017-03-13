@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Northwind.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="NorthwindStoreContainer">
+    <EntitySet Name="Produto" EntityType="Northwind.Store.Produto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Categoria" EntityType="Northwind.Store.Categoria" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ProdutoCategoria" Association="Northwind.Store.ProdutoCategoria">
+      <End Role="Produto" EntitySet="Produto" />
+      <End Role="Categoria" EntitySet="Categoria" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Produto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Preco" Type="decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="Categoria_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="ProdutoCategoria">
+    <End Role="Produto" Type="Northwind.Store.Produto" Multiplicity="*" />
+    <End Role="Categoria" Type="Northwind.Store.Categoria" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Produto">
+        <PropertyRef Name="Categoria_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

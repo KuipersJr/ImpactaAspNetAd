@@ -1,0 +1,12 @@
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.CodeFirst\bin\Debug\Pubs.Repositorios.SqlServer.EF.CodeFirst.dll.config
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.CodeFirst\bin\Debug\Pubs.Repositorios.SqlServer.EF.CodeFirst.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.CodeFirst\bin\Debug\Pubs.Repositorios.SqlServer.EF.CodeFirst.pdb
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.CodeFirst\bin\Debug\EntityFramework.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.CodeFirst\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.CodeFirst\bin\Debug\Northwind.Dominio.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.CodeFirst\bin\Debug\Northwind.Dominio.pdb
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.CodeFirst\bin\Debug\EntityFramework.xml
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.CodeFirst\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.CodeFirst\obj\Debug\Pubs.Repositorios.SqlServer.EF.CodeFirst.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.CodeFirst\obj\Debug\Pubs.Repositorios.SqlServer.EF.CodeFirst.pdb
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Pubs.Repositorios.SqlServer.EF.CodeFirst\obj\Debug\Pubs.Repositorios.SqlServer.EF.CodeFirst.csprojResolveAssemblyReference.cache

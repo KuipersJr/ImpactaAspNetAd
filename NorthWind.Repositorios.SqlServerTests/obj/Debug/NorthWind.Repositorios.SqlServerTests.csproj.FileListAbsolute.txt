@@ -1,0 +1,11 @@
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServerTests\bin\Debug\NorthWind.Repositorios.SqlServerTests.dll.config
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServerTests\bin\Debug\NorthWind.Repositorios.SqlServerTests.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServerTests\bin\Debug\NorthWind.Repositorios.SqlServerTests.pdb
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServerTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServerTests\bin\Debug\Northwind.Dominio.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServerTests\bin\Debug\NorthWind.Repositorios.SqlServer.Ado.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServerTests\bin\Debug\Northwind.Dominio.pdb
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServerTests\bin\Debug\NorthWind.Repositorios.SqlServer.Ado.pdb
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServerTests\obj\Debug\NorthWind.Repositorios.SqlServerTests.csprojResolveAssemblyReference.cache
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServerTests\obj\Debug\NorthWind.Repositorios.SqlServerTests.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServerTests\obj\Debug\NorthWind.Repositorios.SqlServerTests.pdb

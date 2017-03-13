@@ -1,0 +1,15 @@
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EFTests\bin\Debug\NorthWind.Repositorios.SqlServer.EF.CodeFirst.Testes.dll.config
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EFTests\bin\Debug\NorthWind.Repositorios.SqlServer.EF.CodeFirst.Testes.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EFTests\bin\Debug\NorthWind.Repositorios.SqlServer.EF.CodeFirst.Testes.pdb
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EFTests\bin\Debug\EntityFramework.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EFTests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EFTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EFTests\bin\Debug\Northwind.Dominio.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EFTests\bin\Debug\NorthWind.Repositorios.SqlServer.EF.CodeFirst.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EFTests\bin\Debug\Northwind.Dominio.pdb
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EFTests\bin\Debug\NorthWind.Repositorios.SqlServer.EF.CodeFirst.pdb
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EFTests\bin\Debug\EntityFramework.xml
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EFTests\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EFTests\obj\Debug\NorthWind.Repositorios.SqlServer.EF.CodeFirst.Testes.csprojResolveAssemblyReference.cache
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EFTests\obj\Debug\NorthWind.Repositorios.SqlServer.EF.CodeFirst.Testes.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer.EFTests\obj\Debug\NorthWind.Repositorios.SqlServer.EF.CodeFirst.Testes.pdb

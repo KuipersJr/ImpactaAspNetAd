@@ -1,0 +1,1 @@
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Northwind.WeApi\obj\Debug\Northwind.WeApi.csprojResolveAssemblyReference.cache

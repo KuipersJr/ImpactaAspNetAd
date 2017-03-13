@@ -1,0 +1,12 @@
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\AdventureWorks.WcfService\bin\AdventureWorks.WcfService.dll.config
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\AdventureWorks.WcfService\bin\AdventureWorks.WcfService.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\AdventureWorks.WcfService\bin\AdventureWorks.WcfService.pdb
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\AdventureWorks.WcfService\bin\AdventureWorks.Repositorios.SqlServer.EF.DatabaseFirst.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\AdventureWorks.WcfService\bin\EntityFramework.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\AdventureWorks.WcfService\bin\EntityFramework.SqlServer.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\AdventureWorks.WcfService\bin\AdventureWorks.Repositorios.SqlServer.EF.DatabaseFirst.pdb
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\AdventureWorks.WcfService\bin\EntityFramework.xml
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\AdventureWorks.WcfService\bin\EntityFramework.SqlServer.xml
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\AdventureWorks.WcfService\obj\Debug\AdventureWorks.WcfService.csprojResolveAssemblyReference.cache
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\AdventureWorks.WcfService\obj\Debug\AdventureWorks.WcfService.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\AdventureWorks.WcfService\obj\Debug\AdventureWorks.WcfService.pdb

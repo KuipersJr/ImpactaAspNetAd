@@ -1,0 +1,5 @@
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Northwind.Dominio\bin\Debug\Northwind.Dominio.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Northwind.Dominio\bin\Debug\Northwind.Dominio.pdb
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Northwind.Dominio\obj\Debug\Northwind.Dominio.dll
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Northwind.Dominio\obj\Debug\Northwind.Dominio.pdb
+C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Northwind.Dominio\obj\Debug\Northwind.Dominio.csprojResolveAssemblyReference.cache
