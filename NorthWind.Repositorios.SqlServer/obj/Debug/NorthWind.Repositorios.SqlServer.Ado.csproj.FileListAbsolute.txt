@@ -1,7 +1,0 @@
-C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer\bin\Debug\NorthWind.Repositorios.SqlServer.Ado.dll
-C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer\bin\Debug\NorthWind.Repositorios.SqlServer.Ado.pdb
-C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer\bin\Debug\Northwind.Dominio.dll
-C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer\bin\Debug\Northwind.Dominio.pdb
-C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer\obj\Debug\NorthWind.Repositorios.SqlServer.Ado.csprojResolveAssemblyReference.cache
-C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer\obj\Debug\NorthWind.Repositorios.SqlServer.Ado.dll
-C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\NorthWind.Repositorios.SqlServer\obj\Debug\NorthWind.Repositorios.SqlServer.Ado.pdb

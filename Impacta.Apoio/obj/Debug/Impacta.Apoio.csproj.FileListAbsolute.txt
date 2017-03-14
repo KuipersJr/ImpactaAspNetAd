@@ -1,5 +1,0 @@
-C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Impacta.Apoio\bin\Debug\Impacta.Apoio.dll
-C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Impacta.Apoio\bin\Debug\Impacta.Apoio.pdb
-C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Impacta.Apoio\obj\Debug\Impacta.Apoio.dll
-C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Impacta.Apoio\obj\Debug\Impacta.Apoio.pdb
-C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\Impacta.Apoio\obj\Debug\Impacta.Apoio.csprojResolveAssemblyReference.cache

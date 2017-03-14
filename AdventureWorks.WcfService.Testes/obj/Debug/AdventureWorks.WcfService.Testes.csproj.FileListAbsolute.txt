@@ -1,7 +1,0 @@
-C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\AdventureWorks.WcfService.Testes\bin\Debug\AdventureWorks.WcfService.Testes.dll.config
-C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\AdventureWorks.WcfService.Testes\bin\Debug\AdventureWorks.WcfService.Testes.dll
-C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\AdventureWorks.WcfService.Testes\bin\Debug\AdventureWorks.WcfService.Testes.pdb
-C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\AdventureWorks.WcfService.Testes\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\AdventureWorks.WcfService.Testes\obj\Debug\AdventureWorks.WcfService.Testes.csprojResolveAssemblyReference.cache
-C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\AdventureWorks.WcfService.Testes\obj\Debug\AdventureWorks.WcfService.Testes.dll
-C:\Users\Vitor Avelino\Source\Repos\ImpactaAspNetAd\AdventureWorks.WcfService.Testes\obj\Debug\AdventureWorks.WcfService.Testes.pdb
