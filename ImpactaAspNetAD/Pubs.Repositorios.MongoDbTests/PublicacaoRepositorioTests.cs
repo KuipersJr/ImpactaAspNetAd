@@ -15,10 +15,10 @@ namespace Pubs.Repositorios.MongoDb.Tests
         {
             var publicacao = new Publicacao();
 
-            publicacao.Autor = "Vítor";
+            publicacao.Autor = new Autor { Nome = "Vítor Avelino" };
             publicacao.Texto = "Conteúdo da publicação";
             publicacao.Titulo = "Título da publicação";
-            publicacao.Comentarios.Add(new Comentario { Autor = "Fulano" });
+            publicacao.Comentarios.Add(new Comentario { Autor = new Autor { Nome = "Fulano" }, Texto = "Texto do comentário" });
 
             _repositorio.Inserir(publicacao);
         }
@@ -30,8 +30,6 @@ namespace Pubs.Repositorios.MongoDb.Tests
 
             foreach (var publicacao in publicacoes)
             {
-                Console.WriteLine(publicacao.DataPublicacao);
-                Console.WriteLine(publicacao.Comentarios[0].Id);
                 Console.WriteLine(publicacao.Id);
             }
         }
@@ -39,39 +37,39 @@ namespace Pubs.Repositorios.MongoDb.Tests
         [TestMethod]
         public void SelecionarPorIdTeste()
         {
-            var publicacao = _repositorio.Selecionar(new Guid("b25cdb3f-6ac0-40f1-927a-a2a84a5aad83"));
+            var publicacao = _repositorio.Selecionar(new Guid("9619d4e8-7c25-4a82-97b6-f12bcdca30c8"));
 
-            Console.WriteLine(publicacao.Id);
+            Assert.IsNotNull(publicacao);
         }
 
         [TestMethod]
         public void SelecionarPorLinqTeste()
         {
-            var publicacao = _repositorio.Selecionar(p => p.Autor == "avelino").First(); // Case sensitive.
+            var publicacao = _repositorio.Selecionar(p => p.Autor.Nome.Contains("Vítor")).First(); // Case sensitive.
 
-            Assert.AreEqual(publicacao.Autor, "avelino");
+            Assert.IsNotNull(publicacao);
         }
 
         [TestMethod]
         public void AtualizarTeste()
         {
-            var publicacao = _repositorio.Selecionar(p => p.Autor == "Vítor").First();
+            var publicacao = _repositorio.Selecionar(p => p.Autor.Nome.Contains("Vítor")).First();
 
-            publicacao.Autor = "Avelino";
+            publicacao.Autor.Nome = "Avelino Vítor";
 
             _repositorio.Atualizar(publicacao);
 
-            publicacao = _repositorio.Selecionar(p => p.Autor == "Avelino").First();
+            publicacao = _repositorio.Selecionar(p => p.Autor.Nome.Contains("Vítor")).First();
 
-            Assert.AreEqual(publicacao.Autor, "Avelino");
+            Assert.AreEqual(publicacao.Autor.Nome, "Avelino Vítor");
         }
 
         [TestMethod]
         public void ExcluirTeste()
         {
-            _repositorio.Excluir(new Guid("b25cdb3f-6ac0-40f1-927a-a2a84a5aad83"));
+            _repositorio.Excluir(new Guid("9619d4e8-7c25-4a82-97b6-f12bcdca30c8"));
 
-            var publicacao = _repositorio.Selecionar(new Guid("b25cdb3f-6ac0-40f1-927a-a2a84a5aad83"));
+            var publicacao = _repositorio.Selecionar(new Guid("9619d4e8-7c25-4a82-97b6-f12bcdca30c8"));
 
             Assert.IsNull(publicacao);
         }

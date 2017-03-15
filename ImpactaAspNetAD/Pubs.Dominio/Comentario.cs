@@ -9,7 +9,7 @@ namespace Pubs.Dominio
             DataPublicacao = DateTime.Now;
         }
 
-        public string Autor { get; set; }
+        public Autor Autor { get; set; }
         public string Texto { get; set; }
         public DateTime DataPublicacao { get; set; }
     }

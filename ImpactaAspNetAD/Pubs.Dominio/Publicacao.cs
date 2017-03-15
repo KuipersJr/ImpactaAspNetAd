@@ -11,10 +11,11 @@ namespace Pubs.Dominio
             DataPublicacao = DateTime.Now;
         }
 
-        public string Titulo { get; set; }
-        public DateTime DataPublicacao { get; set; }
-        public string Autor { get; set; }
-        public string Texto { get; set; }
+        public Autor Autor { get; set; }
         public List<Comentario> Comentarios { get; protected set; }
+
+        public string Titulo { get; set; }
+        public string Texto { get; set; }
+        public DateTime DataPublicacao { get; set; }
     }
 }
