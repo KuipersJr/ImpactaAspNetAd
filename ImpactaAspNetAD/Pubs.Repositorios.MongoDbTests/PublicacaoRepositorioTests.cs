@@ -21,6 +21,13 @@ namespace Pubs.Repositorios.MongoDb.Tests
             publicacao.Comentarios.Add(new Comentario { Autor = new Autor { Nome = "Fulano" }, Texto = "Texto do comentário" });
 
             _repositorio.Inserir(publicacao);
+
+            /*
+             C:\Program Files\MongoDB\Server\3.4\bin\mongo.exe
+             use Pubs
+             db.getCollectionNames()
+             db.Publicacao.find()                         
+             */
         }
 
         [TestMethod]
@@ -62,6 +69,12 @@ namespace Pubs.Repositorios.MongoDb.Tests
             publicacao = _repositorio.Selecionar(p => p.Autor.Nome.Contains("Vítor")).First();
 
             Assert.AreEqual(publicacao.Autor.Nome, "Avelino Vítor");
+
+            /*
+             db.Publicacao.find({"Titulo": "Título alterado"})  
+             db.Publicacao.find({"Autor.Nome": "Avelino Vítor"})             
+             */
+            //db.Publicacao.find({ "Autor.Nome": /.* Vítor.*/ i})
         }
 
         [TestMethod]

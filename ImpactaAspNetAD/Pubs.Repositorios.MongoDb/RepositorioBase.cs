@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 using System.Linq.Expressions;
 using System.Configuration;
+using MongoDB.Bson;
 
 namespace Pubs.Repositorios.MongoDb
 {
@@ -28,7 +29,7 @@ namespace Pubs.Repositorios.MongoDb
 
         public List<T> Selecionar()
         {
-            return _colecao.AsQueryable().ToList();
+            return _colecao.Find(new BsonDocument()).ToList();
         }
 
         public T Selecionar(Guid guid)
