@@ -86,6 +86,8 @@ namespace Northwind.WebApi.Controllers
 
             db.Entry(produto).State = EntityState.Modified;
 
+            produto.Categoria = db.Categoria.Single(c => c.Id == produto.Categoria.Id);
+
             try
             {
                 db.SaveChanges();

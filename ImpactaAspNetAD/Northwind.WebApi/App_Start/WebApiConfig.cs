@@ -22,9 +22,9 @@ namespace Northwind.WebApi
             );
 
             config.Routes.MapHttpRoute(
-                name: "GetByNameActions",
-                routeTemplate: "api/{controller}/{action}/{nome}",
-                defaults: new { action = "get", nome = RouteParameter.Optional }
+                name: "GetByNameRoute",
+                routeTemplate: "api/{controller}/{action}/{nome}"/*,
+                defaults: new { action = "get", nome = RouteParameter.Optional }*/
             );
         }
     }

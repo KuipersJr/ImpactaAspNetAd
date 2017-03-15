@@ -14,9 +14,9 @@ namespace Northwind.WebApi.ViewModels
         }
 
         public int Id { get; set; }
+        public CategoriaViewModel Categoria { get; set; }
+
         public string Nome { get; set; }
         public decimal Preco { get; set; }
-
-        public CategoriaViewModel Categoria { get; set; }
     }
 }
