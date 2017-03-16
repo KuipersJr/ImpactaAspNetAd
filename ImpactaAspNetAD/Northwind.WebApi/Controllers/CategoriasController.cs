@@ -16,18 +16,23 @@ namespace Northwind.WebApi.Controllers
     {
         private NorthwindContainer db = new NorthwindContainer();
 
+        public CategoriasController()
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+        }
+
         // GET: api/Categorias
-        //public IQueryable<Categoria> GetCategoria()
-        //{
-        //    return db.Categoria;
-        //}
+        public IQueryable<Categoria> GetCategoria()
+        {
+            return db.Categoria;
+        }
 
         // Mencionar a relação entre CRUD e os verbos do HTTP.
 
-        public IQueryable<CategoriaViewModel> Get()
-        {
-            return db.Categoria.Select(c => new CategoriaViewModel { Id = c.Id, Nome = c.Nome });
-        }
+        //public IQueryable<CategoriaViewModel> Get()
+        //{
+        //    return db.Categoria.Select(c => new CategoriaViewModel { Id = c.Id, Nome = c.Nome });
+        //}
 
         // GET: api/Categorias/5
         [ResponseType(typeof(Categoria))]

@@ -16,58 +16,64 @@ namespace Northwind.WebApi.Controllers
     {
         private NorthwindContainer db = new NorthwindContainer();
 
+        public ProdutosController()
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+        }
+
         // GET: api/Produtos
         public IQueryable<Produto> GetProdutos()
         {
-            return db.Produto;
+            return db.Produto.Include(p => p.Categoria);
         }
 
         // GET: api/Produtos/5
-        //[ResponseType(typeof(Produto))]
-        //public IHttpActionResult GetProduto(int id)
-        //{
-        //    Produto produto = db.Produto.Find(id);
-        //    if (produto == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return Ok(produto);
-        //}
-
-        /// <summary>
-        /// Descrição
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [ResponseType(typeof(ProdutoViewModel))]
+        [ResponseType(typeof(Produto))]
         public IHttpActionResult GetProduto(int id)
         {
-            var produto = db.Produto.Find(id);
+            var produto = db.Produto.Include(p => p.Categoria).SingleOrDefault(p => p.Id == id);
 
             if (produto == null)
             {
                 return NotFound();
             }
 
-            return Ok(new ProdutoViewModel(produto));
+            return Ok(produto);
         }
+
+        /// <summary>
+        /// Descrição
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        //[ResponseType(typeof(ProdutoViewModel))]
+        //public IHttpActionResult GetProduto(int id)
+        //{
+        //    var produto = db.Produto.Find(id);
+
+        //    if (produto == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return Ok(new ProdutoViewModel(produto));
+        //}
 
         /// <summary>
         /// Pode ser chamada assim também: api/Produtos?nome=caneta
         /// </summary>
         /// <param name="nome"></param>
         /// <returns></returns>
-        [ResponseType(typeof(List<ProdutoViewModel>))]
+        [ResponseType(typeof(List<Produto>))]
         public IHttpActionResult GetByName(string nome)
         {
-            var produtos = db.Produto.Where(p => p.Nome.Contains(nome)).ToList();
+            var produtos = db.Produto.Include(p => p.Categoria).Where(p => p.Nome.Contains(nome)).ToList();
 
-            var produtosViewModel = new List<ProdutoViewModel>();
-
-            produtos.ForEach(p => produtosViewModel.Add(new ProdutoViewModel(p)));
-
-            return Ok(produtosViewModel);
+            return Ok(produtos);
+            
+            //var produtosViewModel = new List<ProdutoViewModel>();
+            //produtos.ForEach(p => produtosViewModel.Add(new ProdutoViewModel(p)));
+            //return Ok(produtosViewModel);
         }
 
         // PUT: api/Produtos/5
