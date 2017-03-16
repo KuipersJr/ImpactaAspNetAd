@@ -1,6 +1,7 @@
 ﻿using AdventureWorks.Repositorios.SqlServer.EF.DatabaseFirst;
 using System.Collections.Generic;
 using System.Linq;
+//using System.Data.Entity;
 
 namespace AdventureWorks.WcfService
 {
@@ -13,6 +14,19 @@ namespace AdventureWorks.WcfService
             using (var contexto = new AdventureWorks2012Entities())
             {
                 return contexto.Products.SingleOrDefault(p => p.ProductID == id);
+
+                //contexto.Configuration.ProxyCreationEnabled = false;
+                //var produto = contexto.Products.Include(p => p.ProductModel).SingleOrDefault(p => p.ProductID == id);
+
+                /*
+                namespace AdventureWorks.Repositorios.DbFirst
+                {
+                    [DataContract(IsReference = true)]
+                    public partial class ProductModel
+                    {
+                        [DataMember]
+                        public string Name { get; set; }             
+                 */
             }
         }
 
