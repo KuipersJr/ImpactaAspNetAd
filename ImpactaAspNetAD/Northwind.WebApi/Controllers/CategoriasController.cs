@@ -22,6 +22,8 @@ namespace Northwind.WebApi.Controllers
         //    return db.Categoria;
         //}
 
+        // Mencionar a relação entre CRUD e os verbos do HTTP.
+
         public IQueryable<CategoriaViewModel> Get()
         {
             return db.Categoria.Select(c => new CategoriaViewModel { Id = c.Id, Nome = c.Nome });
