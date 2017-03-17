@@ -8,6 +8,7 @@ using System.Web.Http.Description;
 using NorthWind.Repositorios.SqlServer.EF.ModelFirst;
 using Northwind.WebApi.ViewModels;
 using System.Web.Http.Cors;
+using System.Collections.Generic;
 
 namespace Northwind.WebApi.Controllers
 {
@@ -32,6 +33,11 @@ namespace Northwind.WebApi.Controllers
         //public IQueryable<CategoriaViewModel> Get()
         //{
         //    return db.Categoria.Select(c => new CategoriaViewModel { Id = c.Id, Nome = c.Nome });
+        //}
+
+        //public async Task<List<Categoria>> GetProdutos()
+        //{
+        //    return await db.Categoria.ToListAsync();
         //}
 
         // GET: api/Categorias/5

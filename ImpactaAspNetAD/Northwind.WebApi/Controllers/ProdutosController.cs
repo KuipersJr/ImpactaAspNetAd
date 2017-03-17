@@ -27,11 +27,6 @@ namespace Northwind.WebApi.Controllers
             return db.Produto.Include(p => p.Categoria);
         }
 
-        //public async Task<List<Produto>> GetProdutos()
-        //{
-        //    return await db.Produtos.ToListAsync();
-        //}
-
         // GET: api/Produtos/5
         [ResponseType(typeof(Produto))]
         public IHttpActionResult GetProduto(int id)
