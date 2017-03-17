@@ -16,10 +16,10 @@ namespace Northwind.WebApi.Controllers
     {
         private NorthwindContainer db = new NorthwindContainer();
 
-        public CategoriasController()
-        {
-            db.Configuration.ProxyCreationEnabled = false;
-        }
+        //public CategoriasController()
+        //{
+        //    db.Configuration.ProxyCreationEnabled = false;
+        //}
 
         // GET: api/Categorias
         public IQueryable<Categoria> GetCategoria()
