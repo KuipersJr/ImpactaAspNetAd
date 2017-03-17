@@ -16,16 +16,21 @@ namespace Northwind.WebApi.Controllers
     {
         private NorthwindContainer db = new NorthwindContainer();
 
-        public ProdutosController()
-        {
-            db.Configuration.ProxyCreationEnabled = false;
-        }
+        //public ProdutosController()
+        //{
+        //    db.Configuration.ProxyCreationEnabled = false;
+        //}
 
         // GET: api/Produtos
         public IQueryable<Produto> GetProdutos()
         {
             return db.Produto.Include(p => p.Categoria);
         }
+
+        //public async Task<List<Produto>> GetProdutos()
+        //{
+        //    return await db.Produtos.ToListAsync();
+        //}
 
         // GET: api/Produtos/5
         [ResponseType(typeof(Produto))]
