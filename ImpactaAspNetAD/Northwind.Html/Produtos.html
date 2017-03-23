@@ -45,6 +45,18 @@
                 </div>
             </div>
         </form>
+        <table class="table" id="produtosTable">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Categoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr></tr>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
@@ -55,6 +67,7 @@
     $(document).ready(function () {
         vincularSubmeter();
         carregarCategorias();
+        carregarProdutos();
     });
 
     function vincularSubmeter() {
@@ -105,5 +118,29 @@
                 }
             }
         });
+    }
+
+    function carregarProdutos() {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost/Northwind.WebApi/api/Produtos",
+        })
+        .success(function (produtos) {
+            $("#produtosTable > tbody:last-child").append(obterProdutosTr(produtos));
+        })
+        .fail(function (jqXHR, textStatus, errorThrown) {
+            console.log(errorThrown);
+            alert("Erro ao carregar os produtos.");
+        });
+    }
+
+    function obterProdutosTr(produtos) {
+        var trs = "";
+
+        $(produtos).each(function (indice, produto) {
+            trs += "<tr><td>" + produto.Nome + "</td><td>" + produto.Preco + "</td><td>" + produto.Categoria.Nome + "</td></tr>";
+        })
+
+        return trs;
     }
 </script>
