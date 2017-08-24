@@ -24,7 +24,7 @@
                         <asp:ListItem Text="Selecione uma categoria" Value="0" />
                     </asp:DropDownList>
                     <asp:ObjectDataSource ID="categoriasObjectDataSource" runat="server" 
-                        TypeName="NorthWind.Repositorios.SqlServer.CategoriaRepositorio"
+                        TypeName="NorthWind.Repositorios.SqlServer.Ado.CategoriaRepositorio"
                         SelectMethod="Selecionar"></asp:ObjectDataSource>
                 </asp:View>
                 <asp:View runat="server" ID="fornecedorView">
@@ -33,7 +33,7 @@
                         DataValueField="SupplierId">
                         <asp:ListItem Text="Selecione um fornecedor" Value="0" />
                     </asp:DropDownList>
-                    <asp:ObjectDataSource ID="fornecedorObjectDataSource" runat="server" TypeName="NorthWind.Repositorios.SqlServer.FornecedorRepositorio"
+                    <asp:ObjectDataSource ID="fornecedorObjectDataSource" runat="server" TypeName="NorthWind.Repositorios.SqlServer.Ado.FornecedorRepositorio"
                         SelectMethod="Selecionar"></asp:ObjectDataSource>
                 </asp:View>
             </asp:MultiView>
@@ -55,12 +55,12 @@
                 <SortedAscendingHeaderStyle CssClass="sortasc" />
                 <SortedDescendingHeaderStyle CssClass="sortdesc" />
             </asp:GridView>
-            <asp:ObjectDataSource ID="produtosPorCategoriaObjectDataSource" TypeName="NorthWind.Repositorios.SqlServer.ProdutoRepositorio" SelectMethod="ObterPorCategoria" runat="server">
+            <asp:ObjectDataSource ID="produtosPorCategoriaObjectDataSource" TypeName="NorthWind.Repositorios.SqlServer.Ado.ProdutoRepositorio" SelectMethod="ObterPorCategoria" runat="server">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="categoriasDropDownList" PropertyName="SelectedValue" Name="categoriaId" Type="Int32"></asp:ControlParameter>
                 </SelectParameters>
             </asp:ObjectDataSource>
-            <asp:ObjectDataSource ID="produtosPorFornecedorObjectDataSource" TypeName="NorthWind.Repositorios.SqlServer.ProdutoRepositorio" SelectMethod="ObterPorFornecedor" runat="server">
+            <asp:ObjectDataSource ID="produtosPorFornecedorObjectDataSource" TypeName="NorthWind.Repositorios.SqlServer.Ado.ProdutoRepositorio" SelectMethod="ObterPorFornecedor" runat="server">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="fornecedoresDropDownList" PropertyName="SelectedValue" Name="fornecedorId" Type="Int32"></asp:ControlParameter>
                 </SelectParameters>

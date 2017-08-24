@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace NorthWind.Repositorios.SqlServer
+namespace NorthWind.Repositorios.SqlServer.Ado
 {
     public class FornecedorRepositorio : RepositorioDataTableBase
     {

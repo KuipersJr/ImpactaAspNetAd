@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NorthWind.Repositorios.SqlServer.Ado;
 
 namespace NorthWind.Repositorios.SqlServer.Tests
 {

@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace NorthWind.Repositorios.SqlServer
+namespace NorthWind.Repositorios.SqlServer.Ado
 {
     public class CategoriaRepositorio : RepositorioDataTableBase
     {
