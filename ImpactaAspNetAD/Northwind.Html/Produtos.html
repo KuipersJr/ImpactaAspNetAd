@@ -51,11 +51,10 @@
                     <th>Nome</th>
                     <th>Preço</th>
                     <th>Categoria</th>
+                    <th></th>
                 </tr>
             </thead>
-            <tbody>
-                <tr></tr>
-            </tbody>
+            <tbody></tbody>
         </table>
     </div>
 </body>
@@ -64,8 +63,12 @@
 <script src="Scripts/bootstrap.min.js"></script>
 <script type="text/javascript" src="Scripts/select2.min.js"></script>
 <script type="text/javascript">
+    var urlApiProdutos = "http://localhost/Northwind.WebApi/api/Produtos";
+    var urlApiCategorias = "http://localhost/Northwind.WebApi/api/Categorias";
+
     $(document).ready(function () {
         vincularSubmeter();
+        vincularEditar();
         carregarCategorias();
         carregarProdutos();
     });
@@ -123,10 +126,11 @@
     function carregarProdutos() {
         $.ajax({
             type: "GET",
-            url: "http://localhost/Northwind.WebApi/api/Produtos",
+            url: urlApiProdutos
         })
         .success(function (produtos) {
-            $("#produtosTable > tbody:last-child").append(obterProdutosTr(produtos));
+            //$("#produtosTable > tbody:last-child").append(obterProdutosTr(produtos));
+            $("#produtosTable > tbody").append(obterProdutosTr(produtos));
         })
         .fail(function (jqXHR, textStatus, errorThrown) {
             console.log(errorThrown);
@@ -138,9 +142,23 @@
         var trs = "";
 
         $(produtos).each(function (indice, produto) {
-            trs += "<tr><td>" + produto.Nome + "</td><td>" + produto.Preco + "</td><td>" + produto.Categoria.Nome + "</td></tr>";
+            trs += "<tr>";
+            trs += "<td>" + produto.Nome + "</td><td>" + produto.Preco + "</td><td>" + produto.Categoria.Nome + "</td>";
+            trs += obterBotoesAcao(produto.Id);
+            trs += "</tr>";
         })
 
         return trs;
+    }
+
+    function obterBotoesAcao(produtoId) {
+        return "<td>" +
+            "<a class='glyphicon glyphicon-edit' href='/" + urlApiProdutos + "/Edit/" + produtoId + "' title='Editar'></a> | " +
+            "<a class='glyphicon glyphicon-remove' href='/" + urlApiProdutos + "/Delete/" + produtoId + "' title='Excluir'></a>" +
+            "</td>"
+    }
+
+    function vincularEditar() {
+        $(document).on("click", "#produtosTable > tbody", )
     }
 </script>
