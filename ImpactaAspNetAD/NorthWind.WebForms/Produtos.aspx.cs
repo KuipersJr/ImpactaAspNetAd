@@ -1,5 +1,4 @@
-﻿using NorthWind.Repositorios.SqlServer;
-using System;
+﻿using System;
 
 namespace NorthWind.WebForms
 {
@@ -17,10 +16,11 @@ namespace NorthWind.WebForms
 
             if (criterioPesquisaMultiView.ActiveViewIndex == 1 && fornecedoresDropDownList.Items.Count == 1)
             {
-                fornecedoresDropDownList.DataSource = new FornecedorRepositorio().Selecionar();
-                fornecedoresDropDownList.DataValueField = "SupplierId";
-                fornecedoresDropDownList.DataTextField = "CompanyName";
-                fornecedoresDropDownList.DataBind();
+                fornecedoresDropDownList.DataSourceID = "fornecedorObjectDataSource";
+                //fornecedoresDropDownList.DataSource = new FornecedorRepositorio().Selecionar();
+                //fornecedoresDropDownList.DataValueField = "SupplierId";
+                //fornecedoresDropDownList.DataTextField = "CompanyName";
+                //fornecedoresDropDownList.DataBind();
             }       
         }
     }

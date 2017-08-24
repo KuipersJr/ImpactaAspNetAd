@@ -34,7 +34,7 @@
                         <asp:ListItem Text="Selecione um fornecedor" Value="0" />
                     </asp:DropDownList>
                     <asp:ObjectDataSource ID="fornecedorObjectDataSource" runat="server" TypeName="NorthWind.Repositorios.SqlServer.FornecedorRepositorio"
-                        SelectMethod="Obter"></asp:ObjectDataSource>
+                        SelectMethod="Selecionar"></asp:ObjectDataSource>
                 </asp:View>
             </asp:MultiView>
         </div>
