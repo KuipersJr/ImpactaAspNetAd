@@ -46,7 +46,7 @@ namespace NorthWind.Repositorios.SqlServer
         {
             const string nomeProcedure = "TransportadoraSelecionar";
 
-            return base.ExecuteReader<Transportadora>(nomeProcedure, Mapear, new SqlParameter("id", id)).FirstOrDefault();
+            return base.ExecuteReader<Transportadora>(nomeProcedure, Mapear, new SqlParameter("shipperId", id)).FirstOrDefault();
 
             //return base.ExecuteReader(nomeProcedure, new SqlParameter("id", id)).FirstOrDefault();
 
