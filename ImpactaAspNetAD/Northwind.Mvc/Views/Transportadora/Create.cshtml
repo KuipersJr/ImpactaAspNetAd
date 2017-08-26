@@ -1,4 +1,4 @@
-﻿@model Northwind.Dominio.Transportadora
+﻿@model Northwind.Mvc.Ado.ViewModels.TransportadoraViewModel
 
 @{
     ViewBag.Title = "Create";
@@ -47,6 +47,6 @@
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/inputmask")
     <script type="text/javascript">
-        $(function () { $("#Telefone").inputmask("mask", { "mask": "(99) 9999-9999" }); });
+        $(function () { $("#Telefone").inputmask("mask", { "mask": "(99) [9]9999-9999" }); });
     </script>
 }
