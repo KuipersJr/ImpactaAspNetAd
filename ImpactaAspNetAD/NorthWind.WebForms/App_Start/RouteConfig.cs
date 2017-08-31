@@ -9,7 +9,6 @@ namespace NorthWind.WebForms
         {
             var settings = new FriendlyUrlSettings();
             settings.AutoRedirectMode = RedirectMode.Permanent;
-
             routes.EnableFriendlyUrls(settings);
         }
     }
