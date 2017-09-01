@@ -11,6 +11,8 @@ namespace NorthWind.Repositorios.SqlServer
     {
         public List<Transportadora> Selecionar()
         {
+            //throw new Exception("Teste");
+
             const string nomeProcedure = "TransportadoraSelecionar";
 
             return base.ExecuteReader<Transportadora>(nomeProcedure, Mapear, null);

@@ -106,6 +106,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ShipperController.cs" />
     <Compile Include="Controllers\TransportadoraController.cs" />
+    <Compile Include="Filtros\LogErrorAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
