@@ -122,7 +122,7 @@ namespace NorthWind.Repositorios.SqlServer
         public void Atualizar(Transportadora transportadora)
         {
             var parametros = Mapear(transportadora);
-            parametros.Add(new SqlParameter("id", transportadora.Id));
+            parametros.Add(new SqlParameter("@shipperId", transportadora.Id));
 
             base.ExecuteNonQuery("TransportadoraAtualizar", parametros.ToArray());
         }

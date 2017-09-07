@@ -22,8 +22,8 @@ namespace NorthWind.Repositorios.SqlServer.Tests
             }
         }
 
-        [TestMethod()]
-        public void InserirTest()
+        //[TestMethod()]
+        private int InserirTest()
         {
             var transportadora = new Transportadora();
             transportadora.Nome = "Correios";
@@ -34,38 +34,44 @@ namespace NorthWind.Repositorios.SqlServer.Tests
             _transportadoraRepositorio.Inserir(transportadora);
 
             Assert.IsFalse(transportadora.Id == 0);
-            
+
             var transportadoras = _transportadoraRepositorio.Selecionar();
 
             Assert.IsTrue(transportadoras.Any(t => t.Nome == "Correios"));
+
+            return transportadora.Id;
+        }
+
+        //[TestMethod()]
+        private void AtualizarTest(int id)
+        {
+            var transportadora = _transportadoraRepositorio.Selecionar(id);
+
+            transportadora.Nome = "Correios Editado";
+
+            _transportadoraRepositorio.Atualizar(transportadora);
+
+            transportadora = _transportadoraRepositorio.Selecionar(id);
+
+            Assert.IsTrue(transportadora.Nome == "Correios Editado");
+        }
+
+        //[TestMethod()]
+        private void ExcluirTest(int id)
+        {
+            _transportadoraRepositorio.Excluir(id);
+
+            var transportadora = _transportadoraRepositorio.Selecionar(id);
+
+            Assert.IsNull(transportadora);
         }
 
         [TestMethod()]
-        public void AtualizarTest()
+        public void CudTeste()
         {
-            var transportadoras = _transportadoraRepositorio.Selecionar();
-            var correios = transportadoras.Single(t => t.Nome == "Correios");
-
-            correios.Nome = "Correios Editado";
-
-            _transportadoraRepositorio.Atualizar(correios);
-
-            transportadoras = _transportadoraRepositorio.Selecionar();
-
-            Assert.IsTrue(transportadoras.Any(t => t.Nome == "Correios Editado"));
-        }
-
-        [TestMethod()]
-        public void ExcluirTest()
-        {
-            var transportadoras = _transportadoraRepositorio.Selecionar();
-            var correios = transportadoras.Single(t => t.Nome == "Correios Editado");
-
-            _transportadoraRepositorio.Excluir(correios.Id);
-
-            transportadoras = _transportadoraRepositorio.Selecionar();
-
-            Assert.IsFalse(transportadoras.Any(t => t.Nome == "Correios Editado"));
+            var id = InserirTest();
+            AtualizarTest(id);
+            ExcluirTest(id);
         }
 
         [TestMethod()]
