@@ -57,13 +57,13 @@ namespace NorthWind.Repositorios.SqlServer.EF.Tests
             //caneta.Categoria = _contexto.Categorias.Single((Categoria c) => c.Nome == "Papelaria");
             caneta.Categoria = _contexto.Categorias.Single(c => c.Nome == "Papelaria");
 
-            _contexto.Produtos.AddOrUpdate(p => p.Nome, caneta);
+            _contexto.Produtos.Add(caneta);
 
             _contexto.SaveChanges();
         }
 
         [TestMethod]
-        public void InserirProdutoComCategoriaTeste()
+        public void InserirProdutoComNovaCategoriaTeste()
         {
             var barbeador = new Produto();
             barbeador.Nome = "Barbeador";
@@ -71,7 +71,7 @@ namespace NorthWind.Repositorios.SqlServer.EF.Tests
             barbeador.Estoque = 46;
             barbeador.Categoria = new Categoria { Nome = "Perfumaria" };
 
-            _contexto.Produtos.AddOrUpdate(p => p.Nome, barbeador);
+            _contexto.Produtos.Add(barbeador);
 
             _contexto.SaveChanges();
         }
@@ -79,29 +79,27 @@ namespace NorthWind.Repositorios.SqlServer.EF.Tests
         [TestMethod]
         public void EditarProduto()
         {
-            var grampeador = _contexto.Produtos.Single(p => p.Nome == "Grampeador");
+            var caneta = _contexto.Produtos.Single(p => p.Nome == "Caneta");
 
-            grampeador.Preco = 0;
-            grampeador.Descontinuado = true;
-            grampeador.Categoria = _contexto.Categorias.Single(c => c.Nome == "Informática");
+            caneta.Preco = 10;
 
             _contexto.SaveChanges();
 
-            grampeador = _contexto.Produtos.Single(p => p.Nome == "Grampeador");
+            caneta = _contexto.Produtos.Single(p => p.Nome == "Caneta");
 
-            Assert.IsTrue(grampeador.Descontinuado);
+            Assert.IsTrue(caneta.Preco == 10);
         }
 
         [TestMethod]
-        public void ExcluirProdutoDeInformatica()
+        public void ExcluirProduto()
         {
-            var papelaria = _contexto.Produtos.Where(p => p.Categoria.Id == 2).ToList();
+            var caneta = _contexto.Produtos.Single(p => p.Nome == "Caneta");
 
-            _contexto.Produtos.RemoveRange(papelaria);
+            _contexto.Produtos.Remove(caneta);
 
             _contexto.SaveChanges();
 
-            Assert.IsFalse(_contexto.Produtos.Any(p => p.Categoria.Id == 2));
+            Assert.IsFalse(_contexto.Produtos.Any(p => p.Nome == "Caneta"));
         }
 
         [TestMethod]
@@ -113,37 +111,34 @@ namespace NorthWind.Repositorios.SqlServer.EF.Tests
         }
 
         [TestMethod]
-        public void ObterProdutosDePapelaria()
+        public void LazyLoadDesligadoTeste()
         {
-            var produtosDePapelaria = _contexto.Categorias.Where(c => c.Nome == "Papelaria").SelectMany(c => c.Produtos).ToList();
-
-            Assert.AreNotEqual(produtosDePapelaria.Count, 0);
+            var grampeador = _contexto.Produtos.Single(p => p.Nome == "Grampeador");
+            Assert.IsNull(grampeador.Categoria);
         }
 
         [TestMethod]
-        public void LazyLoadTeste()
+        public void LazyLoadLigadoVirtualTeste()
         {
-            // 1o - rodar assim.
-            // 2o - colocar o virtual nas properties e inverter os comentários.
-            // 3o - demonstrar que são feitas duas queries.
+            // 1o - colocar o virtual nas properties.
+            // 2o - demonstrar que são feitas duas queries.
 
             var grampeador = _contexto.Produtos.Single(p => p.Nome == "Grampeador");
-            System.Console.WriteLine(grampeador.Categoria.Nome);
-            //Assert.IsNull(grampeador.Categoria);
-
-            var papelaria = _contexto.Categorias.First();
-            System.Console.WriteLine(papelaria.Produtos[0].Nome);
-            //Assert.IsNull(papelaria.Produtos);
+            Assert.IsTrue(grampeador.Categoria.Nome == "Papelaria");
         }
 
         [TestMethod]
         public void IncludeTeste()
         {
+            // 1o - remover o virtual das properties.
+            // 2o - demonstrar que é feita uma query, com join.
+
             var grampeador = _contexto.Produtos.Single(p => p.Nome == "Grampeador");
             Assert.IsNull(grampeador.Categoria);
 
+            //using System.Data.Entity para usar o Include com lambda.
             grampeador = _contexto.Produtos.Include(p => p.Categoria).Single(p => p.Nome == "Grampeador");
-            //System.Console.WriteLine(grampeador.Categoria.Nome);
+            Assert.IsTrue(grampeador.Categoria.Nome == "Papelaria");
         }
 
         [TestMethod]
