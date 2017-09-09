@@ -5,6 +5,7 @@ using System.Linq;
 using NorthWind.Repositorios.SqlServer.EF.Migrations;
 using System.Data.Entity.Migrations;
 using System.Diagnostics;
+using System;
 
 namespace NorthWind.Repositorios.SqlServer.EF.Tests
 {
@@ -19,7 +20,13 @@ namespace NorthWind.Repositorios.SqlServer.EF.Tests
             // 3o. Roda uma vez apenas para essa classe, independentemente da quantidade de testes que ela tenha.
             //_contexto.Database.Initialize(force: true);
 
-            _contexto.Database.Log = q => Debug.WriteLine(q);
+            //_contexto.Database.Log = q => Debug.WriteLine(q);
+            _contexto.Database.Log = LogarQuery;
+        }
+
+        private static void LogarQuery(string query)
+        {
+            Debug.WriteLine(query);
         }
 
         [TestMethod()]
