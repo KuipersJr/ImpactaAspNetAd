@@ -1,5 +1,4 @@
-﻿using Northwind.Dominio;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
@@ -9,32 +8,17 @@ namespace Northwind.Mvc.EF.ViewModels
     {
         public ProdutoViewModel()
         {
-
-        }
-
-        public ProdutoViewModel(List<Categoria> categorias, Produto produto = null)
-        {
             Categorias = new List<SelectListItem>();
-
-            categorias.ForEach(c => Categorias.Add(new SelectListItem { Text = c.Nome, Value = c.Id.ToString() }));
-
-            if (produto != null)
-            {
-                Id = produto.Id;
-                CategoriaId = produto.Categoria.Id;
-                PossuiImagem = produto.Imagem != null;
-                Nome = produto.Nome;
-                Preco = produto.Preco;
-                Estoque = produto.Estoque;
-                Descontinuado = produto.Descontinuado;
-            }
-        }
+        } 
 
         public int Id { get; set; }
 
+        [Display(Name = "Categoria")]
+        public string CategoriaNome { get; internal set; }
+
         [Required]
         [Display(Name = "Categoria")]
-        public int CategoriaId { get; set; }
+        public int? CategoriaId { get; set; }
 
         public bool PossuiImagem { get; set; }
 

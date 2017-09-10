@@ -7,6 +7,7 @@ using Northwind.Mvc.EF.ViewModels;
 using System.Web;
 using System.IO;
 using System;
+using System.Collections.Generic;
 
 namespace Northwind.Mvc.EF.Controllers
 {
@@ -17,7 +18,14 @@ namespace Northwind.Mvc.EF.Controllers
         // GET: Produto
         public ActionResult Index()
         {
-            return View(db.Produtos.OrderBy(p => p.Nome).ToList());
+            var produtosViewModel = new List<ProdutoViewModel>();
+
+            foreach (var produto in db.Produtos.ToList())
+            {
+                produtosViewModel.Add(Mapear(produto));
+            }
+
+            return View(produtosViewModel);
         }
 
         [ActionName("ProdutosPorCategoria")]
@@ -44,7 +52,7 @@ namespace Northwind.Mvc.EF.Controllers
         // GET: Produto/Create
         public ActionResult Create()
         {
-            return View(new ProdutoViewModel(db.Categorias.ToList()));
+            return View(Mapear(new Produto(), db.Categorias.ToList()));
         }
 
         // POST: Produto/Create
@@ -70,7 +78,7 @@ namespace Northwind.Mvc.EF.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(new ProdutoViewModel(db.Categorias.ToList(), produto));
+            return View(Mapear(produto, db.Categorias.ToList()));
         }
 
         // ToDo: implementar Automapper.
@@ -114,7 +122,8 @@ namespace Northwind.Mvc.EF.Controllers
                 return HttpNotFound();
             }
 
-            return View(new ProdutoViewModel(db.Categorias.ToList(), produto));
+            //return View(new ProdutoViewModel(db.Categorias.ToList(), produto));
+            return View(Mapear(produto, db.Categorias.ToList()));
         }
 
         // POST: Produto/Edit/5
@@ -140,7 +149,8 @@ namespace Northwind.Mvc.EF.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(new ProdutoViewModel(db.Categorias.ToList(), produto));
+            //return View(new ProdutoViewModel(db.Categorias.ToList(), produto));
+            return View(Mapear(produto, db.Categorias.ToList()));
         }
 
         private void Mapear(ProdutoViewModel viewModel, Produto produto, HttpPostedFileBase imagemProduto)
@@ -204,5 +214,29 @@ namespace Northwind.Mvc.EF.Controllers
             }
             base.Dispose(disposing);
         }
+
+        private ProdutoViewModel Mapear(Produto produto, List<Categoria> categorias = null)
+        {
+            var viewModel = new ProdutoViewModel();
+
+            viewModel.CategoriaId = produto.Categoria?.Id;
+            viewModel.CategoriaNome = produto.Categoria?.Nome;
+
+            if (categorias != null)
+            {
+                foreach (var categoria in categorias)
+                {
+                    viewModel.Categorias.Add(new SelectListItem { Text = categoria.Nome, Value = categoria.Id.ToString() });
+                }
+            }
+
+            viewModel.Estoque = produto.Estoque;
+            viewModel.Id = produto.Id;
+            viewModel.Nome = produto.Nome;
+            viewModel.Preco = produto.Preco;
+
+            return viewModel;
+        }
+
     }
 }
