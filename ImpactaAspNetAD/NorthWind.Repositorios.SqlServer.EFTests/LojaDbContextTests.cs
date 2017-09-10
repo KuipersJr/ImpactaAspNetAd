@@ -133,11 +133,8 @@ namespace NorthWind.Repositorios.SqlServer.EF.Tests
             // 1o - remover o virtual das properties.
             // 2o - demonstrar que é feita uma query, com join.
 
-            var grampeador = _contexto.Produtos.Single(p => p.Nome == "Grampeador");
-            Assert.IsNull(grampeador.Categoria);
-
             //using System.Data.Entity para usar o Include com lambda.
-            grampeador = _contexto.Produtos.Include(p => p.Categoria).Single(p => p.Nome == "Grampeador");
+            var grampeador = _contexto.Produtos.Include(p => p.Categoria).Single(p => p.Nome == "Grampeador");
             Assert.IsTrue(grampeador.Categoria.Nome == "Papelaria");
         }
 
