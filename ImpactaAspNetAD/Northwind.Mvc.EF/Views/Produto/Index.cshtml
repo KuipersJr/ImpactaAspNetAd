@@ -64,7 +64,7 @@
 </table>
 @section Scripts {
     <script type="text/javascript">
-        $("table img").error(function () {
+        $("table img").on("error", function () {
             $(this).hide();
         });
     </script>
