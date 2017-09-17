@@ -2,7 +2,7 @@
 using NorthWind.ViewModels;
 using System.Configuration;
 
-namespace Northwind.Repositorios.WebApi.Tests
+namespace Loja.Repositorios.WebApi.Tests
 {
     [TestClass()]
     public class ProdutoRepositorioTests

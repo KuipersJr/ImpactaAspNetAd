@@ -1,4 +1,4 @@
-namespace Northwind.WebApi.Areas.HelpPage
+namespace Loja.WebApi.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

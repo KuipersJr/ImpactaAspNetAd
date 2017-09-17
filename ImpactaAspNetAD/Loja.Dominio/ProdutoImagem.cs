@@ -1,4 +1,4 @@
-﻿namespace Northwind.Dominio
+﻿namespace Loja.Dominio
 {
     public class ProdutoImagem
     {

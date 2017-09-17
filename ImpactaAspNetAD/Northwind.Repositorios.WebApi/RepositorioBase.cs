@@ -3,7 +3,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Northwind.Repositorios.WebApi
+namespace Loja.Repositorios.WebApi
 {
     public class RepositorioBase<T>
     {

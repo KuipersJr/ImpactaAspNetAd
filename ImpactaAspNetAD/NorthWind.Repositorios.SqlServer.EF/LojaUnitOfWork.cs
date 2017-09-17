@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NorthWind.Repositorios.SqlServer.EF
+namespace Loja.Repositorios.SqlServer.EF
 {
     public class LojaUnitOfWork : IDisposable
     {

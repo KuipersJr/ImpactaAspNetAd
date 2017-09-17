@@ -7,8 +7,8 @@
     <ProjectGuid>{0ABBA110-95A2-4C97-8C22-C3DB518C6C5C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NorthWind.Repositorios.SqlServer.EF.CodeFirst</RootNamespace>
-    <AssemblyName>NorthWind.Repositorios.SqlServer.EF.CodeFirst</AssemblyName>
+    <RootNamespace>Loja.Repositorios.SqlServer.EF.CodeFirst</RootNamespace>
+    <AssemblyName>Loja.Repositorios.SqlServer.EF.CodeFirst</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -112,12 +112,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Northwind.Dominio\Northwind.Dominio.csproj">
-      <Project>{2F2CF7FC-4F67-4BDC-9B7D-113051F55C6D}</Project>
-      <Name>Northwind.Dominio</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Migrations\201702212143339_Inicial.resx">
       <DependentUpon>201702212143339_Inicial.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +145,12 @@
     <EmbeddedResource Include="Migrations\201703101803376_MergeCascadeDeleteProduto.resx">
       <DependentUpon>201703101803376_MergeCascadeDeleteProduto.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Loja.Dominio\Loja.Dominio.csproj">
+      <Project>{1183dc45-92af-499d-a5c1-1627fd01e1d3}</Project>
+      <Name>Loja.Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

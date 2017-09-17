@@ -6,8 +6,8 @@
     <ProjectGuid>{59D6C8EA-8981-400F-BA9F-AECD18C1C494}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NorthWind.Repositorios.SqlServer.EF.CodeFirst.Testes</RootNamespace>
-    <AssemblyName>NorthWind.Repositorios.SqlServer.EF.CodeFirst.Testes</AssemblyName>
+    <RootNamespace>Loja.Repositorios.SqlServer.EF.CodeFirst.Testes</RootNamespace>
+    <AssemblyName>Loja.Repositorios.SqlServer.EF.CodeFirst.Testes</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -65,13 +65,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Northwind.Dominio\Northwind.Dominio.csproj">
-      <Project>{2F2CF7FC-4F67-4BDC-9B7D-113051F55C6D}</Project>
-      <Name>Northwind.Dominio</Name>
+    <ProjectReference Include="..\Loja.Dominio\Loja.Dominio.csproj">
+      <Project>{1183dc45-92af-499d-a5c1-1627fd01e1d3}</Project>
+      <Name>Loja.Dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NorthWind.Repositorios.SqlServer.EF\NorthWind.Repositorios.SqlServer.EF.CodeFirst.csproj">
+    <ProjectReference Include="..\NorthWind.Repositorios.SqlServer.EF\Loja.Repositorios.SqlServer.EF.CodeFirst.csproj">
       <Project>{0ABBA110-95A2-4C97-8C22-C3DB518C6C5C}</Project>
-      <Name>NorthWind.Repositorios.SqlServer.EF.CodeFirst</Name>
+      <Name>Loja.Repositorios.SqlServer.EF.CodeFirst</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

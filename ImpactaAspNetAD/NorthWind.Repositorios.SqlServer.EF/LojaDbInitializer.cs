@@ -1,9 +1,9 @@
-﻿using Northwind.Dominio;
+﻿using Loja.Dominio;
 using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NorthWind.Repositorios.SqlServer.EF
+namespace Loja.Repositorios.SqlServer.EF
 {
     public class LojaDbInitializer : DropCreateDatabaseIfModelChanges<LojaDbContext>
     {

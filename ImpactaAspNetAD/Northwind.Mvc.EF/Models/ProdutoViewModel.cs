@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
-namespace Northwind.Mvc.EF.ViewModels
+namespace Loja.Mvc.Models
 {
     public class ProdutoViewModel
     {

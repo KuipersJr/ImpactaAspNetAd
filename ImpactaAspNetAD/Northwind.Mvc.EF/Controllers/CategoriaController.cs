@@ -2,11 +2,11 @@
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using NorthWind.Repositorios.SqlServer.EF;
-using Northwind.Dominio;
+using Loja.Repositorios.SqlServer.EF;
+using Loja.Dominio;
 using System;
 
-namespace Northwind.Mvc.EF.Controllers
+namespace Loja.Mvc.EF.Controllers
 {
     public class CategoriaController : Controller
     {

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using NorthWind.Repositorios.SqlServer.EF.ModelFirst;
-using Northwind.WebApi.ViewModels;
+using Loja.WebApi.ViewModels;
 using System.Web.Http.Cors;
 using System.Collections.Generic;
 
-namespace Northwind.WebApi.Controllers
+namespace Loja.WebApi.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class CategoriasController : ApiController

@@ -1,15 +1,14 @@
 ﻿using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using NorthWind.Repositorios.SqlServer.EF;
-using Northwind.Dominio;
-using Northwind.Mvc.EF.ViewModels;
+using Loja.Dominio;
+using Loja.Mvc.Models;
 using System.Web;
 using System.IO;
-using System;
 using System.Collections.Generic;
+using Loja.Repositorios.SqlServer.EF;
 
-namespace Northwind.Mvc.EF.Controllers
+namespace Loja.Mvc.EF.Controllers
 {
     public class ProdutoController : Controller
     {

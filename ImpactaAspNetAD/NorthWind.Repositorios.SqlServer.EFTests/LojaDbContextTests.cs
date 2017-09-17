@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Northwind.Dominio;
+using Loja.Dominio;
 using System.Data.Entity;
 using System.Linq;
 using NorthWind.Repositorios.SqlServer.EF.Migrations;
@@ -7,7 +7,7 @@ using System.Data.Entity.Migrations;
 using System.Diagnostics;
 using System;
 
-namespace NorthWind.Repositorios.SqlServer.EF.Tests
+namespace Loja.Repositorios.SqlServer.EF.Tests
 {
     [TestClass()]
     public class LojaDbContextTests

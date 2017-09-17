@@ -1,9 +1,9 @@
 ﻿using Impacta.Apoio;
-using NorthWind.Repositorios.SqlServer.EF;
+using Loja.Repositorios.SqlServer.EF;
 using System.Linq;
 using System.Web.Mvc;
 
-namespace Northwind.Mvc.EF.Controllers
+namespace Loja.Mvc.EF.Controllers
 {
     public class ImagemController : Controller
     {

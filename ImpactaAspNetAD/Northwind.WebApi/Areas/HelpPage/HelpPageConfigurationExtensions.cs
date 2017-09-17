@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using Northwind.WebApi.Areas.HelpPage.ModelDescriptions;
-using Northwind.WebApi.Areas.HelpPage.Models;
+using Loja.WebApi.Areas.HelpPage.ModelDescriptions;
+using Loja.WebApi.Areas.HelpPage.Models;
 
-namespace Northwind.WebApi.Areas.HelpPage
+namespace Loja.WebApi.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

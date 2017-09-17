@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Northwind.Mvc.EF
+namespace Loja.Mvc.EF
 {
     public class FilterConfig
     {

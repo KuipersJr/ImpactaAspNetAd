@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using Northwind.WebApi.Areas.HelpPage.ModelDescriptions;
+using Loja.WebApi.Areas.HelpPage.ModelDescriptions;
 
-namespace Northwind.WebApi.Areas.HelpPage.Models
+namespace Loja.WebApi.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

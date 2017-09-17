@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
-using Northwind.WebApi.Areas.HelpPage.ModelDescriptions;
+using Loja.WebApi.Areas.HelpPage.ModelDescriptions;
 
-namespace Northwind.WebApi.Areas.HelpPage
+namespace Loja.WebApi.Areas.HelpPage
 {
     /// <summary>
     /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
