@@ -17,8 +17,8 @@ namespace Loja.Repositorios.SqlServer.EF
             //  1. Enable-Migrations
             //  2. add-migration Inicial
             //  3. Update-Database -ConnectionStringName "lojaConnectionString" // não esquecer de comentar o Up.
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<LojaDbContext, Configuration>());
-            //Configuration.LazyLoadingEnabled = true;
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<LojaDbContext, Configuration>());
+            Configuration.LazyLoadingEnabled = true;
         }
 
         public DbSet<Produto> Produtos { get; set; }

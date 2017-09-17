@@ -1,6 +1,11 @@
 ﻿using Loja.Dominio;
 using Loja.Mvc.Models;
+using Loja.Repositorios.SqlServer.EF;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
 
 namespace Loja.Mvc.Helpers
 {
@@ -16,16 +21,81 @@ namespace Loja.Mvc.Helpers
             }
 
             return produtosViewModel;
+        } 
+
+        public static Produto Mapear(ProdutoViewModel viewModel, LojaDbContext dbContext, HttpPostedFileBase imagemProduto)
+        {
+            var produto = new Produto();
+
+            if (imagemProduto != null && imagemProduto.ContentLength > 0)
+            {
+                using (var reader = new BinaryReader(imagemProduto.InputStream))
+                {
+                    produto.Imagem = new ProdutoImagem
+                    {
+                        Bytes = reader.ReadBytes(imagemProduto.ContentLength),
+                        ContentType = imagemProduto.ContentType
+                    };
+                }
+            }
+
+            produto.Categoria = dbContext.Categorias.Find(viewModel.CategoriaId);
+            produto.Descontinuado = viewModel.Descontinuado;
+            produto.Estoque = viewModel.Estoque.Value;
+            produto.Nome = viewModel.Nome;
+            produto.Preco = viewModel.Preco.Value;
+
+            return produto;
         }
 
-        public static ProdutoViewModel Mapear(Produto produto)
+        public static ProdutoViewModel Mapear(Produto produto, List<Categoria> categorias = null)
         {
             var viewModel = new ProdutoViewModel();
 
+            viewModel.CategoriaId = produto.Categoria.Id;
+            viewModel.CategoriaNome = produto.Categoria.Nome;
+
+            if (categorias != null)
+            {
+                foreach (var categoria in categorias)
+                {
+                    viewModel.Categorias.Add(new SelectListItem { Text = categoria.Nome, Value = categoria.Id.ToString() });
+                }
+            }
+
+            viewModel.Estoque = produto.Estoque;
             viewModel.Id = produto.Id;
             viewModel.Nome = produto.Nome;
+            viewModel.Preco = produto.Preco;
 
             return viewModel;
+        }
+
+        public static void Mapear(ProdutoViewModel viewModel, Produto produto, LojaDbContext dbContext, HttpPostedFileBase imagemProduto)
+        {
+            dbContext.Entry(produto).CurrentValues.SetValues(viewModel);
+
+            produto.Categoria = dbContext.Categorias.Single(c => c.Id == viewModel.CategoriaId);
+
+            if (imagemProduto != null && imagemProduto.ContentLength > 0)
+            {
+                using (var reader = new BinaryReader(imagemProduto.InputStream))
+                {
+                    if (produto.Imagem == null)
+                    {
+                        produto.Imagem = new ProdutoImagem
+                        {
+                            Bytes = reader.ReadBytes(imagemProduto.ContentLength),
+                            ContentType = imagemProduto.ContentType
+                        };
+                    }
+                    else
+                    {
+                        produto.Imagem.Bytes = reader.ReadBytes(imagemProduto.ContentLength);
+                        produto.Imagem.ContentType = imagemProduto.ContentType;
+                    }
+                }
+            }
         }
     }
 }

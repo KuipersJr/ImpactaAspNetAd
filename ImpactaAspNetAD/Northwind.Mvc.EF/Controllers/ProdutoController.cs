@@ -7,6 +7,7 @@ using System.Web;
 using System.IO;
 using System.Collections.Generic;
 using Loja.Repositorios.SqlServer.EF;
+using Loja.Mvc.Helpers;
 
 namespace Loja.Mvc.EF.Controllers
 {
@@ -17,14 +18,7 @@ namespace Loja.Mvc.EF.Controllers
         // GET: Produto
         public ActionResult Index()
         {
-            var produtosViewModel = new List<ProdutoViewModel>();
-
-            foreach (var produto in db.Produtos.ToList())
-            {
-                produtosViewModel.Add(Mapear(produto));
-            }
-
-            return View(produtosViewModel);
+            return View(Mapeamento.Mapear(db.Produtos.ToList()));
         }
 
         [ActionName("ProdutosPorCategoria")]
@@ -40,18 +34,21 @@ namespace Loja.Mvc.EF.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Produto produto = db.Produtos.Find(id);
+
             if (produto == null)
             {
                 return HttpNotFound();
             }
-            return View(produto);
+
+            return View(Mapeamento.Mapear(produto));
         }
 
         // GET: Produto/Create
         public ActionResult Create()
         {
-            return View(Mapear(new Produto(), db.Categorias.ToList()));
+            return View(Mapeamento.Mapear(new Produto(), db.Categorias.ToList()));
         }
 
         // POST: Produto/Create
@@ -66,7 +63,7 @@ namespace Loja.Mvc.EF.Controllers
                 ModelState.AddModelError("imagemProduto", "Apenas arquivos de imagem são permitidos.");
             }
 
-            var produto = Mapear(viewModel, imagemProduto);
+            var produto = Mapeamento.Mapear(viewModel, db, imagemProduto);
 
             if (ModelState.IsValid)
             {
@@ -77,33 +74,7 @@ namespace Loja.Mvc.EF.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(Mapear(produto, db.Categorias.ToList()));
-        }
-
-        // ToDo: implementar Automapper.
-        private Produto Mapear(ProdutoViewModel viewModel, HttpPostedFileBase imagemProduto)
-        {
-            var produto = new Produto();
-
-            if (imagemProduto != null && imagemProduto.ContentLength > 0)
-            {
-                using (var reader = new BinaryReader(imagemProduto.InputStream))
-                {
-                    produto.Imagem = new ProdutoImagem
-                    {
-                        Bytes = reader.ReadBytes(imagemProduto.ContentLength),
-                        ContentType = imagemProduto.ContentType
-                    };
-                }
-            }
-
-            produto.Categoria = db.Categorias.Find(viewModel.CategoriaId);
-            produto.Descontinuado = viewModel.Descontinuado;
-            produto.Estoque = viewModel.Estoque.Value;
-            produto.Nome = viewModel.Nome;
-            produto.Preco = viewModel.Preco.Value;
-
-            return produto;
+            return View(Mapeamento.Mapear(produto, db.Categorias.ToList()));
         }
 
         // GET: Produto/Edit/5
@@ -122,7 +93,7 @@ namespace Loja.Mvc.EF.Controllers
             }
 
             //return View(new ProdutoViewModel(db.Categorias.ToList(), produto));
-            return View(Mapear(produto, db.Categorias.ToList()));
+            return View(Mapeamento.Mapear(produto, db.Categorias.ToList()));
         }
 
         // POST: Produto/Edit/5
@@ -134,7 +105,7 @@ namespace Loja.Mvc.EF.Controllers
         {
             var produto = db.Produtos.Find(viewModel.Id);
 
-            Mapear(viewModel, produto, imagemProduto);
+            Mapeamento.Mapear(viewModel, produto, db, imagemProduto);
 
             if (imagemProduto != null && !Produto.ValidarFormatoImagem(imagemProduto.ContentType))
             {
@@ -149,34 +120,7 @@ namespace Loja.Mvc.EF.Controllers
             }
 
             //return View(new ProdutoViewModel(db.Categorias.ToList(), produto));
-            return View(Mapear(produto, db.Categorias.ToList()));
-        }
-
-        private void Mapear(ProdutoViewModel viewModel, Produto produto, HttpPostedFileBase imagemProduto)
-        {
-            db.Entry(produto).CurrentValues.SetValues(viewModel);
-
-            produto.Categoria = db.Categorias.Single(c => c.Id == viewModel.CategoriaId);
-
-            if (imagemProduto != null && imagemProduto.ContentLength > 0)
-            {
-                using (var reader = new BinaryReader(imagemProduto.InputStream))
-                {
-                    if (produto.Imagem == null)
-                    {
-                        produto.Imagem = new ProdutoImagem
-                        {
-                            Bytes = reader.ReadBytes(imagemProduto.ContentLength),
-                            ContentType = imagemProduto.ContentType
-                        };
-                    }
-                    else
-                    {
-                        produto.Imagem.Bytes = reader.ReadBytes(imagemProduto.ContentLength);
-                        produto.Imagem.ContentType = imagemProduto.ContentType;
-                    }
-                }
-            }
+            return View(Mapeamento.Mapear(produto, db.Categorias.ToList()));
         }
 
         // GET: Produto/Delete/5
@@ -186,12 +130,15 @@ namespace Loja.Mvc.EF.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Produto produto = db.Produtos.Find(id);
+
             if (produto == null)
             {
                 return HttpNotFound();
             }
-            return View(produto);
+
+            return View(Mapeamento.Mapear(produto));
         }
 
         // POST: Produto/Delete/5
@@ -213,29 +160,5 @@ namespace Loja.Mvc.EF.Controllers
             }
             base.Dispose(disposing);
         }
-
-        private ProdutoViewModel Mapear(Produto produto, List<Categoria> categorias = null)
-        {
-            var viewModel = new ProdutoViewModel();
-
-            viewModel.CategoriaId = produto.Categoria?.Id;
-            viewModel.CategoriaNome = produto.Categoria?.Nome;
-
-            if (categorias != null)
-            {
-                foreach (var categoria in categorias)
-                {
-                    viewModel.Categorias.Add(new SelectListItem { Text = categoria.Nome, Value = categoria.Id.ToString() });
-                }
-            }
-
-            viewModel.Estoque = produto.Estoque;
-            viewModel.Id = produto.Id;
-            viewModel.Nome = produto.Nome;
-            viewModel.Preco = produto.Preco;
-
-            return viewModel;
-        }
-
     }
 }
