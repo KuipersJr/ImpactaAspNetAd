@@ -231,7 +231,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>64781</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/Northwind.Mvc.EF</IISUrl>
+          <IISUrl>http://localhost/Loja.Mvc</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

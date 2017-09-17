@@ -97,6 +97,10 @@
     <Compile Include="Migrations\201703101803376_MergeCascadeDeleteProduto.Designer.cs">
       <DependentUpon>201703101803376_MergeCascadeDeleteProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709171923234_Projetos renoados para Loja.cs" />
+    <Compile Include="Migrations\201709171923234_Projetos renoados para Loja.Designer.cs">
+      <DependentUpon>201709171923234_Projetos renoados para Loja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfiguration\ClienteConfiguration.cs" />
     <Compile Include="ModelConfiguration\CategoriaConfiguration.cs" />
@@ -144,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703101803376_MergeCascadeDeleteProduto.resx">
       <DependentUpon>201703101803376_MergeCascadeDeleteProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709171923234_Projetos renoados para Loja.resx">
+      <DependentUpon>201709171923234_Projetos renoados para Loja.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

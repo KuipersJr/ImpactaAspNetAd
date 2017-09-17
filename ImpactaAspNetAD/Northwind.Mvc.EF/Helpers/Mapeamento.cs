@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace Loja.Mvc.Helpers
 {
-    public class Mapeamento
+    public static class Mapeamento
     {
-        private List<ProdutoViewModel> Mapear(List<Produto> produtos)
+        public static List<ProdutoViewModel> Mapear(List<Produto> produtos)
         {
             var produtosViewModel = new List<ProdutoViewModel>();
 
@@ -18,7 +18,7 @@ namespace Loja.Mvc.Helpers
             return produtosViewModel;
         }
 
-        private ProdutoViewModel Mapear(Produto produto)
+        public static ProdutoViewModel Mapear(Produto produto)
         {
             var viewModel = new ProdutoViewModel();
 
