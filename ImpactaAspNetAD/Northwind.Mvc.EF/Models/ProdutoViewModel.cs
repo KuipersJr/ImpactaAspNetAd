@@ -13,15 +13,6 @@ namespace Loja.Mvc.Models
 
         public int Id { get; set; }
 
-        [Display(Name = "Categoria")]
-        public string CategoriaNome { get; internal set; }
-
-        [Required]
-        [Display(Name = "Categoria")]
-        public int? CategoriaId { get; set; }
-
-        public bool PossuiImagem { get; set; }
-
         [Required]
         public string Nome { get; set; }
 
@@ -31,6 +22,15 @@ namespace Loja.Mvc.Models
 
         [Required]
         public int? Estoque { get; set; }
+
+        [Display(Name = "Categoria")]
+        public string CategoriaNome { get; internal set; }
+
+        [Required]
+        [Display(Name = "Categoria")]
+        public int? CategoriaId { get; set; }
+
+        public bool PossuiImagem { get; set; }
 
         public bool Descontinuado { get; set; }
 
