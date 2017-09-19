@@ -105,7 +105,9 @@ namespace Loja.Repositorios.SqlServer.EF.Tests
         [TestMethod]
         public void ObterPrecoMedioPapelaria()
         {
-            var media = _contexto.Produtos.Where(p => p.Categoria.Id == 1 && !p.Descontinuado).Average(p => p.Preco);
+            var media = _contexto.Produtos
+                .Where(p => p.Categoria.Id == 1 && !p.Descontinuado)
+                .Average(p => p.Preco);
 
             Assert.AreNotEqual(media, 0m);
         }
@@ -113,6 +115,8 @@ namespace Loja.Repositorios.SqlServer.EF.Tests
         [TestMethod]
         public void LazyLoadDesligadoTeste()
         {
+            //_contexto.Configuration.LazyLoadingEnabled = true; // Não funciona sem o virtual.
+
             var grampeador = _contexto.Produtos.Single(p => p.Nome == "Grampeador");
             Assert.IsNull(grampeador.Categoria);
         }
@@ -128,7 +132,7 @@ namespace Loja.Repositorios.SqlServer.EF.Tests
         }
 
         [TestMethod]
-        public void LazyLoadLigadoVirtualTeste()
+        public void LazyLoadLigadoTeste()
         {
             // 1o - colocar o virtual nas properties.
             // 2o - demonstrar que são feitas duas queries.
