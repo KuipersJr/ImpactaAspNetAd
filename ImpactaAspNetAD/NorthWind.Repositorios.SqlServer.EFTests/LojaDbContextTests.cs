@@ -118,6 +118,16 @@ namespace Loja.Repositorios.SqlServer.EF.Tests
         }
 
         [TestMethod]
+        public void LazyLoadDesligadoLoadTeste()
+        {
+            var caneta = _contexto.Produtos.First(p => p.Nome == "Caneta");
+
+            _contexto.Entry(caneta).Reference(p => p.Categoria).Load();
+
+            Assert.IsNotNull(caneta.Categoria);
+        }
+
+        [TestMethod]
         public void LazyLoadLigadoVirtualTeste()
         {
             // 1o - colocar o virtual nas properties.
@@ -141,12 +151,19 @@ namespace Loja.Repositorios.SqlServer.EF.Tests
         [TestMethod]
         public void QueryableTeste()
         {
-            var query = _contexto.Categorias.Where(c => c.Nome == "Papelaria");
-            query.OrderBy(c => c.Nome);
+            var query = _contexto.Produtos.Where(p => p.Preco > 10);
+
+            if (true)
+            {
+                query = query.Where(p => p.Estoque > 5);
+            }
+
+            query = query.OrderBy(p => p.Preco);
 
             var primeiro = query.First();
-            var unico = query.Single();            
-            var lista = query.ToList();
+            //var ultimo = query.Last(); // Não pode ser convertido para uma consulta T-SQL.
+            var unico = query.Single();
+            var todos = query.ToList();
         }
 
         [TestMethod]
