@@ -5,9 +5,9 @@ using System.Web.Mvc;
 
 namespace Northwind.Mvc.EF.Controllers
 {
-    public class ImagemController : Controller
+    public class ImagemProdutoController : Controller
     {
-        LojaDbContext _contexto = new LojaDbContext();
+        private readonly LojaDbContext _contexto = new LojaDbContext();
 
         public ActionResult Index(int produtoId)
         {
