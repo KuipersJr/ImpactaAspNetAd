@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Northwind.Mvc.EF.Controllers
+namespace Loja.Mvc.EF.Controllers
 {
     public class HomeController : Controller
     {

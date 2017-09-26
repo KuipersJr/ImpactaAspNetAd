@@ -1,6 +1,6 @@
 ﻿using NorthWind.Repositorios.SqlServer.EF.ModelFirst;
 
-namespace Northwind.WebApi.ViewModels
+namespace Loja.WebApi.ViewModels
 {
     public class ProdutoViewModel
     {

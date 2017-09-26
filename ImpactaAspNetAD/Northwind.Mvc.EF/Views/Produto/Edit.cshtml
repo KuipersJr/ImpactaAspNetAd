@@ -1,4 +1,4 @@
-﻿@model Northwind.Mvc.EF.ViewModels.ProdutoViewModel
+﻿@model Loja.Mvc.Models.ProdutoViewModel
 
 @{
     ViewBag.Title = "Edit";
@@ -70,11 +70,20 @@
             </div>
         }
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.Label("Nova imagem", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <input type="file" id="imagemProduto" name="imagemProduto" />
                 @Html.ValidationMessage("imagemProduto", new { @class = "text-danger" })
+                <img id="imagemProdutoPreview" src="#" alt="Preview" style="visibility:hidden" />
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Imagem, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Imagem, new { type = "file", @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Imagem, "", new { @class = "text-danger" })
                 <img id="imagemProdutoPreview" src="#" alt="Preview" style="visibility:hidden" />
             </div>
         </div>
@@ -95,6 +104,6 @@
     @Scripts.Render("~/bundles/jqueryval")
     <script type="text/javascript" src="~/Scripts/apoio/uploadImagem.js"></script>
     <script type="text/javascript">
-        uploadImagem.definirPreview("imagemProduto", "imagemProdutoPreview");
+        uploadImagem.definirPreview("Imagem", "imagemProdutoPreview");
     </script>
 }

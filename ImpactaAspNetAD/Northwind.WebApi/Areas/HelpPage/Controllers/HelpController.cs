@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using Northwind.WebApi.Areas.HelpPage.ModelDescriptions;
-using Northwind.WebApi.Areas.HelpPage.Models;
+using Loja.WebApi.Areas.HelpPage.ModelDescriptions;
+using Loja.WebApi.Areas.HelpPage.Models;
 
-namespace Northwind.WebApi.Areas.HelpPage.Controllers
+namespace Loja.WebApi.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

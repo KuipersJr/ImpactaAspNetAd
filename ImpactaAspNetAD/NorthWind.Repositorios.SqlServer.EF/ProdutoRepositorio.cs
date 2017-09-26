@@ -1,6 +1,6 @@
-﻿using Northwind.Dominio;
+﻿using Loja.Dominio;
 
-namespace NorthWind.Repositorios.SqlServer.EF
+namespace Loja.Repositorios.SqlServer.EF
 {
     public class ProdutoRepositorio : RepositorioBase<Produto>
     {

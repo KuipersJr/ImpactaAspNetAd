@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 
 // Tem que adicionar referência para o Entity Framework, precário.
-using System.ComponentModel.DataAnnotations.Schema;
+//using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Northwind.Dominio
+namespace Loja.Dominio
 {
     public class Categoria
     {

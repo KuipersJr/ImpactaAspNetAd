@@ -1,7 +1,7 @@
 ﻿using System.Web.Http;
 using System.Web.Mvc;
 
-namespace Northwind.WebApi
+namespace Loja.WebApi
 {
     public class WebApiApplication : System.Web.HttpApplication
     {

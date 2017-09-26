@@ -1,7 +1,7 @@
-﻿using Northwind.Dominio;
+﻿using Loja.Dominio;
 using System.Data.Entity.ModelConfiguration;
 
-namespace NorthWind.Repositorios.SqlServer.EF.ModelConfiguration
+namespace Loja.Repositorios.SqlServer.EF.ModelConfiguration
 {
     public class EnderecoConfiguration : EntityTypeConfiguration<Endereco>
     {

@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web;
 using System.Web.Mvc;
 
-namespace Northwind.Mvc.EF.ViewModels
+namespace Loja.Mvc.Models
 {
     public class ProdutoViewModel
     {
@@ -12,15 +13,6 @@ namespace Northwind.Mvc.EF.ViewModels
         } 
 
         public int Id { get; set; }
-
-        [Display(Name = "Categoria")]
-        public string CategoriaNome { get; internal set; }
-
-        [Required]
-        [Display(Name = "Categoria")]
-        public int? CategoriaId { get; set; }
-
-        public bool PossuiImagem { get; set; }
 
         [Required]
         public string Nome { get; set; }
@@ -32,8 +24,20 @@ namespace Northwind.Mvc.EF.ViewModels
         [Required]
         public int? Estoque { get; set; }
 
+        [Display(Name = "Categoria")]
+        public string CategoriaNome { get; internal set; }
+
+        [Required]
+        [Display(Name = "Categoria")]
+        public int? CategoriaId { get; set; }
+
+        public bool PossuiImagem { get; set; }
+
         public bool Descontinuado { get; set; }
 
         public List<SelectListItem> Categorias { get; set; }
+
+        [RegularExpression(@"^.+\.(png|PNG|jpg|JPG|gif|GIF|bmp|BMP)$", ErrorMessage = "Apenas imagens")]
+        public HttpPostedFileBase Imagem { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model Northwind.Dominio.Produto
+﻿@model Loja.Mvc.Models.ProdutoViewModel
 
 @{
     ViewBag.Title = "Details";
@@ -11,12 +11,11 @@
     <h4>Produto</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            Imagem
-        </dt>
-
-        @if (Model.Imagem != null)
+        @if (Model.PossuiImagem)
         {
+            <dt>
+                Imagem
+            </dt>
             <dd>
                 <img src="~/ImagemProduto?produtoId=@Model.Id" alt="Imagem do produto" />
             </dd>
@@ -30,11 +29,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Categoria)
+            @Html.DisplayNameFor(model => model.CategoriaId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Categoria.Nome)
+            @Html.DisplayFor(model => model.CategoriaNome)
         </dd>
 
         <dt>

@@ -1,4 +1,4 @@
-﻿namespace Northwind.WebApi.ViewModels
+﻿namespace Loja.WebApi.ViewModels
 {
     public class CategoriaViewModel
     {

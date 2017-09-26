@@ -1,10 +1,10 @@
-﻿using NorthWind.Dominio;
+﻿using Loja.Dominio;
 using System.Collections.Generic;
 using System.Linq;
 using System;
 using System.Linq.Expressions;
 
-namespace NorthWind.Repositorios.SqlServer.EF
+namespace Loja.Repositorios.SqlServer.EF
 {
     public class RepositorioBase<T> : IRepositorio<T> where T : class
     {

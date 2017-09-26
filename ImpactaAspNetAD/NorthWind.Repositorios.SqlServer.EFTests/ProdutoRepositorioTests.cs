@@ -1,8 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Northwind.Dominio;
+using Loja.Dominio;
 using System.Linq;
 
-namespace NorthWind.Repositorios.SqlServer.EF.Tests
+namespace Loja.Repositorios.SqlServer.EF.Tests
 {
     [TestClass()]
     public class ProdutoRepositorioTests

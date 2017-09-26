@@ -1,6 +1,6 @@
-namespace NorthWind.Repositorios.SqlServer.EF.Migrations
+namespace Loja.Repositorios.SqlServer.EF.Migrations
 {
-    using Northwind.Dominio;
+    using Loja.Dominio;
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
     using System.Linq;

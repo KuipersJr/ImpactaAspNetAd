@@ -3,7 +3,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace Northwind.Mvc.EF
+namespace Loja.Mvc.EF
 {
     public class MvcApplication : HttpApplication
     {

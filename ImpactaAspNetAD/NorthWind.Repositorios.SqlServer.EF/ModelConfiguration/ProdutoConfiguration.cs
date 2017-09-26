@@ -1,9 +1,9 @@
-﻿using Northwind.Dominio;
+﻿using Loja.Dominio;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.Infrastructure.Annotations;
 using System.Data.Entity.ModelConfiguration;
 
-namespace NorthWind.Repositorios.SqlServer.EF
+namespace Loja.Repositorios.SqlServer.EF
 {
     public class ProdutoConfiguration : EntityTypeConfiguration<Produto>
     {

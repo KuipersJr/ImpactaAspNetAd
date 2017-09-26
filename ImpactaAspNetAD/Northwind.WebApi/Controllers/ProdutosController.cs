@@ -6,10 +6,10 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using NorthWind.Repositorios.SqlServer.EF.ModelFirst;
 using System.Web.Http.Cors;
-using Northwind.WebApi.ViewModels;
+using Loja.WebApi.ViewModels;
 using System.Collections.Generic;
 
-namespace Northwind.WebApi.Controllers
+namespace Loja.WebApi.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ProdutosController : ApiController

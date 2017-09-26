@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Northwind.Mvc.EF</RootNamespace>
-    <AssemblyName>Northwind.Mvc.EF</AssemblyName>
+    <RootNamespace>Loja.Mvc</RootNamespace>
+    <AssemblyName>Loja.Mvc</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
@@ -122,8 +122,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Mapeamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\ProdutoViewModel.cs" />
+    <Compile Include="Models\ProdutoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -193,7 +194,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Project_Readme.html" />
@@ -203,13 +203,13 @@
       <Project>{010EC6CF-5C6D-42EF-BBE8-4D9E4432AF2E}</Project>
       <Name>Impacta.Apoio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Northwind.Dominio\Northwind.Dominio.csproj">
-      <Project>{2f2cf7fc-4f67-4bdc-9b7d-113051f55c6d}</Project>
-      <Name>Northwind.Dominio</Name>
+    <ProjectReference Include="..\Loja.Dominio\Loja.Dominio.csproj">
+      <Project>{1183dc45-92af-499d-a5c1-1627fd01e1d3}</Project>
+      <Name>Loja.Dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NorthWind.Repositorios.SqlServer.EF\NorthWind.Repositorios.SqlServer.EF.CodeFirst.csproj">
+    <ProjectReference Include="..\NorthWind.Repositorios.SqlServer.EF\Loja.Repositorios.SqlServer.EF.CodeFirst.csproj">
       <Project>{0abba110-95a2-4c97-8c22-c3db518c6c5c}</Project>
-      <Name>NorthWind.Repositorios.SqlServer.EF.CodeFirst</Name>
+      <Name>Loja.Repositorios.SqlServer.EF.CodeFirst</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -230,7 +230,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>64781</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/Northwind.Mvc.EF</IISUrl>
+          <IISUrl>http://localhost/Loja.Mvc</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

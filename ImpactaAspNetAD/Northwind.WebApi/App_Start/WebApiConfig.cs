@@ -1,7 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using System.Web.Http;
 
-namespace Northwind.WebApi
+namespace Loja.WebApi
 {
     public static class WebApiConfig
     {

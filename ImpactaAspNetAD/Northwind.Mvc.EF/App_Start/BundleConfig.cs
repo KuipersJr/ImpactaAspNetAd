@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Northwind.Mvc.EF
+namespace Loja.Mvc.EF
 {
     public class BundleConfig
     {

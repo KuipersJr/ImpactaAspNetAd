@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Northwind.Dominio;
+using Loja.Dominio;
 using System.Data.Entity;
 using System.Linq;
 using NorthWind.Repositorios.SqlServer.EF.Migrations;
@@ -7,7 +7,7 @@ using System.Data.Entity.Migrations;
 using System.Diagnostics;
 using System;
 
-namespace NorthWind.Repositorios.SqlServer.EF.Tests
+namespace Loja.Repositorios.SqlServer.EF.Tests
 {
     [TestClass()]
     public class LojaDbContextTests
@@ -105,7 +105,9 @@ namespace NorthWind.Repositorios.SqlServer.EF.Tests
         [TestMethod]
         public void ObterPrecoMedioPapelaria()
         {
-            var media = _contexto.Produtos.Where(p => p.Categoria.Id == 1 && !p.Descontinuado).Average(p => p.Preco);
+            var media = _contexto.Produtos
+                .Where(p => p.Categoria.Id == 1 && !p.Descontinuado)
+                .Average(p => p.Preco);
 
             Assert.AreNotEqual(media, 0m);
         }
@@ -113,12 +115,24 @@ namespace NorthWind.Repositorios.SqlServer.EF.Tests
         [TestMethod]
         public void LazyLoadDesligadoTeste()
         {
+            //_contexto.Configuration.LazyLoadingEnabled = true; // Não funciona sem o virtual.
+
             var grampeador = _contexto.Produtos.Single(p => p.Nome == "Grampeador");
             Assert.IsNull(grampeador.Categoria);
         }
 
         [TestMethod]
-        public void LazyLoadLigadoVirtualTeste()
+        public void LazyLoadDesligadoLoadTeste()
+        {
+            var caneta = _contexto.Produtos.First(p => p.Nome == "Caneta");
+
+            _contexto.Entry(caneta).Reference(p => p.Categoria).Load();
+
+            Assert.IsNotNull(caneta.Categoria);
+        }
+
+        [TestMethod]
+        public void LazyLoadLigadoTeste()
         {
             // 1o - colocar o virtual nas properties.
             // 2o - demonstrar que são feitas duas queries.
@@ -141,12 +155,19 @@ namespace NorthWind.Repositorios.SqlServer.EF.Tests
         [TestMethod]
         public void QueryableTeste()
         {
-            var query = _contexto.Categorias.Where(c => c.Nome == "Papelaria");
-            query.OrderBy(c => c.Nome);
+            var query = _contexto.Produtos.Where(p => p.Preco > 10);
+
+            if (true)
+            {
+                query = query.Where(p => p.Estoque > 5);
+            }
+
+            query = query.OrderBy(p => p.Preco);
 
             var primeiro = query.First();
-            var unico = query.Single();            
-            var lista = query.ToList();
+            //var ultimo = query.Last(); // Não pode ser convertido para uma consulta T-SQL.
+            var unico = query.Single();
+            var todos = query.ToList();
         }
 
         [TestMethod]

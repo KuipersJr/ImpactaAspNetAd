@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Northwind.Repositorios.WebApi
+namespace Loja.Repositorios.WebApi
 {
     public class ProdutoRepositorio : RepositorioBase<Produto>
     {

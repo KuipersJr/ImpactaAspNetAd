@@ -1,10 +1,10 @@
-﻿using Northwind.Dominio;
-using NorthWind.Repositorios.SqlServer.EF.Migrations;
-using NorthWind.Repositorios.SqlServer.EF.ModelConfiguration;
+﻿using Loja.Dominio;
+using Loja.Repositorios.SqlServer.EF.Migrations;
+using Loja.Repositorios.SqlServer.EF.ModelConfiguration;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace NorthWind.Repositorios.SqlServer.EF
+namespace Loja.Repositorios.SqlServer.EF
 {
     public class LojaDbContext : DbContext
     {
