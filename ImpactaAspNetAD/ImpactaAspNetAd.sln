@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.WebForms", "NorthWind.WebForms\NorthWind.WebForms.csproj", "{A124B431-0ED7-4D14-917F-69714DE5E65C}"
 EndProject
@@ -22,8 +22,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loja.Repositorios.SqlServer.EF.CodeFirst", "NorthWind.Repositorios.SqlServer.EF\Loja.Repositorios.SqlServer.EF.CodeFirst.csproj", "{0ABBA110-95A2-4C97-8C22-C3DB518C6C5C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loja.Repositorios.SqlServer.EF.CodeFirst.Testes", "NorthWind.Repositorios.SqlServer.EFTests\Loja.Repositorios.SqlServer.EF.CodeFirst.Testes.csproj", "{59D6C8EA-8981-400F-BA9F-AECD18C1C494}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loja.Mvc", "Northwind.Mvc.EF\Loja.Mvc.csproj", "{8F444A19-99A8-453E-8C05-AA65C2840DE6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Repositorios.SqlServer.EF.ModelFirst", "NorthWind.Repositorios.SqlServer.EF.ModelFirst\NorthWind.Repositorios.SqlServer.EF.ModelFirst.csproj", "{6E4B66A5-B28E-4B86-AA46-99C67D2C04B1}"
 EndProject
@@ -88,6 +86,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pubs.Repositorios.MongoDbTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loja.Dominio", "Loja.Dominio\Loja.Dominio.csproj", "{1183DC45-92AF-499D-A5C1-1627FD01E1D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loja.Mvc", "Loja.Mvc\Loja.Mvc.csproj", "{8F444A19-99A8-453E-8C05-AA65C2840DE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -130,10 +130,6 @@ Global
 		{59D6C8EA-8981-400F-BA9F-AECD18C1C494}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59D6C8EA-8981-400F-BA9F-AECD18C1C494}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59D6C8EA-8981-400F-BA9F-AECD18C1C494}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8F444A19-99A8-453E-8C05-AA65C2840DE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F444A19-99A8-453E-8C05-AA65C2840DE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8F444A19-99A8-453E-8C05-AA65C2840DE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8F444A19-99A8-453E-8C05-AA65C2840DE6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6E4B66A5-B28E-4B86-AA46-99C67D2C04B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6E4B66A5-B28E-4B86-AA46-99C67D2C04B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E4B66A5-B28E-4B86-AA46-99C67D2C04B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -198,6 +194,10 @@ Global
 		{1183DC45-92AF-499D-A5C1-1627FD01E1D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1183DC45-92AF-499D-A5C1-1627FD01E1D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1183DC45-92AF-499D-A5C1-1627FD01E1D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F444A19-99A8-453E-8C05-AA65C2840DE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F444A19-99A8-453E-8C05-AA65C2840DE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F444A19-99A8-453E-8C05-AA65C2840DE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F444A19-99A8-453E-8C05-AA65C2840DE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -212,7 +212,6 @@ Global
 		{B3FA7B03-EC0F-4B8B-829F-568DE9A73F7A} = {81BF38C0-56EA-46F4-82E0-9D502C3E5C00}
 		{0ABBA110-95A2-4C97-8C22-C3DB518C6C5C} = {1D2CB0C3-9DAC-49CB-8E15-D932796B5610}
 		{59D6C8EA-8981-400F-BA9F-AECD18C1C494} = {81BF38C0-56EA-46F4-82E0-9D502C3E5C00}
-		{8F444A19-99A8-453E-8C05-AA65C2840DE6} = {1897DA40-B497-44E8-9CED-68FEE60295C8}
 		{6E4B66A5-B28E-4B86-AA46-99C67D2C04B1} = {1D2CB0C3-9DAC-49CB-8E15-D932796B5610}
 		{2252AC05-AA76-40C0-BC25-0295E28611CA} = {81BF38C0-56EA-46F4-82E0-9D502C3E5C00}
 		{94DF663C-C7D4-4D8A-AEED-7C9CF0FFA235} = {1D2CB0C3-9DAC-49CB-8E15-D932796B5610}
@@ -230,6 +229,7 @@ Global
 		{6F36C653-AD84-420A-BAC2-D69DD3EF30C6} = {D99FE7F2-3755-44A9-9C1F-9A2264E87902}
 		{DEC07280-CF88-469A-AEF6-F585BFBFFBE7} = {81BF38C0-56EA-46F4-82E0-9D502C3E5C00}
 		{1183DC45-92AF-499D-A5C1-1627FD01E1D3} = {D99FE7F2-3755-44A9-9C1F-9A2264E87902}
+		{8F444A19-99A8-453E-8C05-AA65C2840DE6} = {1897DA40-B497-44E8-9CED-68FEE60295C8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {46AB0C3C-725F-484D-9EB2-17252C13977F}
