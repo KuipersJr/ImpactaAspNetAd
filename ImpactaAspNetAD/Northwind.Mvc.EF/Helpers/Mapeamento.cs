@@ -23,18 +23,18 @@ namespace Loja.Mvc.Helpers
             return produtosViewModel;
         } 
 
-        public static Produto Mapear(ProdutoViewModel viewModel, LojaDbContext dbContext, HttpPostedFileBase imagemProduto)
+        public static Produto Mapear(ProdutoViewModel viewModel, LojaDbContext dbContext/*, HttpPostedFileBase imagemProduto*/)
         {
             var produto = new Produto();
 
-            if (imagemProduto != null && imagemProduto.ContentLength > 0)
+            if (viewModel.Imagem != null && viewModel.Imagem.ContentLength > 0)
             {
-                using (var reader = new BinaryReader(imagemProduto.InputStream))
+                using (var reader = new BinaryReader(viewModel.Imagem.InputStream))
                 {
                     produto.Imagem = new ProdutoImagem
                     {
-                        Bytes = reader.ReadBytes(imagemProduto.ContentLength),
-                        ContentType = imagemProduto.ContentType
+                        Bytes = reader.ReadBytes(viewModel.Imagem.ContentLength),
+                        ContentType = viewModel.Imagem.ContentType
                     };
                 }
             }
@@ -52,8 +52,8 @@ namespace Loja.Mvc.Helpers
         {
             var viewModel = new ProdutoViewModel();
 
-            viewModel.CategoriaId = produto.Categoria.Id;
-            viewModel.CategoriaNome = produto.Categoria.Nome;
+            viewModel.CategoriaId = produto.Categoria?.Id;
+            viewModel.CategoriaNome = produto.Categoria?.Nome;
 
             if (categorias != null)
             {
@@ -71,28 +71,28 @@ namespace Loja.Mvc.Helpers
             return viewModel;
         }
 
-        public static void Mapear(ProdutoViewModel viewModel, Produto produto, LojaDbContext dbContext, HttpPostedFileBase imagemProduto)
+        public static void Mapear(ProdutoViewModel viewModel, Produto produto, LojaDbContext dbContext/*, HttpPostedFileBase imagemProduto*/)
         {
             dbContext.Entry(produto).CurrentValues.SetValues(viewModel);
 
             produto.Categoria = dbContext.Categorias.Single(c => c.Id == viewModel.CategoriaId);
 
-            if (imagemProduto != null && imagemProduto.ContentLength > 0)
+            if (viewModel.Imagem != null && viewModel.Imagem.ContentLength > 0)
             {
-                using (var reader = new BinaryReader(imagemProduto.InputStream))
+                using (var reader = new BinaryReader(viewModel.Imagem.InputStream))
                 {
                     if (produto.Imagem == null)
                     {
                         produto.Imagem = new ProdutoImagem
                         {
-                            Bytes = reader.ReadBytes(imagemProduto.ContentLength),
-                            ContentType = imagemProduto.ContentType
+                            Bytes = reader.ReadBytes(viewModel.Imagem.ContentLength),
+                            ContentType = viewModel.Imagem.ContentType
                         };
                     }
                     else
                     {
-                        produto.Imagem.Bytes = reader.ReadBytes(imagemProduto.ContentLength);
-                        produto.Imagem.ContentType = imagemProduto.ContentType;
+                        produto.Imagem.Bytes = reader.ReadBytes(viewModel.Imagem.ContentLength);
+                        produto.Imagem.ContentType = viewModel.Imagem.ContentType;
                     }
                 }
             }

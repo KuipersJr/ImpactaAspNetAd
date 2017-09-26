@@ -56,14 +56,14 @@ namespace Loja.Mvc.EF.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ProdutoViewModel viewModel, HttpPostedFileBase imagemProduto)
+        public ActionResult Create(ProdutoViewModel viewModel/*, HttpPostedFileBase imagemProduto*/)
         {
-            if (imagemProduto != null && !Produto.ValidarFormatoImagem(imagemProduto.ContentType))
+            if (viewModel.Imagem != null && !Produto.ValidarFormatoImagem(viewModel.Imagem.ContentType))
             {
                 ModelState.AddModelError("imagemProduto", "Apenas arquivos de imagem são permitidos.");
             }
 
-            var produto = Mapeamento.Mapear(viewModel, db, imagemProduto);
+            var produto = Mapeamento.Mapear(viewModel, db/*, viewModel.Imagem*/);
 
             if (ModelState.IsValid)
             {
@@ -101,13 +101,13 @@ namespace Loja.Mvc.EF.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(ProdutoViewModel viewModel, HttpPostedFileBase imagemProduto)
+        public ActionResult Edit(ProdutoViewModel viewModel/*, HttpPostedFileBase imagemProduto*/)
         {
             var produto = db.Produtos.Find(viewModel.Id);
 
-            Mapeamento.Mapear(viewModel, produto, db, imagemProduto);
+            Mapeamento.Mapear(viewModel, produto, db/*, imagemProduto*/);
 
-            if (imagemProduto != null && !Produto.ValidarFormatoImagem(imagemProduto.ContentType))
+            if (viewModel.Imagem != null && !Produto.ValidarFormatoImagem(viewModel.Imagem.ContentType))
             {
                 ModelState.AddModelError("imagemProduto", "Apenas arquivos de imagem são permitidos.");
             }
