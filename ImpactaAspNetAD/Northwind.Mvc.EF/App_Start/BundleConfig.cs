@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace Loja.Mvc.EF
+namespace Loja.Mvc
 {
     public class BundleConfig
     {

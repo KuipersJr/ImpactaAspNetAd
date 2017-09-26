@@ -1,9 +1,12 @@
-﻿using Impacta.Apoio;
-using Loja.Repositorios.SqlServer.EF;
+﻿using System;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Web.Mvc;
+using Loja.Repositorios.SqlServer.EF;
 
-namespace Loja.Mvc.EF.Controllers
+namespace Loja.Mvc.Controllers
 {
     public class ImagemProdutoController : Controller
     {
@@ -25,7 +28,19 @@ namespace Loja.Mvc.EF.Controllers
                 return null;
             }
 
-            return File(Imagem.ObterMiniatura(produto.Imagem.Bytes, largura, altura), produto.Imagem.ContentType);
+            return File(ObterMiniatura(produto.Imagem.Bytes, largura, altura), produto.Imagem.ContentType);
+        }
+
+        public static byte[] ObterMiniatura(byte[] imagem, int largura, int altura)
+        {
+            using (var stream = new MemoryStream())
+            {
+                using (var miniatura = Image.FromStream(new MemoryStream(imagem)).GetThumbnailImage(largura, altura, null, new IntPtr()))
+                {
+                    miniatura.Save(stream, ImageFormat.Png);
+                    return stream.ToArray();
+                }
+            }
         }
 
         protected override void Dispose(bool disposing)

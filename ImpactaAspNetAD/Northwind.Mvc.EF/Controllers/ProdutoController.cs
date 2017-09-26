@@ -2,14 +2,11 @@
 using System.Net;
 using System.Web.Mvc;
 using Loja.Dominio;
-using Loja.Mvc.Models;
-using System.Web;
-using System.IO;
-using System.Collections.Generic;
-using Loja.Repositorios.SqlServer.EF;
 using Loja.Mvc.Helpers;
+using Loja.Mvc.Models;
+using Loja.Repositorios.SqlServer.EF;
 
-namespace Loja.Mvc.EF.Controllers
+namespace Loja.Mvc.Controllers
 {
     public class ProdutoController : Controller
     {

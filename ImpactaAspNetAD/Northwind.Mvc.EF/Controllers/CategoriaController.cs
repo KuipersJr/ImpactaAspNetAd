@@ -1,12 +1,12 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using Loja.Repositorios.SqlServer.EF;
 using Loja.Dominio;
-using System;
+using Loja.Repositorios.SqlServer.EF;
 
-namespace Loja.Mvc.EF.Controllers
+namespace Loja.Mvc.Controllers
 {
     public class CategoriaController : Controller
     {

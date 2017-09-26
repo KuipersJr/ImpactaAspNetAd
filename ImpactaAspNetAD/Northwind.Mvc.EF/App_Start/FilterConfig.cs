@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
-namespace Loja.Mvc.EF
+namespace Loja.Mvc
 {
     public class FilterConfig
     {
