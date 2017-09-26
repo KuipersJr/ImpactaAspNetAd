@@ -37,6 +37,7 @@ namespace Loja.Mvc.Models
 
         public List<SelectListItem> Categorias { get; set; }
 
+        [RegularExpression(@"^.+\.(png|PNG|jpg|JPG|gif|GIF|bmp|BMP)$", ErrorMessage = "Apenas imagens")]
         public HttpPostedFileBase Imagem { get; set; }
     }
 }
