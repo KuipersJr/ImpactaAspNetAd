@@ -67,6 +67,7 @@ namespace Loja.Mvc.Helpers
             viewModel.Id = produto.Id;
             viewModel.Nome = produto.Nome;
             viewModel.Preco = produto.Preco;
+            viewModel.PossuiImagem = produto.Imagem != null;
 
             return viewModel;
         }
