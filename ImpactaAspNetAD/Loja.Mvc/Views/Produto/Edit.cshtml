@@ -8,7 +8,7 @@
 <h2>Edit</h2>
 
 
-@using (Html.BeginForm("Edit", "Produto", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Edit", "Produto", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -70,19 +70,10 @@
             </div>
         }
 
-        @*<div class="form-group">
-            @Html.Label("Nova imagem", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <input type="file" id="imagemProduto" name="imagemProduto" />
-                @Html.ValidationMessage("imagemProduto", new { @class = "text-danger" })
-                <img id="imagemProdutoPreview" src="#" alt="Preview" style="visibility:hidden" />
-            </div>
-        </div>*@
-
         <div class="form-group">
             @Html.LabelFor(m => m.Imagem, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.Imagem, new { type = "file", @class = "form-control" })
+                @Html.TextBoxFor(model => model.Imagem, new { type = "file", @class = "form-control", accept = "image/*" })
                 @Html.ValidationMessageFor(m => m.Imagem, "", new { @class = "text-danger" })
                 <img id="imagemProdutoPreview" src="#" alt="Preview" style="visibility:hidden" />
             </div>

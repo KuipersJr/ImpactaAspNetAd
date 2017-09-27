@@ -7,11 +7,6 @@ namespace Loja.Mvc.Models
 {
     public class ProdutoViewModel
     {
-        public ProdutoViewModel()
-        {
-            Categorias = new List<SelectListItem>();
-        } 
-
         public int Id { get; set; }
 
         [Required]
@@ -35,8 +30,8 @@ namespace Loja.Mvc.Models
 
         public bool Descontinuado { get; set; }
 
-        public List<SelectListItem> Categorias { get; set; }
+        public List<SelectListItem> Categorias { get; set; } = new List<SelectListItem>();
 
-        public HttpPostedFileBase Imagem { get; set; }
+        public HttpPostedFileBase Imagem { get; set; } 
     }
 }

@@ -42,25 +42,21 @@ namespace Loja.Mvc.Controllers
             return View(Mapeamento.Mapear(produto));
         }
 
-        // GET: Produto/Create
         public ActionResult Create()
         {
             return View(Mapeamento.Mapear(new Produto(), db.Categorias.ToList()));
         }
 
-        // POST: Produto/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ProdutoViewModel viewModel/*, HttpPostedFileBase imagemProduto*/)
+        public ActionResult Create(ProdutoViewModel viewModel)
         {
             if (viewModel.Imagem != null && !Produto.ValidarFormatoImagem(viewModel.Imagem.ContentType))
             {
                 ModelState.AddModelError("imagemProduto", "Apenas arquivos de imagem são permitidos.");
             }
 
-            var produto = Mapeamento.Mapear(viewModel, db/*, viewModel.Imagem*/);
+            var produto = Mapeamento.Mapear(viewModel, db);
 
             if (ModelState.IsValid)
             {
@@ -74,7 +70,6 @@ namespace Loja.Mvc.Controllers
             return View(Mapeamento.Mapear(produto, db.Categorias.ToList()));
         }
 
-        // GET: Produto/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -89,20 +84,16 @@ namespace Loja.Mvc.Controllers
                 return HttpNotFound();
             }
 
-            //return View(new ProdutoViewModel(db.Categorias.ToList(), produto));
             return View(Mapeamento.Mapear(produto, db.Categorias.ToList()));
         }
 
-        // POST: Produto/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(ProdutoViewModel viewModel/*, HttpPostedFileBase imagemProduto*/)
+        public ActionResult Edit(ProdutoViewModel viewModel)
         {
             var produto = db.Produtos.Find(viewModel.Id);
 
-            Mapeamento.Mapear(viewModel, produto, db/*, imagemProduto*/);
+            Mapeamento.Mapear(viewModel, produto, db);
 
             if (viewModel.Imagem != null && !Produto.ValidarFormatoImagem(viewModel.Imagem.ContentType))
             {
@@ -115,12 +106,10 @@ namespace Loja.Mvc.Controllers
 
                 return RedirectToAction("Index");
             }
-
-            //return View(new ProdutoViewModel(db.Categorias.ToList(), produto));
+            
             return View(Mapeamento.Mapear(produto, db.Categorias.ToList()));
         }
 
-        // GET: Produto/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
