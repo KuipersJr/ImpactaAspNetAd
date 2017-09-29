@@ -76,6 +76,12 @@ namespace Loja.WebApi.Controllers
             //return Ok(produtosViewModel);
         }
 
+        [Route("api/Produtos/GetByCategoria/{id}")]
+        public List<Produto> GetByCategoria(int id)
+        {
+            return db.Produto.Where(p => p.Categoria.Id == id).Include(p => p.Categoria).ToList();
+        }
+
         // PUT: api/Produtos/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutProduto(int id, Produto produto)
