@@ -153,6 +153,33 @@ namespace Loja.Repositorios.SqlServer.EF.Tests
         }
 
         [TestMethod]
+        public void ProxyDesativadoTeste()
+        {
+            //https://msdn.microsoft.com/en-us/library/dd456854(v=vs.100).aspx
+            //funciona apenas para entidades carregadas pelo lazy load (pedido.ItensPedido <--).
+            _contexto.Configuration.ProxyCreationEnabled = false;
+
+            var lapis = new Produto();
+            lapis.Nome = "Lápis";
+            lapis.Preco = 9.36m;
+            lapis.Estoque = 36;
+            lapis.Categoria = _contexto.Categorias.Single(c => c.Nome == "Papelaria");
+
+            _contexto.Produtos.Add(lapis);
+            _contexto.SaveChanges();
+
+            Assert.IsFalse(_contexto.Produtos.Any(p => p.Nome == "Lápis"));
+
+            //var caneta = _contexto.Produtos.Single(p => p.Nome == "Grampeador");
+            //caneta.Preco = 9.34m;
+            //_contexto.SaveChanges();
+
+            //caneta = _contexto.Produtos.Single(p => p.Nome == "Grampeador");
+
+            //Assert.AreNotEqual(caneta.Preco, 9.34m);
+        }
+
+        [TestMethod]
         public void QueryableTeste()
         {
             var query = _contexto.Produtos.Where(p => p.Preco > 10);
