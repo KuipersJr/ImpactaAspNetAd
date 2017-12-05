@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -14,14 +15,14 @@ namespace Loja.Mvc.Controllers
 
         public ActionResult Index(int produtoId)
         {
-            var produto = _contexto.Produtos.Single(p => p.Id == produtoId);
+            var produto = _contexto.Produtos.Include(p => p.Imagem).Single(p => p.Id == produtoId);
 
             return File(produto.Imagem.Bytes, produto.Imagem.ContentType);
         }
 
         public ActionResult Miniatura(int produtoId, int largura = 50, int altura = 50)
         {
-            var produto = _contexto.Produtos.Single(p => p.Id == produtoId);
+            var produto = _contexto.Produtos.Include(p => p.Imagem).Single(p => p.Id == produtoId);
 
             if (produto.Imagem == null)
             {
