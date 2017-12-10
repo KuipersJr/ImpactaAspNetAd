@@ -4,7 +4,7 @@ namespace Pubs.Dominio
 {
     public abstract class EntidadeBase
     {
-        public EntidadeBase()
+        protected EntidadeBase()
         {
             Id = Guid.NewGuid();
         }

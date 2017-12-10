@@ -39,12 +39,20 @@ namespace Pubs.Repositorios.MongoDb.Tests
             {
                 Console.WriteLine(publicacao.Id);
             }
+
+            /*
+Test Name:	SelecionarTodosTeste
+Test Outcome:	Passed
+Result StandardOutput:	bd36bafe-56af-405f-aa4c-2e5d85d9672a
+
+             
+             */
         }
 
         [TestMethod]
         public void SelecionarPorIdTeste()
         {
-            var publicacao = _repositorio.Selecionar(new Guid("9619d4e8-7c25-4a82-97b6-f12bcdca30c8"));
+            var publicacao = _repositorio.Selecionar(new Guid("bd36bafe-56af-405f-aa4c-2e5d85d9672a"));
 
             Assert.IsNotNull(publicacao);
         }

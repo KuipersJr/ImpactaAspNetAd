@@ -10,10 +10,10 @@ namespace Pubs.Repositorios.MongoDb
 {
     public class RepositorioBase<T> where T : EntidadeBase
     {
-        private readonly IMongoDatabase _db;
-        private IMongoCollection<T> _colecao; /*refatorar depois*/
+        //private readonly IMongoDatabase _db;
+        protected IMongoCollection<T> _colecao; /*refatorar depois*/
 
-        public RepositorioBase()
+        protected RepositorioBase()
         {
             var connectionString = ConfigurationManager.ConnectionStrings["pubsConnectionString"].ConnectionString;
             var databaseName = MongoUrl.Create(connectionString).DatabaseName;
@@ -21,7 +21,7 @@ namespace Pubs.Repositorios.MongoDb
             //As of today's version of MongoDB (v2.0.1.27 for MongoDB.Driver), 
             //there's no need to close or dispose of connections. The client handles it automatically.
             //https://stackoverflow.com/questions/32703051/properly-shutting-down-mongodb-database-connection-from-c-sharp-2-1-driver
-            _db = new MongoClient(connectionString).GetDatabase(databaseName);
+            var _db = new MongoClient(connectionString).GetDatabase(databaseName);
             _colecao = _db.GetCollection<T>(typeof(T).Name);            
         }
 
